@@ -1,12 +1,12 @@
 import React from 'react'
 import {Routes, Route} from "react-router-dom"
-import Ecommerce from '../pages/Ecommerce'
+import EcommerceHome from '../pages/EcommerceHome'
 
 
 const Rutas = () => {
   return (
     <Routes>
-       <Route path='/ecommerce' element={Ecommerce}/>
+       <Route path='/ecommercehome' element={<EcommerceHome/>}/>
     </Routes>
   )
 }

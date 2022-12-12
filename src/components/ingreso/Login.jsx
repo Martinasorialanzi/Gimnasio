@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import {functionLogin} from '../../api/Login.api'
+import {funcionLogin} from '../../api/Login.api'
+import Swal from 'sweetalert2'
 
 const Login = () => {
 
@@ -15,7 +16,7 @@ const Login = () => {
               email,
               password,
             }
-            const response = functionLogin(login);
+            const response = funcionLogin(login);
     console.log(response)
     
     if (response.auth === true) {  //auth es un atributo del objeto response q es un booleano.

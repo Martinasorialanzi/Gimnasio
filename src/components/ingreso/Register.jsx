@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import {funcionRegistro} from '../../api/Register.api'
 
 
 const Registro = () => {
@@ -74,8 +75,6 @@ validacion()
       });
     };
   
-    
-    console.log(usuarios);
     
   };
 

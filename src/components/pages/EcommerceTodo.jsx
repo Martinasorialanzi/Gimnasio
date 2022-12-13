@@ -3,7 +3,7 @@ import { Nav,Card,Button, Container, Row, Col,Pagination,Carousel } from 'react-
 import CarritoCompras from '../carritoCompras/CarritoCompras'
 import { Productos } from '../helpers/Productos'
 
-const EcommerceHome = () => {
+const EcommerceTodo = () => {
   return (
     <>
     <h1>Ecommerce</h1>
@@ -28,45 +28,6 @@ const EcommerceHome = () => {
       
     </Nav>
 {/* Carrusel */}
-
-<Carousel>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="https://cdn.shopify.com/s/files/1/0065/5389/4977/files/November_Desktop_Mens_1800x.jpg?v=1668528184"
-          alt="First slide"
-        />
-        <Carousel.Caption>
-        <Button>SHOP NOW</Button>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="https://cdn.shopify.com/s/files/1/0065/5389/4977/files/November_Desktop_Womens_1800x.jpg?v=1668528183"
-          alt="Second slide"
-        />
-
-        <Carousel.Caption>
-        <Button>SHOP NOW</Button>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="https://cdn.shopify.com/s/files/1/0065/5389/4977/files/November_Desktop_New_Arrivals_1800x.jpg?v=1668528183"
-          alt="Third slide"
-        />
-
-        <Carousel.Caption>
-          <Button>SHOP NOW</Button>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
-
-
-    <br></br>
-    <h1>Productos mas vendidos</h1>
 
 
 {/*empieza las cards */}
@@ -93,10 +54,20 @@ const EcommerceHome = () => {
   </Row>
   </Container>
    
- <Button>Ver mas</Button>
+  <Pagination className='justify-content-center'>
+      <Pagination.First />
+      <Pagination.Prev />
+      <Pagination.Item active>{1}</Pagination.Item>
+      <Pagination.Item>{2}</Pagination.Item>
+      <Pagination.Item>{3}</Pagination.Item>
+      <Pagination.Item>{4}</Pagination.Item>
+    
+      <Pagination.Next />
+      <Pagination.Last />
+    </Pagination>   
     </>
    
   )
 }
 
-export default EcommerceHome
+export default EcommerceTodo

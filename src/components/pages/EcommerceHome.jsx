@@ -31,12 +31,11 @@ const EcommerceHome = () => {
         <Card key={filteredProducto.id} style={{ width: '90%' }} className='mb-2'  border="light">
           <Card.Img variant="top" src={filteredProducto.imagen} />
           <Card.Body>
-            <Card.Title className='mb-4' >{filteredProducto.nombre}</Card.Title>
+            <Card.Title className='mb-2' >{filteredProducto.nombre}</Card.Title>
             <Stack direction="horizontal"  >
             <Card.Text className=''>
               ${filteredProducto.precio}
             </Card.Text>
-            <Button className="ms-auto"variant="dark" style={{ width: '' }}>Comprar</Button>
             </Stack>
           </Card.Body>
 
@@ -45,8 +44,9 @@ const EcommerceHome = () => {
       )
     })}
     
-
-    <Button variant='dark' style={{width:'15%'}} className="m-4">Ver mas</Button> 
+    <Row className="justify-content-center">
+    <Button variant='dark' style={{width:'32%'}} className="m-4">Ver mas</Button> 
+    </Row>
       </Row>
     </Container>
 
@@ -56,7 +56,7 @@ const EcommerceHome = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://cdn.shopify.com/s/files/1/0065/5389/4977/files/OCT-homepage-container-02_1000x.png?v=1634247031"
+          src="https://cdn.shopify.com/s/files/1/0065/5389/4977/files/OCT-homepage-container-02_3000x.png?v=1634247031"
           alt="First slide"
           />
         <Carousel.Caption>
@@ -69,8 +69,9 @@ const EcommerceHome = () => {
       <Carousel.Item>
         <img
           className="d-block w-100 "
-          src="https://cdn.shopify.com/s/files/1/0065/5389/4977/files/accessories_container_8a8e35be-7b10-4bce-b849-8884d9498b41_1000x.jpg?v=1642255854"
+          src="https://cdn.shopify.com/s/files/1/0065/5389/4977/files/accessories_container_8a8e35be-7b10-4bce-b849-8884d9498b41_2000x.jpg?v=1642255854"
           alt="First slide"
+          
           />
         <Carousel.Caption>
         <Button className='bg-dark border-dark'>COMPRA ACCESORIOS</Button>

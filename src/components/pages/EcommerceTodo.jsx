@@ -1,5 +1,5 @@
 import React from 'react'
-import { Nav,Card,Button, Container, Row, Col,Pagination,Carousel } from 'react-bootstrap'
+import { Nav,Card,Button, Container, Row, Col,Pagination,Stack } from 'react-bootstrap'
 import CarritoCompras from '../carritoCompras/CarritoCompras'
 import { Productos } from '../helpers/Productos'
 
@@ -36,18 +36,21 @@ const EcommerceTodo = () => {
 {Productos.map((producto)=>{
   return(
 
-    <Col xs={12} md={6} xl={4}>
-    <Card key={producto.id} style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={producto.imagen} />
-      <Card.Body>
-        <Card.Title>{producto.nombre}</Card.Title>
-        <Card.Text>
-          ${producto.precio}
-        </Card.Text>
-        <Button variant="primary">Comprar</Button>
-      </Card.Body>
-    </Card>
-    </Col>
+    <Col xs={6} sm={6} md={3} xl={3} >
+        <Card key={producto.id} style={{ width: '90%' }} className='mb-2'  border="light">
+          <Card.Img variant="top" src={producto.imagen} />
+          <Card.Body>
+            <Card.Title className='mb-4' >{producto.nombre}</Card.Title>
+            <Stack direction="horizontal"  >
+            <Card.Text className=''>
+              ${producto.precio}
+            </Card.Text>
+            <Button className="ms-auto"variant="dark" style={{ width: '' }}>Comprar</Button>
+            </Stack>
+          </Card.Body>
+
+        </Card>
+        </Col>
   )
 })}
 

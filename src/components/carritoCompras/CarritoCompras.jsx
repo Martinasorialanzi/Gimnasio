@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import {BsFillCartFill} from 'react-icons/bs'
 
 
 const CarritoCompras = () => {
@@ -13,8 +14,8 @@ const CarritoCompras = () => {
   return (
     <>
     <div className="vr" />
-      <Button variant="primary" onClick={handleShow}>
-        Launch
+      <Button variant="dark" onClick={handleShow}>
+        <BsFillCartFill/>
       </Button>
 
       <Offcanvas show={show} onHide={handleClose} placement="end">

@@ -1,99 +1,84 @@
 import React from 'react'
-import { Nav,Card,Button, Container, Row, Col,Pagination,Carousel } from 'react-bootstrap'
-import CarritoCompras from '../carritoCompras/CarritoCompras'
+import {Button, Container, Row,Stack,Carousel,Card,Col} from 'react-bootstrap'
+import '../ecommerce/ecommerce.css'
+import CarruselEcommerceHome from '../ecommerce/CarruselEcommerceHome'
+import NavEcommerce from '../ecommerce/NavEcommerce'
+import CardsEcommerce from '../ecommerce/CardsEcommerce'
 import { Productos } from '../helpers/Productos'
+
+
 
 const EcommerceHome = () => {
   return (
     <>
-    <h1>Ecommerce</h1>
-    <CarritoCompras/>
     
-    <Nav justify variant="tabs" defaultActiveKey="/ecommerce">
-    <Nav.Item>
-        <Nav.Link href="/ecommerce-all">Todo</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link href="/ecommerce-indumentaria">Indumentaria</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link href="/ecommerce-accesorios">Accesorios</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link href="/home/suplementos">Sumplementos</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link href="/ecommerce-equipos">Equipos</Nav.Link>
-      </Nav.Item>
-      
-    </Nav>
-{/* Carrusel */}
+    <NavEcommerce  />
 
-<Carousel>
+    <CarruselEcommerceHome/>
+
+    
+ <Container className='cards-container '>
+    
+    <h3 className='text-center mb-4 p-2'>Productos mas vendidos</h3>
+ 
+    <Container className="mb-4">
+
+      <Row className="justify-content-center" >
+      {Productos.filter((producto)=>producto.portada.includes("true")).map((filteredProducto)=>{
+      return(
+        
+        <Col xs={6} sm={4} md={3} xl={3} >
+        <Card key={filteredProducto.id} style={{ width: '90%' }} className='mb-2'  border="light">
+          <Card.Img variant="top" src={filteredProducto.imagen} />
+          <Card.Body>
+            <Card.Title className='mb-4' >{filteredProducto.nombre}</Card.Title>
+            <Stack direction="horizontal"  >
+            <Card.Text className=''>
+              ${filteredProducto.precio}
+            </Card.Text>
+            <Button className="ms-auto"variant="dark" style={{ width: '' }}>Comprar</Button>
+            </Stack>
+          </Card.Body>
+
+        </Card>
+        </Col>
+      )
+    })}
+    
+
+    <Button variant='dark' style={{width:'15%'}} className="m-4">Ver mas</Button> 
+      </Row>
+    </Container>
+
+
+     <Stack direction="horizontal" gap={3}>
+    <Carousel>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://cdn.shopify.com/s/files/1/0065/5389/4977/files/November_Desktop_Mens_1800x.jpg?v=1668528184"
+          src="https://cdn.shopify.com/s/files/1/0065/5389/4977/files/OCT-homepage-container-02_1000x.png?v=1634247031"
           alt="First slide"
-        />
+          />
         <Carousel.Caption>
-        <Button>SHOP NOW</Button>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="https://cdn.shopify.com/s/files/1/0065/5389/4977/files/November_Desktop_Womens_1800x.jpg?v=1668528183"
-          alt="Second slide"
-        />
-
-        <Carousel.Caption>
-        <Button>SHOP NOW</Button>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="https://cdn.shopify.com/s/files/1/0065/5389/4977/files/November_Desktop_New_Arrivals_1800x.jpg?v=1668528183"
-          alt="Third slide"
-        />
-
-        <Carousel.Caption>
-          <Button>SHOP NOW</Button>
+        <Button className='bg-dark border-dark'>COMPRA EQUIPOS</Button>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-
-
-    <br></br>
-    <h1>Productos mas vendidos</h1>
-
-
-{/*empieza las cards */}
-<Container>
-      <Row>
-{Productos.map((producto)=>{
-  return(
-
-    <Col xs={12} md={6} xl={4}>
-    <Card key={producto.id} style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={producto.imagen} />
-      <Card.Body>
-        <Card.Title>{producto.nombre}</Card.Title>
-        <Card.Text>
-          ${producto.precio}
-        </Card.Text>
-        <Button variant="primary">Comprar</Button>
-      </Card.Body>
-    </Card>
-    </Col>
-  )
-})}
-
-  </Row>
-  </Container>
-   
- <Button>Ver mas</Button>
+      
+    <Carousel>
+      <Carousel.Item>
+        <img
+          className="d-block w-100 "
+          src="https://cdn.shopify.com/s/files/1/0065/5389/4977/files/accessories_container_8a8e35be-7b10-4bce-b849-8884d9498b41_1000x.jpg?v=1642255854"
+          alt="First slide"
+          />
+        <Carousel.Caption>
+        <Button className='bg-dark border-dark'>COMPRA ACCESORIOS</Button>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
+    </Stack>
+          </Container>
     </>
    
   )

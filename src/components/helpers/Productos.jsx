@@ -1,14 +1,16 @@
 
-export const Productos =
+export const productos =
     [
         { 
             "nombre":"Medias negras",
             "categoria":"accesorios",
             "precio":1500,
             "id":1,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/BPYDWNp/barrys-socks-black.webp",
-            "portada":"false"
+            "portada":"false",
+            "talle":["xs","s","m","l","xl"],
+            "color": ["negro"]
     
         },
         { 
@@ -16,29 +18,32 @@ export const Productos =
             "categoria":"accesorios",
             "precio":1500,
             "id":2,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/LgMbSQw/barrys-socks-white.webp",
-            "portada":"false"
-    
+            "portada":"false",
+            "talle":["xs","s","m","l","xl"],
+            "color": ["blanco"]
         },
         { 
             "nombre":"Bolso",
             "categoria":"accesorios",
             "precio":3000,
             "id":3,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/QvK7qJ2/bolso.webp",
-            "portada":"false"
-    
+            "portada":"false",
+            "color": ["negro"]
         },
         { 
             "nombre":"Guantes",
             "categoria":"accesorios",
             "precio":2700,
             "id":4,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/Mk3FPDy/GLOVES1.webp",
-            "portada":"false"
+            "portada":"false",
+            "talle":["xs","s","m","l","xl"],
+            "color": ["gris"]
     
         },
         { 
@@ -46,9 +51,11 @@ export const Productos =
             "categoria":"accesorios",
             "precio":2700,
             "id":5,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/BqzBFtf/GLOVES3.webp",
-            "portada":"false"
+            "portada":"false",
+            "talle":["xs","s","m","l","xl"],
+            "color": ["negro"]
     
         },
         { 
@@ -56,9 +63,11 @@ export const Productos =
             "categoria":"accesorios",
             "precio":3000,
             "id":6,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/XsjLyW3/mochila.webp",
-            "portada":"true"
+            "portada":"true",
+            "color": ["negro"],
+            "talle":[]
     
         },
         { 
@@ -66,9 +75,11 @@ export const Productos =
             "categoria":"accesorios",
             "precio":1600,
             "id":7,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/TPQN9H6/taza.webp",
-            "portada":"false"
+            "portada":"false",
+            "talle":[],
+            "color": ["blanco"]
     
         },
         { 
@@ -76,9 +87,11 @@ export const Productos =
             "categoria":"accesorios",
             "precio":2400,
             "id":8,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/xX5v6qV/TOWEL.jpg",
-            "portada":"false"
+            "portada":"false",
+            "color": ["blanco"],
+            "talle":[]
     
         },
         { 
@@ -86,9 +99,11 @@ export const Productos =
             "categoria":"accesorios",
             "precio":1500,
             "id":9,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/D4h2Lqb/vaso-termico.webp",
-            "portada":"false"
+            "portada":"false",
+            "color": ["blanco"],
+            "talle":[]
     
         },
         //equipos
@@ -97,9 +112,11 @@ export const Productos =
             "categoria":"equipos",
             "precio":2000,
             "id":10,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/bFSXPJf/BLUE-BAND.webp",
-            "portada":"false"
+            "portada":"false",
+            "color": ["azul"],
+            "talle":[]
     
         },
         { 
@@ -107,9 +124,11 @@ export const Productos =
             "categoria":"equipos",
             "precio":4000,
             "id":11,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/jHyTJH7/FITKITS.webp",
-            "portada":"true"
+            "portada":"true",
+            "color": ["azul"],
+            "talle":[]
     
         },
         { 
@@ -117,9 +136,11 @@ export const Productos =
             "categoria":"equipos",
             "precio":3000,
             "id":12,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/3rL60YX/mat.webp",
-            "portada":"false"
+            "portada":"false",
+            "color": ["negro","blanco"],
+            "talle":[]
     
         },
         { 
@@ -127,9 +148,12 @@ export const Productos =
             "categoria":"equipos",
             "precio":4500,
             "id":13,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/HKjB82d/pesas.webp",
-            "portada":"false"
+            "portada":"false",
+            "talle":["xs","s","m","l","xl"],
+            "color": ["negro"],
+            "talle":[]
     
         },
         { 
@@ -137,9 +161,11 @@ export const Productos =
             "categoria":"equipos",
             "precio":2000,
             "id":14,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/ngyXdkH/RESIST-BAND-RED.webp",
-            "portada":"false"
+            "portada":"false",
+            "color": ["rojo"],
+            "talle":[]
     
         },
         { 
@@ -147,9 +173,11 @@ export const Productos =
             "categoria":"equipos",
             "precio":6000,
             "id":15,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/60wrd5q/retail-weights-50lb.webp",
-            "portada":"false"
+            "portada":"false",
+            "color": ["negro"],
+            "talle":[]
     
         },
         { 
@@ -157,9 +185,11 @@ export const Productos =
             "categoria":"equipos",
             "precio":7000,
             "id":16,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/Yy7LTR5/retail-weights-80lb.webp",
-            "portada":"false"
+            "portada":"false",
+            "color": ["negro"],
+            "talle":[]
     
         },
         { 
@@ -167,9 +197,11 @@ export const Productos =
             "categoria":"equipos",
             "precio":4000,
             "id":17,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/vmc2m6S/step.webp",
-            "portada":"false"
+            "portada":"false",
+            "color": ["negro"],
+            "talle":[]
     
         },
         //indumentaria
@@ -178,9 +210,11 @@ export const Productos =
             "categoria":"indumentaria",
             "precio":5000,
             "id":18,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/g4RqjsG/buzo-gris-varon.webp",
-            "portada":"false"
+            "portada":"false",
+            "talle":["xs","s","m","l","xl"],
+            "color": ["gris"]
     
         },
         { 
@@ -188,9 +222,11 @@ export const Productos =
             "categoria":"indumentaria",
             "precio":5000,
             "id":19,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/LpJ3WQY/buzo-negro-mujer.webp",
-            "portada":"false"
+            "portada":"false",
+            "talle":["xs","s","m","l","xl"],
+            "color": ["negro"]
     
         },
         { 
@@ -198,9 +234,11 @@ export const Productos =
             "categoria":"indumentaria",
             "precio":5000,
             "id":20,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/frm10dw/buzo-negro-varon.webp",
-            "portada":"false"
+            "portada":"false",
+            "talle":["xs","s","m","l","xl"],
+            "color": ["negro"]
     
         },
         { 
@@ -208,9 +246,11 @@ export const Productos =
             "categoria":"indumentaria",
             "precio":8000,
             "id":21,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/PzwzDP4/conjunto-marron-mujer.webp",
-            "portada":"true"
+            "portada":"true",
+            "talle":["xs","s","m","l","xl"],
+            "color": ["marron"]
     
         },
         { 
@@ -218,19 +258,23 @@ export const Productos =
             "categoria":"indumentaria",
             "precio":5000,
             "id":22,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/WsCknn6/jogger-negro-mujer.webp",
-            "portada":"false"
+            "portada":"false",
+            "talle":["xs","s","m","l","xl"],
+            "color": ["negro"]
     
         },
         { 
-            "nombre":"Remera black lux",
+            "nombre":"Remera blue lux",
             "categoria":"indumentaria",
             "precio":4500,
             "id":23,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/vxJdt2z/remera-azul-varon.webp",
-            "portada":"false"
+            "portada":"false",
+            "talle":["xs","s","m","l","xl"],
+            "color": ["azul"]
     
         },
         { 
@@ -238,9 +282,11 @@ export const Productos =
             "categoria":"indumentaria",
             "precio":4500,
             "id":24,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/RcrY15h/remera-blanca-varon.webp",
-            "portada":"false"
+            "portada":"false",
+            "talle":["xs","s","m","l","xl"],
+            "color": ["blanco"]
 
         },
         { 
@@ -248,9 +294,11 @@ export const Productos =
             "categoria":"indumentaria",
             "precio":4500,
             "id":25,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/mDm2NVQ/remera-gris-2-mujer.webp",
-            "portada":"false"
+            "portada":"false",
+            "talle":["xs","s","m","l","xl"],
+            "color": ["gris"]
     
         },
         { 
@@ -258,9 +306,11 @@ export const Productos =
             "categoria":"indumentaria",
             "precio":4500,
             "id":26,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/pK8F948/remera-gris-mujer.webp",
-            "portada":"false"
+            "portada":"false",
+            "talle":["xs","s","m","l","xl"],
+            "color": ["gris"]
     
         },
         { 
@@ -268,9 +318,11 @@ export const Productos =
             "categoria":"indumentaria",
             "precio":4500,
             "id":27,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/NxZhVns/remera-naranja-mujer.webp",
-            "portada":"false"
+            "portada":"false",
+            "talle":["xs","s","m","l","xl"],
+            "color": ["naranja"]
     
         },
         { 
@@ -278,9 +330,11 @@ export const Productos =
             "categoria":"indumentaria",
             "precio":4500,
             "id":28,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/1RV3VgW/remera-negra-mujer.webp",
-            "portada":"false"
+            "portada":"false",
+            "talle":["xs","s","m","l","xl"],
+            "color": ["negro"]
     
         },
         { 
@@ -288,9 +342,11 @@ export const Productos =
             "categoria":"indumentaria",
             "precio":4500,
             "id":29,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/zXcV1k6/remera-negra-varon.webp",
-            "portada":"false"
+            "portada":"false",
+            "talle":["xs","s","m","l","xl"],
+            "color": ["negro"]
     
         },
         { 
@@ -298,11 +354,14 @@ export const Productos =
             "categoria":"indumentaria",
             "precio":5000,
             "id":30,
-            "descripción":"",
+            "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/dmhZDRN/short-azul-varon.webp",
-            "portada":"true"
+            "portada":"true",
+            "talle":["xs","s","m","l","xl"],
+            "color": "azul"
     
         },
+     
     
     
     

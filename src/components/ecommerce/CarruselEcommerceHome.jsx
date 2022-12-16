@@ -1,5 +1,6 @@
 import React from 'react'
 import { Carousel,Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import '../ecommerce/ecommerce.css'
 
 const CarruselEcommerceHome = () => {
@@ -13,9 +14,11 @@ const CarruselEcommerceHome = () => {
         alt="First slide"
       />
       <Carousel.Caption>
-    
+
+      <Link to={'/ecommerce-all'}>
       <Button className='bg-dark border-dark'>SHOP NOW</Button>
-      
+      </Link>
+
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>

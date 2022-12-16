@@ -1,58 +1,36 @@
 import React from 'react'
 import { Nav,Card,Button, Container, Row, Col,Pagination,Stack } from 'react-bootstrap'
-import CarritoCompras from '../carritoCompras/CarritoCompras'
-import { Productos } from '../helpers/Productos'
+import CardsEcommerce from '../ecommerce/CardsEcommerce'
+import NavEcommerce from '../ecommerce/NavEcommerce'
+import { productos } from '../helpers/productos'
 
 const EcommerceTodo = () => {
   return (
     <>
-    <h1>Ecommerce</h1>
-    <CarritoCompras/>
-    
-    <Nav justify variant="tabs" defaultActiveKey="/ecommerce">
-    <Nav.Item>
-        <Nav.Link href="/ecommerce-all">Todo</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link href="/ecommerce-indumentaria">Indumentaria</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link href="/ecommerce-accesorios">Accesorios</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link href="/home/suplementos">Sumplementos</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link href="/ecommerce-equipos">Equipos</Nav.Link>
-      </Nav.Item>
-      
-    </Nav>
-{/* Carrusel */}
+<NavEcommerce/>
 
 
-{/*empieza las cards */}
-<Container>
-      <Row>
-{Productos.map((producto)=>{
+<Container className='mt-4'>
+      <Row className="justify-content-center">
+{/* {productos.map((producto)=>{
   return(
 
-    <Col xs={6} sm={6} md={3} xl={3} >
-        <Card key={producto.id} style={{ width: '90%' }} className='mb-2'  border="light">
-          <Card.Img variant="top" src={producto.imagen} />
-          <Card.Body>
-            <Card.Title className='mb-4' >{producto.nombre}</Card.Title>
-            <Stack direction="horizontal"  >
-            <Card.Text className=''>
-              ${producto.precio}
-            </Card.Text>
-            <Button className="ms-auto"variant="dark" style={{ width: '' }}>Comprar</Button>
-            </Stack>
-          </Card.Body>
+    <Col xs={6} sm={4} md={3} xl={3} >
+    <Card key={producto.id} style={{ width: '90%' }} className='mb-2'  border="light">
+      <Card.Img variant="top" src={producto.imagen} />
+      <Card.Body>
+        <Card.Title className='mb-2' >{producto.nombre}</Card.Title>
+        <Stack direction="horizontal"  >
+        <Card.Text className=''>
+          ${producto.precio}
+        </Card.Text>
+        </Stack>
+      </Card.Body>
 
-        </Card>
-        </Col>
+    </Card>
+    </Col>
   )
-})}
+})} */}
 
   </Row>
   </Container>
@@ -68,6 +46,19 @@ const EcommerceTodo = () => {
       <Pagination.Next />
       <Pagination.Last />
     </Pagination>   
+
+
+    <Container className='mt-4'>
+      <Row className="justify-content-center">
+{productos.map((producto)=>{
+  return(
+    <CardsEcommerce producto={producto}/>
+  )
+})}
+
+  </Row>
+  </Container>
+    
     </>
    
   )

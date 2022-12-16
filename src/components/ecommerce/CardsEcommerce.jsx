@@ -1,35 +1,37 @@
 import React from 'react'
 import {Card,Button, Col,Stack,Row} from 'react-bootstrap'
-import { Productos } from '../helpers/Productos'
+import { Link } from 'react-router-dom'
+import { productos } from '../helpers/productos'
 
 
 
-const CardsEcommerce = () => {
+const CardsEcommerce = ({producto}) => {
 
   return (
-      <Row className="justify-content-center" >
-    {Productos.map((producto)=>{
-      return(
+    //   <Row className="justify-content-center" >
+    // {Productos.map((producto)=>{
+    //   return(
         
         <Col xs={6} sm={6} md={3} xl={3} >
-        <Card key={producto.id} style={{ width: '90%' }} className='mb-2'  border="light">
+        <Card key={producto.id} style={{ width: '90%' }} className='mb-4'  border="light">
+          <Link to={`/ecommerce-producto/${producto.id}`}>
           <Card.Img variant="top" src={producto.imagen} />
+          </Link>
           <Card.Body>
-            <Card.Title className='mb-4' >{producto.nombre}</Card.Title>
+            <Card.Title className='mb-1' >{producto.nombre}</Card.Title>
             <Stack direction="horizontal"  >
             <Card.Text className=''>
               ${producto.precio}
             </Card.Text>
-            <Button className="ms-auto"variant="dark" style={{ width: '' }}>Comprar</Button>
             </Stack>
           </Card.Body>
 
         </Card>
         </Col>
-      )
-    })}
+    //   )
+    // })}
     
-      </Row>
+      // </Row>
     )
 }
 

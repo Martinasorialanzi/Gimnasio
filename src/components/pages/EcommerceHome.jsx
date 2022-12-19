@@ -5,8 +5,6 @@ import {
   Row,
   Stack,
   Carousel,
-  Card,
-  Col,
 } from "react-bootstrap";
 import "../ecommerce/ecommerce.css";
 import CarruselEcommerceHome from "../ecommerce/CarruselEcommerceHome";
@@ -30,9 +28,9 @@ const EcommerceHome = () => {
             {productos
               .filter((producto) => producto.portada.includes("true"))
               .map((producto) => {
-                return <CardsEcommerce producto={producto} />;
+                return <CardsEcommerce producto={producto} key={producto.id} />;
               })}
-            <Link to={"/ecommerce-all"}>
+            <Link to={"/ecommerce-categoria/all"}>
               <Row className="justify-content-center">
                 <Button variant="dark" style={{ width: "32%" }} className="m-4">
                   Ver mas
@@ -51,7 +49,9 @@ const EcommerceHome = () => {
                 alt="First slide"
               />
               <Carousel.Caption>
+                <Link to={`/ecommerce-categoria/equipos`}>
                 <Button className="bg-dark border-dark">COMPRA EQUIPOS</Button>
+                </Link>
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
@@ -64,9 +64,11 @@ const EcommerceHome = () => {
                 alt="First slide"
               />
               <Carousel.Caption>
+                <Link to={`/ecommerce-categoria/accesorios`}>
                 <Button className="bg-dark border-dark">
                   COMPRA ACCESORIOS
                 </Button>
+                </Link>
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>

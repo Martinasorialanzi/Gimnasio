@@ -32,7 +32,8 @@ export const productos =
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/QvK7qJ2/bolso.webp",
             "portada":"false",
-            "color": ["negro"]
+            "color": ["negro"],
+            "talle":[],
         },
         { 
             "nombre":"Guantes",
@@ -79,7 +80,7 @@ export const productos =
             "imagen":"https://i.ibb.co/TPQN9H6/taza.webp",
             "portada":"false",
             "talle":[],
-            "color": ["blanco"]
+            "color": []
     
         },
         { 
@@ -358,7 +359,7 @@ export const productos =
             "imagen":"https://i.ibb.co/dmhZDRN/short-azul-varon.webp",
             "portada":"true",
             "talle":["xs","s","m","l","xl"],
-            "color": "azul"
+            "color": ["azul"]
     
         },
      
@@ -367,5 +368,8 @@ export const productos =
     
     ]
 
+    export const tallesProductos=["xs","s","m","l","xl"]
+
+    export const coloresProductos=["azul","negro","gris","marron","blanco","rojo"]
 
 

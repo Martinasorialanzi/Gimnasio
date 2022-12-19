@@ -1,7 +1,7 @@
 import React from 'react'
-import {Card,Button, Col,Stack,Row} from 'react-bootstrap'
+import {Card, Col,Stack} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { productos } from '../helpers/productos'
+
 
 
 

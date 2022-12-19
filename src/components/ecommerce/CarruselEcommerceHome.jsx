@@ -15,7 +15,7 @@ const CarruselEcommerceHome = () => {
       />
       <Carousel.Caption>
 
-      <Link to={'/ecommerce-all'}>
+      <Link to={'/ecommerce-categoria/all'}>
       <Button className='bg-dark border-dark'>SHOP NOW</Button>
       </Link>
 
@@ -29,7 +29,9 @@ const CarruselEcommerceHome = () => {
       />
 
       <Carousel.Caption>
+      <Link to={'/ecommerce-categoria/all'}>
       <Button className='bg-dark border-dark'>SHOP NOW</Button>
+      </Link>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
@@ -40,7 +42,9 @@ const CarruselEcommerceHome = () => {
       />
 
       <Carousel.Caption>
-        <Button className='bg-dark border-dark'>SHOP NOW</Button>
+      <Link to={'/ecommerce-categoria/all'}>
+      <Button className='bg-dark border-dark'>SHOP NOW</Button>
+      </Link>
       </Carousel.Caption>
     </Carousel.Item>
   </Carousel>

@@ -1,23 +1,23 @@
 import React from 'react'
 import { Nav } from 'react-bootstrap'
 import CarritoCompras from '../carritoCompras/CarritoCompras'
+import { categorias } from '../helpers/categorias'
+import { Link } from 'react-router-dom'
 
 
 const NavEcommerce = () => {
   return (
     <Nav justify variant="tabs" defaultActiveKey="/ecommerce">
-    <Nav.Item>
-        <Nav.Link href="/ecommerce-all" className='text-dark'>Todo</Nav.Link>
+  
+    {categorias.map((categoria)=>{
+      return(
+      <Nav.Item key={categoria.id}>
+        <Nav.Link href={`/ecommerce-categoria/${categoria.nombre}`}className='text-dark'>{ categoria.nombre}</Nav.Link>
       </Nav.Item>
-      <Nav.Item>
-        <Nav.Link href="/ecommerce-indumentaria" className='text-dark' >Indumentaria</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link href="/ecommerce-accesorios" className='text-dark'>Accesorios</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link href="/ecommerce-equipos" className='text-dark'>Equipos</Nav.Link>
-      </Nav.Item>
+      )
+
+    })}  
+     
       <Nav.Item>
       <CarritoCompras/>
       </Nav.Item>

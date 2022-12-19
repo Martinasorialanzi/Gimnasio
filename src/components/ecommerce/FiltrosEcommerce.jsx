@@ -1,8 +1,10 @@
-import React from 'react'
+import {  React } from 'react' 
 import { Row,Form, Container } from 'react-bootstrap'
-import { tallesProductos, coloresProductos } from '../helpers/productos'
+import { tallesProductos, coloresProductos, productos } from '../helpers/productos'
 
-export const FiltrosPrecio = () => {
+
+export const FiltrosPrecio = ({precio,setPrecio}) => {
+  
   return (
     <>
   <Container className='m-1'>
@@ -12,14 +14,25 @@ export const FiltrosPrecio = () => {
     <Form>
      
         <Row  className="m-3">
-            
+
         <Form.Check
             inline
-            label="All"
+            label="all"
             name="group1"
             type="radio"
             id={`inline-radio`}
+            value={1000000000}
+            onChange={(e) => setPrecio(e.currentTarget.value)}
             defaultChecked
+          />    
+        <Form.Check
+            inline
+            label="$0-$1000"
+            name="group1"
+            type="radio"
+            id={`inline-radio`}
+            value={0}
+            onChange={(e) => setPrecio(e.currentTarget.value)}
           />  
           <Form.Check
             inline
@@ -27,6 +40,8 @@ export const FiltrosPrecio = () => {
             name="group1"
             type="radio"
             id={`inline-radio`}
+            value={1500}
+            onChange={(e) => setPrecio(e.currentTarget.value)}
           />
           <Form.Check
             inline
@@ -34,6 +49,8 @@ export const FiltrosPrecio = () => {
             name="group1"
             type="radio"
             id={`inline-radio`}
+            value={3000}
+            onChange={(e) => setPrecio(e.currentTarget.value)}
           />
           <Form.Check
             inline
@@ -41,6 +58,8 @@ export const FiltrosPrecio = () => {
             name="group1"
             type="radio"
             id={`inline-radio`}
+            value={4500}
+            onChange={(e) => setPrecio(e.currentTarget.value)}
           />
           <Form.Check
             inline
@@ -48,6 +67,8 @@ export const FiltrosPrecio = () => {
             name="group1"
             type="radio"
             id={`inline-radio`}
+            value={6500}
+            onChange={(e) => setPrecio(e.currentTarget.value)}
           />
           
         </Row>
@@ -57,7 +78,10 @@ export const FiltrosPrecio = () => {
         </>
         )}
         
-export const FiltrosTalle = () => {
+export const FiltrosTalle = ({talle,setTalle}) => {
+ 
+
+
     return (
       <>
   <Container className='m-1'>
@@ -73,6 +97,8 @@ export const FiltrosTalle = () => {
             name="group1"
             type="radio"
             id={`inline-radio`}
+            value="all"
+            onChange={(e) => setTalle(e.currentTarget.value)}
             defaultChecked
           />
      {tallesProductos.map((talle)=>{
@@ -83,6 +109,9 @@ export const FiltrosTalle = () => {
             name="group1"
             type="radio"
             id={`inline-radio`}
+            value={talle}
+            onChange={(e) => setTalle(e.currentTarget.value)}
+            key={talle}
           />   
         )
      })}       
@@ -93,7 +122,9 @@ export const FiltrosTalle = () => {
     </>
     )}
 
-export const FiltrosColor = () => {
+export const FiltrosColor = ({color,setColor}) => {
+  
+  
  return(
     <>
   <Container className='m-1'>
@@ -108,7 +139,10 @@ export const FiltrosColor = () => {
         name="group1"
         type="radio"
         id={`inline-radio`}
+        value="all"
+        onChange={(e) => setColor(e.currentTarget.value)}
         defaultChecked
+        
       />
  {coloresProductos.map((color)=>{
     return (
@@ -118,6 +152,9 @@ export const FiltrosColor = () => {
         name="group1"
         type="radio"
         id={`inline-radio`}
+        value={color}
+        onChange={(e) => setColor(e.currentTarget.value)}
+        key={color}
       />   
     )
  })}       

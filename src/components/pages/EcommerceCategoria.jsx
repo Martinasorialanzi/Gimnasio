@@ -1,4 +1,4 @@
-import {React} from 'react'
+import {React, useState} from 'react'
 import { useParams } from 'react-router-dom'
 import NavEcommerce from '../ecommerce/NavEcommerce'
 import { productos } from '../helpers/productos'
@@ -10,6 +10,14 @@ const EcommerceCategoria = () => {
 
   const {categoria}=useParams()
   const cat=categoria
+
+  const [talle, setTalle] = useState("all")
+  console.log(talle)
+  const [color, setColor] = useState("all")
+  console.log(color)
+  const [precio, setPrecio] = useState(1000000000)
+  const precioNum=parseInt(precio)
+  console.log(precioNum)
   
   
   return (
@@ -17,27 +25,36 @@ const EcommerceCategoria = () => {
     <NavEcommerce/>
     <Row>
       <Col sm={1} className="">
-      <FiltrosTalle/>
-      <FiltrosPrecio/>
-      <FiltrosColor/>
+      <FiltrosTalle talle={talle} setTalle={setTalle}/>
+      <FiltrosPrecio precio={precio} setPrecio={setPrecio} />
+      <FiltrosColor color={color} setColor={setColor}/>
         </Col>
-    <Col className="mb-4">
-    <Container className="mb-4">
+    <Col className="p-0 m-0">
+    <Container className="">
     <Row className="justify-content-center">
-      {cat==="all"? 
       <>
-      {productos.map((producto)=>{
-        return(
-          <CardsEcommerce producto={producto} key={producto.id}/>
-        )
-      })}
-      </>:<>
-      {productos.filter((producto)=>producto.categoria===cat).map((producto)=>{
+      {productos.filter((producto)=>
+      
+      producto.categoria.includes(cat) 
+      &&
+      (talle==="all"? producto.categoria.includes(cat):
+      producto.talle.includes(talle) )
+      && 
+      (color==="all"? producto.categoria.includes(cat):
+      producto.color.includes(color)
+      )
+      &&
+      (precioNum===1000000000? producto.categoria.includes(cat):
+      precioNum<6000?
+      producto.precio>precioNum &&producto.precio<=(precioNum+1500):
+      producto.precio>6000
+      )
+      ).map((producto)=>{
       return(     
         <CardsEcommerce producto={producto} key={producto.id}/>
         )
     })}
-      </>}
+      </>
    
     </Row>
     </Container>

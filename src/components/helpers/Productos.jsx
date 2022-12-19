@@ -3,7 +3,7 @@ export const productos =
     [
         { 
             "nombre":"Medias negras",
-            "categoria":"accesorios",
+            "categoria":["accesorios","all"],
             "precio":1500,
             "id":1,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -15,7 +15,7 @@ export const productos =
         },
         { 
             "nombre":"Medias blancas",
-            "categoria":"accesorios",
+            "categoria":["accesorios","all"],
             "precio":1500,
             "id":2,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -26,7 +26,7 @@ export const productos =
         },
         { 
             "nombre":"Bolso",
-            "categoria":"accesorios",
+            "categoria":["accesorios","all"],
             "precio":3000,
             "id":3,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -37,7 +37,7 @@ export const productos =
         },
         { 
             "nombre":"Guantes",
-            "categoria":"accesorios",
+            "categoria":["accesorios","all"],
             "precio":2700,
             "id":4,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -49,7 +49,7 @@ export const productos =
         },
         { 
             "nombre":"Guantes",
-            "categoria":"accesorios",
+            "categoria":["accesorios","all"],
             "precio":2700,
             "id":5,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -61,7 +61,7 @@ export const productos =
         },
         { 
             "nombre":"Mochila",
-            "categoria":"accesorios",
+            "categoria":["accesorios","all"],
             "precio":3000,
             "id":6,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -73,7 +73,7 @@ export const productos =
         },
         { 
             "nombre":"Taza ceramica",
-            "categoria":"accesorios",
+            "categoria":["accesorios","all"],
             "precio":1600,
             "id":7,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -85,7 +85,7 @@ export const productos =
         },
         { 
             "nombre":"Pack de Toallas ",
-            "categoria":"accesorios",
+            "categoria":["accesorios","all"],
             "precio":2400,
             "id":8,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -97,7 +97,7 @@ export const productos =
         },
         { 
             "nombre":"Vaso térmico",
-            "categoria":"accesorios",
+            "categoria":["accesorios","all"],
             "precio":1500,
             "id":9,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -110,7 +110,7 @@ export const productos =
         //equipos
         { 
             "nombre":"Banda azul",
-            "categoria":"equipos",
+            "categoria":["equipos","all"],
             "precio":2000,
             "id":10,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -122,7 +122,7 @@ export const productos =
         },
         { 
             "nombre":"Kit fitness",
-            "categoria":"equipos",
+            "categoria":["equipos","all"],
             "precio":4000,
             "id":11,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -134,7 +134,7 @@ export const productos =
         },
         { 
             "nombre":"Mat",
-            "categoria":"equipos",
+            "categoria":["equipos","all"],
             "precio":3000,
             "id":12,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -146,7 +146,7 @@ export const productos =
         },
         { 
             "nombre":"Pesas 10kg ",
-            "categoria":"equipos",
+            "categoria":["equipos","all"],
             "precio":4500,
             "id":13,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -159,7 +159,7 @@ export const productos =
         },
         { 
             "nombre":"Banda elastica ",
-            "categoria":"equipos",
+            "categoria":["equipos","all"],
             "precio":2000,
             "id":14,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -171,7 +171,7 @@ export const productos =
         },
         { 
             "nombre":"Pesas 50lb",
-            "categoria":"equipos",
+            "categoria":["equipos","all"],
             "precio":6000,
             "id":15,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -183,7 +183,7 @@ export const productos =
         },
         { 
             "nombre":"Pesas 80lb",
-            "categoria":"equipos",
+            "categoria":["equipos","all"],
             "precio":7000,
             "id":16,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -195,7 +195,7 @@ export const productos =
         },
         { 
             "nombre":"Step",
-            "categoria":"equipos",
+            "categoria":["equipos","all"],
             "precio":4000,
             "id":17,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -208,7 +208,7 @@ export const productos =
         //indumentaria
         { 
             "nombre":"Buzo wave",
-            "categoria":"indumentaria",
+            "categoria":["indumentaria","all"],
             "precio":5000,
             "id":18,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -220,7 +220,7 @@ export const productos =
         },
         { 
             "nombre":"Buzo crop",
-            "categoria":"indumentaria",
+            "categoria":["indumentaria","all"],
             "precio":5000,
             "id":19,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -232,7 +232,7 @@ export const productos =
         },
         { 
             "nombre":"Buzo black",
-            "categoria":"indumentaria",
+            "categoria":["indumentaria","all"],
             "precio":5000,
             "id":20,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -244,8 +244,8 @@ export const productos =
         },
         { 
             "nombre":"Conjunto denver",
-            "categoria":"indumentaria",
-            "precio":8000,
+            "categoria":["indumentaria","all"],
+            "precio":9000,
             "id":21,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/PzwzDP4/conjunto-marron-mujer.webp",
@@ -256,7 +256,7 @@ export const productos =
         },
         { 
             "nombre":"Jogger heather",
-            "categoria":"indumentaria",
+            "categoria":["indumentaria","all"],
             "precio":5000,
             "id":22,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -268,7 +268,7 @@ export const productos =
         },
         { 
             "nombre":"Remera blue lux",
-            "categoria":"indumentaria",
+            "categoria":["indumentaria","all"],
             "precio":4500,
             "id":23,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -280,7 +280,7 @@ export const productos =
         },
         { 
             "nombre":"Remera white lux",
-            "categoria":"indumentaria",
+            "categoria":["indumentaria","all"],
             "precio":4500,
             "id":24,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -292,7 +292,7 @@ export const productos =
         },
         { 
             "nombre":"Remera grey goosse",
-            "categoria":"indumentaria",
+            "categoria":["indumentaria","all"],
             "precio":4500,
             "id":25,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -304,7 +304,7 @@ export const productos =
         },
         { 
             "nombre":"Remera grey cow",
-            "categoria":"indumentaria",
+            "categoria":["indumentaria","all"],
             "precio":4500,
             "id":26,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -316,7 +316,7 @@ export const productos =
         },
         { 
             "nombre":"Remera orange",
-            "categoria":"indumentaria",
+            "categoria":["indumentaria","all"],
             "precio":4500,
             "id":27,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -328,7 +328,7 @@ export const productos =
         },
         { 
             "nombre":"Remera lake",
-            "categoria":"indumentaria",
+            "categoria":["indumentaria","all"],
             "precio":4500,
             "id":28,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -340,7 +340,7 @@ export const productos =
         },
         { 
             "nombre":"Remera andes",
-            "categoria":"indumentaria",
+            "categoria":["indumentaria","all"],
             "precio":4500,
             "id":29,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
@@ -352,7 +352,7 @@ export const productos =
         },
         { 
             "nombre":"Short deportivo blue",
-            "categoria":"indumentaria",
+            "categoria":["indumentaria","all"],
             "precio":5000,
             "id":30,
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",

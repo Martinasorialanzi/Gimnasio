@@ -104,10 +104,15 @@ const EcommerceDetalleProducto = () => {
                         +
                       </Button>
                     </Stack>
-
+                    {detallesProducto.stock>0?
                     <Button variant="dark" size="xs">
                       Agregar al carrito
-                    </Button>
+                    </Button>:
+                    <Button variant="dark" size="xs" disabled>
+                    Sin stock
+                  </Button>
+                    }  
+                    
                     <h4>Descripcion</h4>
                     {detallesProducto.descripción}
                   </Stack>

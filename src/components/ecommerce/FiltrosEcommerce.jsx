@@ -21,13 +21,13 @@ export const FiltrosPrecio = ({precio,setPrecio}) => {
             name="group1"
             type="radio"
             id={`inline-radio`}
-            value={1000000000}
+            value="all"
             onChange={(e) => setPrecio(e.currentTarget.value)}
             defaultChecked
           />    
         <Form.Check
             inline
-            label="$0-$1000"
+            label="$0-$1500"
             name="group1"
             type="radio"
             id={`inline-radio`}
@@ -36,7 +36,7 @@ export const FiltrosPrecio = ({precio,setPrecio}) => {
           />  
           <Form.Check
             inline
-            label="$1000-$2000"
+            label="$1500-$3000"
             name="group1"
             type="radio"
             id={`inline-radio`}
@@ -45,7 +45,7 @@ export const FiltrosPrecio = ({precio,setPrecio}) => {
           />
           <Form.Check
             inline
-            label="$2000-$3500"
+            label="$3000-$4500"
             name="group1"
             type="radio"
             id={`inline-radio`}
@@ -54,7 +54,7 @@ export const FiltrosPrecio = ({precio,setPrecio}) => {
           />
           <Form.Check
             inline
-            label="$3500-$5000"
+            label="$4500-$6000"
             name="group1"
             type="radio"
             id={`inline-radio`}
@@ -63,7 +63,7 @@ export const FiltrosPrecio = ({precio,setPrecio}) => {
           />
           <Form.Check
             inline
-            label="$5000+"
+            label="$6000+"
             name="group1"
             type="radio"
             id={`inline-radio`}

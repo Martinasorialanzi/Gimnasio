@@ -10,7 +10,8 @@ export const productos =
             "imagen":"https://i.ibb.co/BPYDWNp/barrys-socks-black.webp",
             "portada":"false",
             "talle":["xs","s","m","l","xl"],
-            "color": ["negro"]
+            "color": ["negro"],
+            "stock":0
     
         },
         { 
@@ -22,7 +23,8 @@ export const productos =
             "imagen":"https://i.ibb.co/LgMbSQw/barrys-socks-white.webp",
             "portada":"false",
             "talle":["xs","s","m","l","xl"],
-            "color": ["blanco"]
+            "color": ["blanco"],
+            "stock":50
         },
         { 
             "nombre":"Bolso",
@@ -34,6 +36,7 @@ export const productos =
             "portada":"false",
             "color": ["negro"],
             "talle":[],
+            "stock":50
         },
         { 
             "nombre":"Guantes",
@@ -44,7 +47,8 @@ export const productos =
             "imagen":"https://i.ibb.co/Mk3FPDy/GLOVES1.webp",
             "portada":"false",
             "talle":["xs","s","m","l","xl"],
-            "color": ["gris"]
+            "color": ["gris"],
+            "stock":50
     
         },
         { 
@@ -56,7 +60,8 @@ export const productos =
             "imagen":"https://i.ibb.co/BqzBFtf/GLOVES3.webp",
             "portada":"false",
             "talle":["xs","s","m","l","xl"],
-            "color": ["negro"]
+            "color":["negro"],
+            "stock":50
     
         },
         { 
@@ -68,7 +73,9 @@ export const productos =
             "imagen":"https://i.ibb.co/XsjLyW3/mochila.webp",
             "portada":"true",
             "color": ["negro"],
-            "talle":[]
+            "talle":[],
+            "stock":50
+            
     
         },
         { 
@@ -80,7 +87,8 @@ export const productos =
             "imagen":"https://i.ibb.co/TPQN9H6/taza.webp",
             "portada":"false",
             "talle":[],
-            "color": []
+            "color": [],
+            "stock":50
     
         },
         { 
@@ -92,7 +100,8 @@ export const productos =
             "imagen":"https://i.ibb.co/xX5v6qV/TOWEL.jpg",
             "portada":"false",
             "color": ["blanco"],
-            "talle":[]
+            "talle":[],
+            "stock":50
     
         },
         { 
@@ -104,7 +113,8 @@ export const productos =
             "imagen":"https://i.ibb.co/D4h2Lqb/vaso-termico.webp",
             "portada":"false",
             "color": ["blanco"],
-            "talle":[]
+            "talle":[],
+            "stock":50
     
         },
         //equipos
@@ -117,7 +127,8 @@ export const productos =
             "imagen":"https://i.ibb.co/bFSXPJf/BLUE-BAND.webp",
             "portada":"false",
             "color": ["azul"],
-            "talle":[]
+            "talle":[],
+            "stock":50
     
         },
         { 
@@ -129,7 +140,8 @@ export const productos =
             "imagen":"https://i.ibb.co/jHyTJH7/FITKITS.webp",
             "portada":"true",
             "color": ["azul"],
-            "talle":[]
+            "talle":[],
+            "stock":50
     
         },
         { 
@@ -141,7 +153,8 @@ export const productos =
             "imagen":"https://i.ibb.co/3rL60YX/mat.webp",
             "portada":"false",
             "color": ["negro","blanco"],
-            "talle":[]
+            "talle":[],
+            "stock":50
     
         },
         { 
@@ -154,7 +167,8 @@ export const productos =
             "portada":"false",
             "talle":["xs","s","m","l","xl"],
             "color": ["negro"],
-            "talle":[]
+            "talle":[],
+            "stock":50
     
         },
         { 
@@ -166,7 +180,8 @@ export const productos =
             "imagen":"https://i.ibb.co/ngyXdkH/RESIST-BAND-RED.webp",
             "portada":"false",
             "color": ["rojo"],
-            "talle":[]
+            "talle":[],
+            "stock":50
     
         },
         { 
@@ -178,7 +193,8 @@ export const productos =
             "imagen":"https://i.ibb.co/60wrd5q/retail-weights-50lb.webp",
             "portada":"false",
             "color": ["negro"],
-            "talle":[]
+            "talle":[],
+            "stock":50
     
         },
         { 
@@ -190,7 +206,8 @@ export const productos =
             "imagen":"https://i.ibb.co/Yy7LTR5/retail-weights-80lb.webp",
             "portada":"false",
             "color": ["negro"],
-            "talle":[]
+            "talle":[],
+            "stock":50
     
         },
         { 
@@ -202,7 +219,8 @@ export const productos =
             "imagen":"https://i.ibb.co/vmc2m6S/step.webp",
             "portada":"false",
             "color": ["negro"],
-            "talle":[]
+            "talle":[],
+            "stock":50
     
         },
         //indumentaria
@@ -215,7 +233,8 @@ export const productos =
             "imagen":"https://i.ibb.co/g4RqjsG/buzo-gris-varon.webp",
             "portada":"false",
             "talle":["xs","s","m","l","xl"],
-            "color": ["gris"]
+            "color": ["gris"],
+            "stock":50
     
         },
         { 
@@ -227,7 +246,8 @@ export const productos =
             "imagen":"https://i.ibb.co/LpJ3WQY/buzo-negro-mujer.webp",
             "portada":"false",
             "talle":["xs","s","m","l","xl"],
-            "color": ["negro"]
+            "color": ["negro"],
+            "stock":50
     
         },
         { 
@@ -239,7 +259,8 @@ export const productos =
             "imagen":"https://i.ibb.co/frm10dw/buzo-negro-varon.webp",
             "portada":"false",
             "talle":["xs","s","m","l","xl"],
-            "color": ["negro"]
+            "color": ["negro"],
+            "stock":50
     
         },
         { 
@@ -251,7 +272,8 @@ export const productos =
             "imagen":"https://i.ibb.co/PzwzDP4/conjunto-marron-mujer.webp",
             "portada":"true",
             "talle":["xs","s","m","l","xl"],
-            "color": ["marron"]
+            "color": ["marron"],
+            "stock":50
     
         },
         { 
@@ -263,7 +285,8 @@ export const productos =
             "imagen":"https://i.ibb.co/WsCknn6/jogger-negro-mujer.webp",
             "portada":"false",
             "talle":["xs","s","m","l","xl"],
-            "color": ["negro"]
+            "color": ["negro"],
+            "stock":50
     
         },
         { 
@@ -275,7 +298,8 @@ export const productos =
             "imagen":"https://i.ibb.co/vxJdt2z/remera-azul-varon.webp",
             "portada":"false",
             "talle":["xs","s","m","l","xl"],
-            "color": ["azul"]
+            "color": ["azul"],
+            "stock":50
     
         },
         { 
@@ -287,7 +311,8 @@ export const productos =
             "imagen":"https://i.ibb.co/RcrY15h/remera-blanca-varon.webp",
             "portada":"false",
             "talle":["xs","s","m","l","xl"],
-            "color": ["blanco"]
+            "color": ["blanco"],
+            "stock":50
 
         },
         { 
@@ -299,7 +324,8 @@ export const productos =
             "imagen":"https://i.ibb.co/mDm2NVQ/remera-gris-2-mujer.webp",
             "portada":"false",
             "talle":["xs","s","m","l","xl"],
-            "color": ["gris"]
+            "color": ["gris"],
+            "stock":50
     
         },
         { 
@@ -311,7 +337,8 @@ export const productos =
             "imagen":"https://i.ibb.co/pK8F948/remera-gris-mujer.webp",
             "portada":"false",
             "talle":["xs","s","m","l","xl"],
-            "color": ["gris"]
+            "color": ["gris"],
+            "stock":50
     
         },
         { 
@@ -323,7 +350,8 @@ export const productos =
             "imagen":"https://i.ibb.co/NxZhVns/remera-naranja-mujer.webp",
             "portada":"false",
             "talle":["xs","s","m","l","xl"],
-            "color": ["naranja"]
+            "color": ["naranja"],
+            "stock":50
     
         },
         { 
@@ -335,7 +363,8 @@ export const productos =
             "imagen":"https://i.ibb.co/1RV3VgW/remera-negra-mujer.webp",
             "portada":"false",
             "talle":["xs","s","m","l","xl"],
-            "color": ["negro"]
+            "color": ["negro"],
+            "stock":50
     
         },
         { 
@@ -347,7 +376,8 @@ export const productos =
             "imagen":"https://i.ibb.co/zXcV1k6/remera-negra-varon.webp",
             "portada":"false",
             "talle":["xs","s","m","l","xl"],
-            "color": ["negro"]
+            "color": ["negro"],
+            "stock":50
     
         },
         { 
@@ -359,7 +389,8 @@ export const productos =
             "imagen":"https://i.ibb.co/dmhZDRN/short-azul-varon.webp",
             "portada":"true",
             "talle":["xs","s","m","l","xl"],
-            "color": ["azul"]
+            "color": ["azul"],
+            "stock":50
     
         },
      

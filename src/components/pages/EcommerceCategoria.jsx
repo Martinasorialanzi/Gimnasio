@@ -15,7 +15,7 @@ const EcommerceCategoria = () => {
   console.log(talle)
   const [color, setColor] = useState("all")
   console.log(color)
-  const [precio, setPrecio] = useState(1000000000)
+  const [precio, setPrecio] = useState("all")
   const precioNum=parseInt(precio)
   console.log(precioNum)
   
@@ -44,7 +44,7 @@ const EcommerceCategoria = () => {
       producto.color.includes(color)
       )
       &&
-      (precioNum===1000000000? producto.categoria.includes(cat):
+      (precio==="all"? producto.categoria.includes(cat):
       precioNum<6000?
       producto.precio>precioNum &&producto.precio<=(precioNum+1500):
       producto.precio>6000

@@ -1,4 +1,4 @@
-import { useState, React } from "react";
+import {React,useState } from "react";
 import {Stack,Col,Row,ToggleButton,ButtonGroup,Button} from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import NavEcommerce from "../ecommerce/NavEcommerce";
@@ -9,15 +9,19 @@ const EcommerceDetalleProducto = () => {
   const idNumber = parseInt(id);
 
   const [talleValue, setTalleValue] = useState("");
-  console.log(talleValue);
   const [colorValue, setColorValue] = useState("");
-  console.log(colorValue);
-
   const [cantidad, setCantidad] = useState(0);
+  
+  
+  const [allProducts, setAllProducts] = useState([])
 
+  const handleCompra=(detallesProducto)=>{
+    setAllProducts([...allProducts,detallesProducto])
+  }
+    console.log(allProducts)
   return (
     <>
-    
+    <p style={"margin-left=15px"}>style</p>
       <NavEcommerce />
 
       {productos
@@ -105,10 +109,10 @@ const EcommerceDetalleProducto = () => {
                       </Button>
                     </Stack>
                     {detallesProducto.stock>0?
-                    <Button variant="dark" size="xs">
+                    <Button variant="dark" size="xs" onClick={()=>handleCompra(detallesProducto)}>
                       Agregar al carrito
                     </Button>:
-                    <Button variant="dark" size="xs" disabled>
+                    <Button variant="dark" size="xs" disabled >
                     Sin stock
                   </Button>
                     }  

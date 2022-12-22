@@ -1,8 +1,7 @@
 import React from 'react'
 import { Nav } from 'react-bootstrap'
-import CarritoCompras from '../carritoCompras/CarritoCompras'
+import CarritoCompras from './carritoCompras/CarritoCompras'
 import { categorias } from '../helpers/categorias'
-import { Link } from 'react-router-dom'
 
 
 const NavEcommerce = () => {

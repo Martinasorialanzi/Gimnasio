@@ -167,7 +167,6 @@ export const productos =
             "portada":"false",
             "talle":["xs","s","m","l","xl"],
             "color": ["negro"],
-            "talle":[],
             "stock":50
     
         },

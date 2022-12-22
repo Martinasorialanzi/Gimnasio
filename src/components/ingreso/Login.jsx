@@ -8,32 +8,35 @@ const Login = () => {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
+  const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,20}$/;
+
     
         const handleSubmit = (e) =>{
             e.preventDefault();
     
-            const login = {
-              email,
-              password,
-            }
-            const response = funcionLogin(login);
-    console.log(response)
+    //         const login = {
+    //           email,
+    //           password,
+    //         }
+    //         const response = funcionLogin(login);
+    // console.log(response)
     
-    if (response.auth === true) {  //auth es un atributo del objeto response q es un booleano.
-      Swal.fire({
-        icon: "success",
-        title: "Bienvenido",
-        text: "Ingreso exitoso",
-      }, setTimeout(() => {
-        window.location.href = "/home"; //una vez q se logue lo redirecciono al home
-        }, 2000));;
-    } else {
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: "Usuario o contraseña incorrectos",
-      });
-    }
+    // if (response.auth === true) {  //auth es un atributo del objeto response q es un booleano.
+    //   Swal.fire({
+    //     icon: "success",
+    //     title: "Bienvenido",
+    //     text: "Ingreso exitoso",
+    //   }, setTimeout(() => {
+    //     window.location.href = "/home"; //una vez q se logue lo redirecciono al home
+    //     }, 2000));;
+    // } else {
+    //   Swal.fire({
+    //     icon: "error",
+    //     title: "Error",
+    //     text: "Usuario o contraseña incorrectos",
+    //   });
+    // }
         }
     
         

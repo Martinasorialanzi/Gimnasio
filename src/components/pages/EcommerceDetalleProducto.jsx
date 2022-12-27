@@ -10,19 +10,45 @@ const EcommerceDetalleProducto = () => {
 
   const [talleValue, setTalleValue] = useState("");
   const [colorValue, setColorValue] = useState("");
+  const[contador,setContador]=useState(1)
   const [cantidad, setCantidad] = useState(0);
-  
+  const [total,setTotal]=useState(0)
   
   const [allProducts, setAllProducts] = useState([])
 
   const handleCompra=(detallesProducto)=>{
-    setAllProducts([...allProducts,detallesProducto])
+  
+  if (allProducts.find(item => item.detalles.id === detallesProducto.id)) {
+    const products = allProducts.map(item =>
+      item.detalles.id === detallesProducto.id
+        ? { ...item, cantidad: item.cantidad + contador }
+        : item
+    );
+    setTotal(total + detallesProducto.precio * cantidad);
+    setCantidad(cantidad + contador);
+    return setAllProducts([...products]);
   }
+
+  setTotal(total + detallesProducto.precio * cantidad);
+  setCantidad(cantidad + contador);
+  setAllProducts([
+    ...allProducts,
+    {detalles:detallesProducto,
+      talle:talleValue,
+      color:colorValue,
+      cantidad: contador
+    }]);
+  }
+
+  localStorage.setItem("productos carrito",allProducts)  
+  
+
+
     console.log(allProducts)
   return (
     <>
-    <p style={"margin-left=15px"}>style</p>
-      <NavEcommerce />
+    
+      <NavEcommerce allProducts={allProducts} setAllProduct={setAllProducts} cantidad={cantidad} setCantidad={setCantidad} total={total} setTotal={setTotal}/>
 
       {productos
         .filter((producto) => producto.id === idNumber)
@@ -90,19 +116,19 @@ const EcommerceDetalleProducto = () => {
                         variant="dark"
                         className=" border"
                         onClick={(e) => {
-                          if (cantidad !== 0) {
-                            setCantidad(cantidad - 1);
+                          if (contador !== 1) {
+                            setContador(contador - 1);
                           }
                         }}
                       >
                         -
                       </Button>
-                      <div className="bg-light border">{cantidad}</div>
+                      <div className="bg-light border">{contador}</div>
                       <Button
                         variant="dark"
                         className="border"
                         onClick={(e) => {
-                          setCantidad(cantidad + 1);
+                          setContador(contador + 1);
                         }}
                       >
                         +

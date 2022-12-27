@@ -165,7 +165,7 @@ export const productos =
             "descripción":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem nisl. Donec ligula turpis, aliquam eget suscipit a, maximus ut sapien. Sed faucibus elit felis, a vestibulum sem imperdiet quis.",
             "imagen":"https://i.ibb.co/HKjB82d/pesas.webp",
             "portada":"false",
-            "talle":["xs","s","m","l","xl"],
+            "talle":[],
             "color": ["negro"],
             "stock":50
     

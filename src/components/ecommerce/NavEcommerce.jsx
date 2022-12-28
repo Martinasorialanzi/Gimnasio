@@ -4,7 +4,7 @@ import CarritoCompras from './carritoCompras/CarritoCompras'
 import { categorias } from '../helpers/categorias'
 
 
-const NavEcommerce = ({allProducts,setAllProduct,cantidad,setCantidad,total,setTotal}) => {
+const NavEcommerce = () => {
   return (
     <Nav justify variant="tabs" defaultActiveKey="/ecommerce">
   
@@ -18,7 +18,7 @@ const NavEcommerce = ({allProducts,setAllProduct,cantidad,setCantidad,total,setT
     })}  
      
       <Nav.Item>
-      <CarritoCompras allProducts={allProducts} setAllProduct={setAllProduct} cantidad={cantidad} setCantidad={setCantidad}total={total} setTotal={setTotal}/>
+      <CarritoCompras />
       </Nav.Item>
       
     </Nav>

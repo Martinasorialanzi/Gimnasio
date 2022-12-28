@@ -1,6 +1,6 @@
-import React from 'react'
+import React,{useHistory} from 'react'
 import {Card, Col,Stack} from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate,  } from 'react-router-dom'
 
 
 

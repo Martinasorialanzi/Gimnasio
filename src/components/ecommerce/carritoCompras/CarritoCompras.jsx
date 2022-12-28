@@ -1,32 +1,38 @@
-import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
+import React, { useState,useEffect } from "react";
+import {Button, Stack} from "react-bootstrap";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { BsFillCartFill } from "react-icons/bs";
-import "../carritoCompras/carritoCompras.css"
+import "../carritoCompras/carritoCompras.css";
 
-const CarritoCompras = ({ allProducts,setAllProducts, setCantidad,cantidad,total,setTotal}) => {
+const CarritoCompras = () => {
   const [show, setShow] = useState(false);
-
+  
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
 
+  const productosCarrito=JSON.parse(localStorage.getItem("productos carrito"))
 
-  const onDeleteProduct = (product) => {
-		const results = allProducts.filter(
-			item => item.detalle.id !== product.detalle.id
-		);
+  console.log(productosCarrito)
+  
+  // const onDeleteProduct = (product) => {
+  //   productosCarrito.filter((item)=>{
 
-		setTotal(total - product.detalle.precio * product.cantidad);
-		setCantidad(cantidad - product.cantidad);
-		setAllProducts(results);
-	};
+  //   })
+  //   }
 
-	const onCleanCart = () => {
-		setAllProducts([]);
-		setTotal(0);
-		setCantidad(0);
-	};
+  //   setTotal(total - product.detalles.precio * product.cantidad);
+  //   setCantidad(cantidad - product.cantidad);
+  //   setAllProducts(results);
+  // };
+
+  const onCleanCart = () => {
+  
+  };
+
+
+
+
 
   return (
     <>
@@ -35,29 +41,42 @@ const CarritoCompras = ({ allProducts,setAllProducts, setCantidad,cantidad,total
         <BsFillCartFill />
       </Button>
 
-      <Offcanvas show={show} onHide={handleClose} placement="end">
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-
-
-          {allProducts ? (
+       <Offcanvas show={show} onHide={handleClose} placement="end">
+         <Offcanvas.Header closeButton>
+           <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+         </Offcanvas.Header>
+         <Offcanvas.Body>
+           {productosCarrito ? (
             <>
               <div className="row-product">
-                {allProducts.map((product) => (
-                  <div className="cart-product" key={product.detalles.id}>
+                {productosCarrito.map((product,index) => (
+                  <div className="cart-product" key={index}>
+                      <Stack direction="horizontal" gap={2}>
+                        <img
+                        src={product.detalles.imagen}
+                        width={60}
+                        heigth={60}/>
                     <div className="info-cart-product">
-                      <span className="cantidad-producto-carrito">
-                        {product.cantidad}
-                      </span>
+                    <Stack direction="vertical" gap={0}>
                       <p className="titulo-producto-carrito">
                         {product.detalles.nombre}
                       </p>
-                      <span className="precio-producto-carrito">
-                        ${product.detalles.precio}
-                      </span>
+                      <p className="precio-producto-carrito">
+                        ${product.total}
+                      </p>
+                      <p className="cantidad-producto-carrito">
+                        cantidad: {product.cantidad}
+                      </p>
+                      
+                      <p className="cantidad-producto-carrito">
+                        color:{product.color}
+                      </p>
+                      <p className="cantidad-producto-carrito">
+                        talle: {product.talle}
+                      </p>
+                      </Stack>
                     </div>
+                      </Stack>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -65,7 +84,7 @@ const CarritoCompras = ({ allProducts,setAllProducts, setCantidad,cantidad,total
                       strokeWidth="1.5"
                       stroke="currentColor"
                       className="icon-close"
-                      onClick={() => onDeleteProduct(product)}
+                      // onClick={() => onDeleteProduct(product)}
                     >
                       <path
                         strokeLinecap="round"
@@ -79,21 +98,23 @@ const CarritoCompras = ({ allProducts,setAllProducts, setCantidad,cantidad,total
 
               <div className="cart-total">
                 <h3>Total:</h3>
-               <span className="total-pagar">${total}</span>
+                {/* <span className="total-pagar">${total}</span> */}
               </div>
 
               <button className="btn-clear-all" 
-              onClick={onCleanCart}
+              // onClick={onCleanCart}
               >
                 Vaciar Carrito
               </button>
             </>
           ) : (
             <p className="cart-empty">El carrito está vacío</p>
-          )} 
+          )}
         </Offcanvas.Body>
       </Offcanvas>
     </>
+
+  
   );
 };
 

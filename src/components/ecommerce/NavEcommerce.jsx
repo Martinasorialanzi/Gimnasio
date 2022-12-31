@@ -11,7 +11,7 @@ const NavEcommerce = ({allProducts,setAllProducts}) => {
     {categorias.map((categoria)=>{
       return(
       <Nav.Item key={categoria.id}>
-        <Nav.Link href={`/ecommerce-categoria/${categoria.nombre}`}className='text-dark'>{ categoria.nombre}</Nav.Link>
+        <Nav.Link href={`/ecommerce-categoria/${categoria.nombre}`}className='text-dark'>{categoria.nombre}</Nav.Link>
       </Nav.Item>
       )
 

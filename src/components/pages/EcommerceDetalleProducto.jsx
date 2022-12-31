@@ -156,14 +156,25 @@ const EcommerceDetalleProducto = () => {
                       +
                     </Button>
                   </Stack>
-                  {detallesProducto.stock > 0 ? (
-                    <Button
+                  {detallesProducto.stock > 0  ? (
+                    ( (detallesProducto.color.length !== 0 && colorValue.length!==0) &&  (detallesProducto.talle.length !== 0 && talleValue.length!==0))?
+                    
+                    (<Button
                       variant="dark"
                       size="xs"
                       onClick={() => handleCompra(detallesProducto)}
                     >
                       Agregar al carrito
-                    </Button>
+                    </Button>):
+                    (<Button
+                      variant="dark"
+                      size="xs"
+                      onClick={() => handleCompra(detallesProducto)}
+                      disabled
+                    >
+                      Agregar al carrito
+                    </Button>)
+                    
                   ) : (
                     <Button variant="dark" size="xs" disabled>
                       Sin stock

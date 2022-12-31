@@ -32,7 +32,7 @@ const CarritoCompras = ({ allProducts, setAllProducts }) => {
 
       <Offcanvas show={show} onHide={handleClose} placement="end">
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+          <Offcanvas.Title><BsFillCartFill /></Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           

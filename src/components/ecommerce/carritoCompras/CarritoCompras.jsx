@@ -1,38 +1,27 @@
-import React, { useState,useEffect } from "react";
-import {Button, Stack} from "react-bootstrap";
+import React, { useState } from "react";
+import { Button, Stack } from "react-bootstrap";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { BsFillCartFill } from "react-icons/bs";
 import "../carritoCompras/carritoCompras.css";
 
-const CarritoCompras = () => {
+const CarritoCompras = ({ allProducts, setAllProducts }) => {
   const [show, setShow] = useState(false);
-  
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const onDeleteProduct = (productsCarrito) => {
+    let index = allProducts.indexOf(productsCarrito);
+    allProducts.splice(index, 1);
+    localStorage.setItem("productos carrito", JSON.stringify(allProducts));
 
-  const productosCarrito=JSON.parse(localStorage.getItem("productos carrito"))
-
-  console.log(productosCarrito)
-  
-  // const onDeleteProduct = (product) => {
-  //   productosCarrito.filter((item)=>{
-
-  //   })
-  //   }
-
-  //   setTotal(total - product.detalles.precio * product.cantidad);
-  //   setCantidad(cantidad - product.cantidad);
-  //   setAllProducts(results);
-  // };
-
-  const onCleanCart = () => {
-  
+    setAllProducts(JSON.parse(localStorage.getItem("productos carrito")));
   };
 
-
-
-
+  const onCleanCart = (e) => {
+    localStorage.clear("productos carrito");
+    return setAllProducts([]);
+  };
 
   return (
     <>
@@ -41,42 +30,49 @@ const CarritoCompras = () => {
         <BsFillCartFill />
       </Button>
 
-       <Offcanvas show={show} onHide={handleClose} placement="end">
-         <Offcanvas.Header closeButton>
-           <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-         </Offcanvas.Header>
-         <Offcanvas.Body>
-           {productosCarrito ? (
+      <Offcanvas show={show} onHide={handleClose} placement="end">
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          
             <>
               <div className="row-product">
-                {productosCarrito.map((product,index) => (
+                {allProducts.map((productsCarrito, index) => (
                   <div className="cart-product" key={index}>
-                      <Stack direction="horizontal" gap={2}>
-                        <img
-                        src={product.detalles.imagen}
+                    <Stack direction="horizontal" gap={2}>
+                      <img
+                        alt="fotos productos carrito"
+                        src={productsCarrito.detalles.imagen}
                         width={60}
-                        heigth={60}/>
-                    <div className="info-cart-product">
-                    <Stack direction="vertical" gap={0}>
-                      <p className="titulo-producto-carrito">
-                        {product.detalles.nombre}
-                      </p>
-                      <p className="precio-producto-carrito">
-                        ${product.total}
-                      </p>
-                      <p className="cantidad-producto-carrito">
-                        cantidad: {product.cantidad}
-                      </p>
-                      
-                      <p className="cantidad-producto-carrito">
-                        color:{product.color}
-                      </p>
-                      <p className="cantidad-producto-carrito">
-                        talle: {product.talle}
-                      </p>
-                      </Stack>
-                    </div>
-                      </Stack>
+                        heigth={60}
+                      />
+                      <div className="info-cart-product">
+                        <Stack direction="vertical" gap={0}>
+                          <p className="titulo-producto-carrito">
+                            {productsCarrito.detalles.nombre}
+                          </p>
+                          <p className="precio-producto-carrito">
+                            ${productsCarrito.total}
+                          </p>
+                          <p className="cantidad-producto-carrito">
+                            cantidad: {productsCarrito.cantidad}
+                          </p>
+
+                          {productsCarrito.color.length !== 0 ? (
+                            <p className="cantidad-producto-carrito">
+                              color:{productsCarrito.color}
+                            </p>
+                          ) : null}
+
+                          {productsCarrito.talle.length !== 0 ? (
+                            <p className="cantidad-producto-carrito">
+                              talle: {productsCarrito.talle}
+                            </p>
+                          ) : null}
+                        </Stack>
+                      </div>
+                    </Stack>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -84,7 +80,7 @@ const CarritoCompras = () => {
                       strokeWidth="1.5"
                       stroke="currentColor"
                       className="icon-close"
-                      // onClick={() => onDeleteProduct(product)}
+                      onClick={(e) => onDeleteProduct(productsCarrito)}
                     >
                       <path
                         strokeLinecap="round"
@@ -95,26 +91,28 @@ const CarritoCompras = () => {
                   </div>
                 ))}
               </div>
+              {allProducts.length !== 0 ? (
+                <>
+                  <div className="cart-total">
+                    <h3>
+                      Total:
+                      {allProducts.reduce(
+                        (acumulador, actual) => acumulador + actual.total,
+                        0
+                      )}
+                    </h3>
+                  </div>
 
-              <div className="cart-total">
-                <h3>Total:</h3>
-                {/* <span className="total-pagar">${total}</span> */}
-              </div>
-
-              <button className="btn-clear-all" 
-              // onClick={onCleanCart}
-              >
-                Vaciar Carrito
-              </button>
+                  <button className="btn-clear-all" onClick={onCleanCart}>
+                    Vaciar Carrito
+                  </button>
+                </>
+              ) :  <p className="cart-empty">El carrito está vacío</p>}
             </>
-          ) : (
-            <p className="cart-empty">El carrito está vacío</p>
-          )}
+          
         </Offcanvas.Body>
       </Offcanvas>
     </>
-
-  
   );
 };
 

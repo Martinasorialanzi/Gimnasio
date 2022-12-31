@@ -8,6 +8,18 @@ import {FiltrosColor,FiltrosPrecio,FiltrosTalle} from '../ecommerce/FiltrosEcomm
 
 const EcommerceCategoria = () => {
 
+  const [allProducts, setAllProducts] = useState(()=>{
+    try{
+      const productosEnLocalStorage=localStorage.getItem("productos carrito");
+      return productosEnLocalStorage? JSON.parse(productosEnLocalStorage):[];
+    } catch (error){
+      return [];
+    }
+  });
+
+
+
+
   const {categoria}=useParams()
   const cat=categoria
 
@@ -22,7 +34,7 @@ const EcommerceCategoria = () => {
   
   return (
     <>
-    <NavEcommerce/>
+    <NavEcommerce allProducts={allProducts} setAllProducts={setAllProducts}/>
     <Row>
       <Col sm={1} className="">
       <FiltrosTalle talle={talle} setTalle={setTalle}/>

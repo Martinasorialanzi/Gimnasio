@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   Button,
   Container,
@@ -14,9 +14,20 @@ import { productos } from "../helpers/productos";
 import { Link } from "react-router-dom";
 
 const EcommerceHome = () => {
+  const [allProducts, setAllProducts] = useState(()=>{
+    try{
+      const productosEnLocalStorage=localStorage.getItem("productos carrito");
+      return productosEnLocalStorage? JSON.parse(productosEnLocalStorage):[];
+    } catch (error){
+      return [];
+    }
+  });
+
+
+
   return (
     <>
-      <NavEcommerce />
+      <NavEcommerce allProducts={allProducts} setAllProducts={setAllProducts}/>
 
       <CarruselEcommerceHome />
 

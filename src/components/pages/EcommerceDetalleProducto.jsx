@@ -64,7 +64,7 @@ const EcommerceDetalleProducto = () => {
 
   return (
     <>
-      <NavEcommerce />
+      <NavEcommerce allProducts={allProducts} setAllProducts={setAllProducts} />
 
       {productos
         .filter((producto) => producto.id === idNumber)

@@ -3,7 +3,8 @@ import { useRef } from 'react';
 import { useEffect } from 'react';
 import { Container, } from 'react-bootstrap';
 import emailjs from '@emailjs/browser';
-import './Mailer.css'
+import './Mailer.css';
+import Swal from 'sweetalert2';
 
 
 const Mailer = () => {
@@ -21,7 +22,9 @@ const Mailer = () => {
         e.preventDefault();
         emailjs.sendForm('service_o1bi7xw', 'template_5llduc9', e.target, 'ZeW1Ssurf-xesG-Ui').then(res => console.log(res))
         e.target.reset()
+        Swal.fire('Enhorabuena', 'Tu mensaje ha sido enviado', 'success')
             .catch(error => console.log(error))
+        Swal.fire('Ups', 'Tu mensaje no podido enviarse', 'error')
         
     }
     

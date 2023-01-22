@@ -6,7 +6,7 @@ import uniquid from 'uniqid';
 import { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-// import Swal from 'sweetalert2';
+import Swal from 'sweetalert2';
 
 
 const AgregarUsuario = () => {
@@ -31,8 +31,8 @@ const AgregarUsuario = () => {
 
         axios.post('/api/usuario/agregarusuario', usuario)
             .then(res => {
-                alert(res.data)
-                // Swal.fire('Listo', 'Usuario agregado exitosamente', 'success')
+                // alert(res.data)
+                Swal.fire('Listo', 'Usuario agregado exitosamente', 'success')
             })
             .then(err => { console.log(err) })
         navegar('/listadeusuarios')

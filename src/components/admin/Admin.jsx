@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 const Admin = () => {
 
   return (
-      <div className='fondo-admin'>
+      <div className='fondo-admin body-mailer'>
          
           <h1 className='text-center mb-5 color-titulo-admin'>Panel del Administrador</h1>
           <Container>

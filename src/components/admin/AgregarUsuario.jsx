@@ -29,7 +29,7 @@ const AgregarUsuario = () => {
 
         console.log(usuario)
 
-        axios.post('/api/usuario/agregarusuario', usuario)
+        axios.post('/v1/agregarusuario', usuario)
             .then(res => {
                 // alert(res.data)
                 Swal.fire('Listo', 'Usuario agregado exitosamente', 'success')

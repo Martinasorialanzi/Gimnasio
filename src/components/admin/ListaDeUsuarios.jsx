@@ -11,7 +11,7 @@ const ListasDeUsuarios = () => {
 
 
     useEffect(() => {
-        axios.get('api/usuario/obtenerlistadeusuarios').then(res => {
+        axios.get('/v1/obtenerlistadeusuarios').then(res => {
             console.log(res.data)
             setDataUsuarios(res.data)
         }).catch(err => {
@@ -21,7 +21,7 @@ const ListasDeUsuarios = () => {
     // const Swal = require('sweetalert2')
 
     const borrarUsuario = (idUsuario) => {
-        axios.post('/api/usuario/borrarusuario', { idUsuario: idUsuario }).then(res => {
+        axios.post('/v1/borrarusuario', { idUsuario: idUsuario }).then(res => {
             console.log(res.data)
             // alert(res.data)
             Swal.fire('Listo', 'Usuario Eliminado Correctamente', 'info', 'Ok')

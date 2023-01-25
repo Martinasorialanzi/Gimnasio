@@ -21,7 +21,7 @@ const EditarUsuario = () => {
 
 
     useEffect(() => {
-        axios.post('/api/usuario/obtenerdatausuario', { idUsuario: params.idUsuario }).then(res => {
+        axios.post('/v1/obtenerdatausuario', { idUsuario: params.idUsuario }).then(res => {
             console.log(res.data[0])
             const dataUsuario = res.data[0]
             setNombre(dataUsuario.nombre)
@@ -43,7 +43,7 @@ const EditarUsuario = () => {
             idUsuario: params.idUsuario
         }
 
-        axios.post('/api/usuario/actualizarusuario', actualizarUsuario).then(() => {
+        axios.post('/v1/actualizarusuario', actualizarUsuario).then(() => {
             // alert(res.data)
             Swal.fire('Listo', 'Usuario editado Exitosamente', 'success')
         }).then(err => {

@@ -1,8 +1,15 @@
 import { React, useState, useEffect } from "react";
-import {Stack,Col,Row,ToggleButton,ButtonGroup,Button,} from "react-bootstrap";
+import {
+  Stack,
+  Col,
+  Row,
+  ToggleButton,
+  ButtonGroup,
+  Button,
+} from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import NavEcommerce from "../ecommerce/NavEcommerce";
-import { productos } from "../helpers/productos";
+import { GetProducts } from "../helpers/GetProducts";
 
 const EcommerceDetalleProducto = () => {
   const { id } = useParams();
@@ -14,21 +21,30 @@ const EcommerceDetalleProducto = () => {
   const [cantidad, setCantidad] = useState(0);
   const [total, setTotal] = useState(0);
 
-  const [allProducts, setAllProducts] = useState(()=>{
-    try{
-      const productosEnLocalStorage=localStorage.getItem("productos carrito");
-      return productosEnLocalStorage? JSON.parse(productosEnLocalStorage):[];
-    } catch (error){
+  const [allProducts, setAllProducts] = useState(() => {
+    try {
+      const productosEnLocalStorage = localStorage.getItem("productos carrito");
+      return productosEnLocalStorage ? JSON.parse(productosEnLocalStorage) : [];
+    } catch (error) {
       return [];
     }
   });
 
 
-    useEffect(() => {
-      
-      localStorage.setItem("productos carrito", JSON.stringify(allProducts));
-      }, [allProducts])
-    
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {
+    const getProducts = async () => {
+      const response = await GetProducts();
+      setProductos(response.products);
+    };
+
+    getProducts();
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("productos carrito", JSON.stringify(allProducts));
+  }, [allProducts]);
 
   const handleCompra = (detallesProducto) => {
     if (
@@ -43,7 +59,11 @@ const EcommerceDetalleProducto = () => {
         item.detalles.id === detallesProducto.id &&
         item.talle === talleValue &&
         item.color === colorValue
-          ? { ...item, cantidad: item.cantidad + contador, total: (item.cantidad + contador)*item.detalles.precio }
+          ? {
+              ...item,
+              cantidad: item.cantidad + contador,
+              total: (item.cantidad + contador) * item.detalles.precio,
+            }
           : item
       );
       setTotal(total + detallesProducto.precio * cantidad);
@@ -57,7 +77,7 @@ const EcommerceDetalleProducto = () => {
         talle: talleValue,
         color: colorValue,
         cantidad: contador,
-        total:detallesProducto.precio*contador
+        total: detallesProducto.precio * contador,
       },
     ]);
   };
@@ -156,25 +176,28 @@ const EcommerceDetalleProducto = () => {
                       +
                     </Button>
                   </Stack>
-                  {detallesProducto.stock > 0  ? (
-                    ( (detallesProducto.color.length !== 0 && colorValue.length!==0) &&  (detallesProducto.talle.length !== 0 && talleValue.length!==0))?
-                    
-                    (<Button
-                      variant="dark"
-                      size="xs"
-                      onClick={() => handleCompra(detallesProducto)}
-                    >
-                      Agregar al carrito
-                    </Button>):
-                    (<Button
-                      variant="dark"
-                      size="xs"
-                      onClick={() => handleCompra(detallesProducto)}
-                      disabled
-                    >
-                      Agregar al carrito
-                    </Button>)
-                    
+                  {detallesProducto.stock > 0 ? (
+                    (detallesProducto.color.length !== 0 &&
+                      colorValue.length === 0) ||
+                    (detallesProducto.talle.length > 0 &&
+                      talleValue.length === 0) ? (
+                      <Button
+                        variant="dark"
+                        size="xs"
+                        onClick={() => handleCompra(detallesProducto)}
+                        disabled
+                      >
+                        Agregar al carrito
+                      </Button>
+                    ) : (
+                      <Button
+                        variant="dark"
+                        size="xs"
+                        onClick={() => handleCompra(detallesProducto)}
+                      >
+                        Agregar al carrito
+                      </Button>
+                    )
                   ) : (
                     <Button variant="dark" size="xs" disabled>
                       Sin stock

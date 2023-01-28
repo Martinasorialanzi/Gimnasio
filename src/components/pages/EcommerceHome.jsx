@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
 import {
   Button,
   Container,
@@ -10,7 +10,7 @@ import "../ecommerce/ecommerce.css";
 import CarruselEcommerceHome from "../ecommerce/CarruselEcommerceHome";
 import NavEcommerce from "../ecommerce/NavEcommerce";
 import CardsEcommerce from "../ecommerce/CardsEcommerce";
-import { productos } from "../helpers/productos";
+import { GetProducts } from "../helpers/GetProducts";
 import { Link } from "react-router-dom";
 
 const EcommerceHome = () => {
@@ -24,7 +24,17 @@ const EcommerceHome = () => {
   });
 
 
+  const [productos, setProductos] = useState([]);
 
+  useEffect(() => {
+    const getProducts = async () => {
+      const response = await GetProducts();
+      setProductos((response.products));
+    };
+
+    getProducts();
+  }, []);
+  
   return (
     <>
       <NavEcommerce allProducts={allProducts} setAllProducts={setAllProducts}/>
@@ -34,10 +44,13 @@ const EcommerceHome = () => {
       <Container className="cards-container ">
         <h3 className="text-center mb-4 p-2">Productos mas vendidos</h3>
 
+        
+
         <Container className="mb-4">
           <Row className="justify-content-center">
             {productos
-              .filter((producto) => producto.portada.includes("true"))
+
+              .filter((producto) => producto.portada===true)
               .map((producto) => {
                 return <CardsEcommerce producto={producto} key={producto.id} />;
               })}

@@ -3,7 +3,7 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
 
-body {
+.body-mailer-chat {
     margin: 0;
     padding: 0;
     background: linear-gradient(100deg, #bc6a17, #13110d);
@@ -14,15 +14,15 @@ body {
     align-items: center;
 }
 
-h1 {
+.h1-chat {
     color: #ff6600;
-    font-size: 5rem;
+    font-size: 2rem;
     font-weight: 600;
     font-family: 'Shadows Into Light', cursive;
     margin: 0;
 }
 
-.form-mail {
+.form-mail-chat {
     width: 20rem;
     border: groove 3px #ffff;
     border-radius: 15px;
@@ -36,19 +36,16 @@ h1 {
     align-items: center;
 }
 
-hr {
-    width: 20rem;
-}
 
-label {
+.label-chat {
     font-size: 1.3rem;
     color: #FEFEFE;
     font-weight: 900;
     margin-bottom: 0.5rem;
 }
 
-input {
-    font-size: 1.2rem !important;
+.input-chat {
+    font-size: 1.1rem !important;
     background: #ffff;
     box-shadow: 0 -2px 2px #E95821;
     border-radius: 25px;
@@ -58,7 +55,7 @@ input {
     padding: 0.5rem;
 }
 
-textarea {
+.textarea-chat {
     font-size: 1.2rem !important;
     border-radius: 10px;
     background-color: #ffff;
@@ -68,10 +65,10 @@ textarea {
     height: 8rem;
 }
 
-button {
+.button-chat {
     width: 100%;
     border-radius: 20px !important;
-    font-size: 1.3rem !important;
+    font-size: 1rem !important;
     color: green;
     background-color: #E95821 !important;
     cursor: pointer;
@@ -79,7 +76,7 @@ button {
 }
 
 
-button:hover{
+.button-chat:hover{
     background-color: #ffff !important;
     color: #E95821;
     box-shadow: inset #E95821;

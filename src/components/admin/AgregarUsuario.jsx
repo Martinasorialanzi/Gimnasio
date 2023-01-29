@@ -7,17 +7,28 @@ import { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import './Listado.css'
+
 
 
 const AgregarUsuario = () => {
+    
     const [nombre, setNombre] = useState('');
     const [edad, setEdad] = useState('');
     const [correo, setCorreo] = useState('');
     const [celular, setCelular] = useState('');
     const [plan, setPlan] = useState('')
     const navegar = useNavigate();
+  
+   
 
-    const agregarUsuario = () => {
+    
+  
+
+
+    const agregarUsuario = (e) => {
+
+        e.preventDefault()
         const usuario = {
             nombre: nombre,
             edad: edad,
@@ -26,9 +37,7 @@ const AgregarUsuario = () => {
             plan: plan,
             idUsuario: uniquid()
         }
-
-        console.log(usuario)
-
+ 
         axios.post('/v1/agregarusuario', usuario)
             .then(res => {
                 // alert(res.data)
@@ -39,36 +48,41 @@ const AgregarUsuario = () => {
     }
   return (
       <>
-          <h1>Agregar un Cliente</h1>
+          
+          <h1 className='text-center h1-titulo-form-ag-ed mt-4 mb-4'>Agregar Usuario</h1>
+          
           <Container>
-              <Form>
+              
+              <Form className='text-center' onSubmit={agregarUsuario}>
                   <Form.Group className="mb-3" controlId="formBasicEmail">
-                      <Form.Label>Nombre</Form.Label>
-                      <Form.Control type="text" className='w-25 m-auto' value={nombre} onChange={(e) => { setNombre(e.target.value) }} />
+                      <Form.Label className='etiqueta-formulario-ag-ed'>Nombre</Form.Label>
+                      <Form.Control required type="text" className=' m-auto input-form-ag-ed' value={nombre} onChange={(e) => {setNombre(e.target.value)}}  />
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formBasicPassword">
-                      <Form.Label>Edad</Form.Label>
-                      <Form.Control type="text" className='w-25 m-auto' value={edad} onChange={(e) => { setEdad(e.target.value) }} />
+                      <Form.Label className='etiqueta-formulario-ag-ed'>Edad</Form.Label>
+                      <Form.Control required type="text" className='m-auto input-form-ag-ed' value={edad} onChange={(e) => { setEdad(e.target.value) }} />
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formBasicPassword">
-                      <Form.Label>Correo</Form.Label>
-                      <Form.Control type="text" className='w-25 m-auto' value={correo} onChange={(e) => { setCorreo(e.target.value) }} />
+                      <Form.Label className='etiqueta-formulario-ag-ed'>Correo</Form.Label>
+                      <Form.Control required type="text" className=' m-auto input-form-ag-ed' value={correo} onChange={(e) => { setCorreo(e.target.value) }} />
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formBasicPassword">
-                      <Form.Label>Celular</Form.Label>
-                      <Form.Control type="text" className='w-25 m-auto' value={celular} onChange={(e) => { setCelular(e.target.value) }} />
+                      <Form.Label className='etiqueta-formulario-ag-ed'>Celular</Form.Label>
+                      <Form.Control required type="text" className=' m-auto input-form-ag-ed' value={celular} onChange={(e) => { setCelular(e.target.value) }} />
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formBasicPassword">
-                      <Form.Label>Plan</Form.Label>
-                      <Form.Control type="text" className='w-25 m-auto' value={plan} onChange={(e) => { setPlan(e.target.value) }} />
+                      <Form.Label className='etiqueta-formulario-ag-ed'>Plan</Form.Label>
+                      <Form.Control required  type="text" className=' m-auto input-form-ag-ed' value={plan} onChange={(e) => { setPlan(e.target.value) }} />
                   </Form.Group>
-                  <Button variant="primary" type="submit" onClick={agregarUsuario}>
+                  <Button variant="primary" type="submit" n className='me-2 botones-formularios-ag-ed' >
                       Guardar
                   </Button>
+                  <Link to='/listadeusuarios' ><Button variant="primary" type="submit" className='ms-2 botones-formularios-ag-ed'>
+                      Volver
+                  </Button></Link>
+                  
               </Form>
-              <Link to='/listadeusuarios'><Button variant="primary" type="submit" className='mt-5'>
-                  lista de Usuarios
-              </Button></Link>
+
           </Container>
       </>
   )

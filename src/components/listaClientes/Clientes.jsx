@@ -1,13 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
-
+import ListasDeUsuarios from '../admin/ListaDeUsuarios';
+import './Clientes.css'
 
 const Clientes = () => {
   return (
       <>
-          <h1 className='text-center'>Listado de Clientes</h1>
-          <Link to="/listadeusuarios"><button>Lista de Clientes</button></Link>
+          
+          <ListasDeUsuarios/>
          
       </>
   )

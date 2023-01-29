@@ -4,7 +4,8 @@ import { useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import './Mailer.css';
 import Swal from 'sweetalert2';
-import Container from 'react-bootstrap/Container';
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -32,23 +33,24 @@ const Mailer = () => {
 
 
     return (
-      <Container>
-      <div className='form-mail mt-4 '>
-          <h1 className='title-form text-center '>Enviar mensaje a un usuario</h1>
-          <form onSubmit={sendEmail} className="text-center mt-3">
-              <label className='mt-1'>Nombre</label><br/>
-              <input type="text" name="user_name" ref={inputform} className='mt-1'/><br />
-           
-              <label className='mt-1'>Email</label><br />
-              <input type="email" name="user_email" className='mt-1' /><br />
-            
-              <label className='mt-1'>Mensaje</label><br />
-              <textarea name="user_message" className='mt-1' /><br />
-             
-              <button className='mailer-color-boton mt-3' >Enviar</button>
+      <div className='body-mailer-chat'>
+        <div className='form-mail-chat  mt-2 '>
+          <h1 className='title-form text-center h1-chat '>Enviar mensaje a un usuario</h1>
+          <form onSubmit={sendEmail} className="text-center mt-1">
+            <label className='mt-1 label-chat'>Nombre</label><br />
+            <input required type="text" name="user_name" ref={inputform} className='mt-1 input-chat' /><br />
+
+            <label className='mt-1 label-chat'>Email</label><br />
+            <input required type="email" name="user_email" className='mt-1 input-chat' /><br />
+
+            <label className='mt-1 label-chat'>Mensaje</label><br />
+            <textarea  required name="user_message" className='mt-1 textarea-chat ' /><br />
+
+            <button className='button-chat mt-1' >Enviar</button>
+            <Link to={'/admin'}><button className='button-chat mt-1' >Volver</button></Link>
           </form>
-            </div>
-        </Container>
+        </div>
+      </div>
   )
 }
 

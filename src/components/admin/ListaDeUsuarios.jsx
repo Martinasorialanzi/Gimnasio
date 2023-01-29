@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import Table from 'react-bootstrap/Table';
-import { FaPen, FaTrash } from "react-icons/fa";
+import {  FaPen, FaTrash } from "react-icons/fa";
+import { GrMail } from "react-icons/gr";
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
+import './Listado.css'
+
 
 const ListasDeUsuarios = () => {
     const [dataUsuarios, setDataUsuarios] = useState([])
     const navegar = useNavigate()
 
+
+    
 
     useEffect(() => {
         axios.get('/v1/obtenerlistadeusuarios').then(res => {
@@ -46,8 +51,9 @@ const ListasDeUsuarios = () => {
                     <td>{usuario.plan}</td>
                     <td><a href="/admin">Ver más</a></td>
                     <td><div className='text-center'>
-                        <Link to={`/editarusuario/${usuario.idUsuario}`} className='hipervinculos-sin-azul'><FaPen className='fs-5 me-3 text-dark' /></Link>
-                        <FaTrash className='ms-3 fs-5' type='button' onClick={() => { borrarUsuario(usuario.idUsuario) }} /></div></td>
+                        <Link to={`/chatparticular/${usuario.idUsuario}`} ><GrMail className='me-3 fs-4 text-dark' /></Link>
+                        <Link to={`/editarusuario/${usuario.idUsuario}`} ><FaPen className='fs-5 me-2 text-dark' /></Link>
+                        <FaTrash className='ms-2 fs-5' type='button' onClick={() => { borrarUsuario(usuario.idUsuario) }} /></div></td>
                 </tr>
             </tbody>
         )
@@ -55,26 +61,28 @@ const ListasDeUsuarios = () => {
 
     return (
         <>
-            <h1 className='text-center mt-5'>Listado de Usuarios</h1>
+            
+            <h1 className='text-center mt-5 titulo-listado'>Listado de Usuarios</h1>
             <div className='text-center mb-2'>
-                <Link to='/agregarusuario'><button className='mb-5 mt-5'>Agregar Usuario</button></Link>
+                <Link to='/agregarusuario'><button className='mb-5 mt-5 button-listado'>Agregar Usuario</button></Link>
                 <Table striped bordered hover size="sm">
                     <thead className='text-center'>
                         <tr>
-                            <th>Número</th>
-                            <th>Nombres y Apellido</th>
-                            <th>Edad</th>
-                            <th>Correo</th>
-                            <th>Celular</th>
-                            <th>Plan Asignado</th>
-                            <th>Cuotas</th>
-                            <th>Editar</th>
+                            <th className='back-tabla-listado text-light'>Codigo Usuario</th>
+                            <th className='back-tabla-listado text-light'>Nombres y Apellido</th>
+                            <th className='back-tabla-listado text-light'>Edad</th>
+                            <th className='back-tabla-listado text-light'>Correo</th>
+                            <th className='back-tabla-listado text-light'>Celular</th>
+                            <th className='back-tabla-listado text-light'>Plan Asignado</th>
+                            <th className='back-tabla-listado text-light'>Cuotas</th>
+                            <th className='back-tabla-listado text-light'>Editar</th>
                         </tr>
                     </thead>
                     {listausuarios}
                 </Table>
 
-            </div>
+                </div>
+            
 
         </>
     )

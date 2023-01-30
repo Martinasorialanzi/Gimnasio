@@ -61,23 +61,26 @@ const EditarUsuario = () => {
                 <Form className='text-center' onSubmit={editarUsuario}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label className='etiqueta-formulario-ag-ed'>Nombre</Form.Label>
-                        <Form.Control required type="text" className=' m-auto input-form-ag-ed' value={nombre} onChange={(e) => { setNombre(e.target.value) }} />
+                        <Form.Control required type="text" className=' m-auto input-form-ag-ed' value={nombre} onChange={(e) => { setNombre(e.target.value) }} maxLength={15} minLength={3} />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label className='etiqueta-formulario-ag-ed'>Edad</Form.Label>
-                        <Form.Control required type="text" className=' m-auto input-form-ag-ed' value={edad} onChange={(e) => { setEdad(e.target.value) }} />
+                        <Form.Control required type="number" className=' m-auto input-form-ag-ed' value={edad} onChange={(e) => { setEdad(e.target.value) }} max="100" min="10"
+                             />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label className='etiqueta-formulario-ag-ed'>Correo</Form.Label>
-                        <Form.Control  required type="text" className=' m-auto input-form-ag-ed' value={correo} onChange={(e) => { setCorreo(e.target.value) }} />
+                        <Form.Control required type="text" className=' m-auto input-form-ag-ed' value={correo} onChange={(e) => { setCorreo(e.target.value) }} pattern="[^@\s]+@[^@\s]+" maxLength={50} minLength={13} />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label className='etiqueta-formulario-ag-ed'>Celular</Form.Label>
-                        <Form.Control required type="text" className=' m-auto input-form-ag-ed' value={celular} onChange={(e) => { setCelular(e.target.value) }} />
+                        <Form.Control required type="number" className=' m-auto input-form-ag-ed' value={celular} onChange={(e) => { setCelular(e.target.value) }}  max="999999999999" min="1111111111"
+                             />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label className='etiqueta-formulario-ag-ed'>Plan</Form.Label>
-                        <Form.Control required type="text" className='m-auto input-form-ag-ed' value={plan} onChange={(e) => { setPlan(e.target.value) }} />
+                        <Form.Control required type="number" className='m-auto input-form-ag-ed' value={plan} onChange={(e) => { setPlan(e.target.value) }} max="004" min="001"
+                             />
                     </Form.Group>
                     <Button variant="primary" type="submit"  className='me-2 botones-formularios-ag-ed' >
                         Editar

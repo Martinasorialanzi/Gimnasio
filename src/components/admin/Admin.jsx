@@ -46,8 +46,8 @@ const Admin = () => {
                   <Col xs={6} xl={3}>
                       <Card style={{ width: '15rem', height: '15rem' }} className='mb-4 m-2 card-admin  card-body-admin'>
                           <Card.Body className='Container '>
-                              <Card.Subtitle className="text-center mt-5"><FontAwesomeIcon icon={faDumbbell} className='iconosAdmin' /></Card.Subtitle>
-                              <Card.Title className='text-center mt-5'>Planes</Card.Title>
+                              <Link to={"/planes"} className='text-decoration-none text-dark'><Card.Subtitle className="text-center mt-5"><FontAwesomeIcon icon={faDumbbell} className='iconosAdmin' /></Card.Subtitle>
+                                  <Card.Title className='text-center mt-5'>Planes</Card.Title></Link>
                           </Card.Body>
                       </Card>
                   </Col>

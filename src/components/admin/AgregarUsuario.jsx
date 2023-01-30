@@ -69,7 +69,7 @@ const AgregarUsuario = () => {
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formBasicPassword">
                       <Form.Label className='etiqueta-formulario-ag-ed'>Correo</Form.Label>
-                      <Form.Control required type="text" className=' m-auto input-form-ag-ed' value={correo} onChange={(e) => { setCorreo(e.target.value) }} pattern="[^@\s]+@[^@\s]+" maxLength={50} minLength={13} />
+                      <Form.Control required type="email" className=' m-auto input-form-ag-ed' value={correo} onChange={(e) => { setCorreo(e.target.value) }} pattern="[^@\s]+@[^@\s]+" maxLength={50} minLength={13} />
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formBasicPassword">
                       <Form.Label className='etiqueta-formulario-ag-ed'>Celular</Form.Label>

@@ -63,7 +63,7 @@ const ChatParticular = () => {
                   <textarea required name="user_message" className='mt-1 textarea-chat ' /><br />
 
                   <button className='button-chat mt-1' >Enviar</button>
-                  <Link to={'/admin'}><button className='button-chat mt-1' >Volver</button></Link>
+                  <Link to={'/listadeusuarios'}><button className='button-chat mt-1' >Volver</button></Link>
               </form>
           </div>
       </div>

@@ -9,6 +9,9 @@ import Chat from '../chat/Chat'
 import ChatParticular from '../chat/ChatParticular'
 import Clientes from '../listaClientes/Clientes'
 import Turnos from '../turnos/Turnos'
+import Planes from '../planes/Planes'
+import AgregarPlan from '../planes/AgregarPlan'
+import EditarPlan from '../planes/EditarPlan'
 
 
 const Rutas = () => {
@@ -23,6 +26,9 @@ const Rutas = () => {
       <Route path="/editarusuario/:idUsuario" element={<EditarUsuario />} exact />
       <Route path="/chat" element={<Chat />} exact />
       <Route path="/chatparticular/:idUsuario" element={<ChatParticular />} exact />
+      <Route path="/planes" element={<Planes />} exact />
+      <Route path="/agregarplan" element={<AgregarPlan />} exact />
+      <Route path="/editarplan/:codigoPlan" element={<EditarPlan />} exact />
       {/* lo ponga aca al admin y lo hago libre de ingreso hasta que finalice la parte estetica despues empiezo a trabajar en el acceso restringido */}
       
     </Routes>

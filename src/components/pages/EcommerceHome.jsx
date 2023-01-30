@@ -52,7 +52,7 @@ const EcommerceHome = () => {
 
               .filter((producto) => producto.portada===true)
               .map((producto) => {
-                return <CardsEcommerce producto={producto} key={producto.id} />;
+                return <CardsEcommerce producto={producto} key={producto._id} />;
               })}
             <Link to={"/ecommerce-categoria/all"}>
               <Row className="justify-content-center">

@@ -10,7 +10,7 @@ const Rutas = () => {
   return (
     <Routes>
        <Route path='/ecommercehome' element={<EcommerceHome/>}/>
-       <Route path='/ecommerce-producto/:id' element={<EcommerceDetalleProducto/>}/>
+       <Route path='/ecommerce-producto/:_id' element={<EcommerceDetalleProducto/>}/>
        <Route path='/ecommerce-categoria/:categoria' element={<EcommerceCategoria/>}/>
        <Route path='/admin/productos' element={<AdminProducts/>}/>
     </Routes>

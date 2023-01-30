@@ -13,8 +13,8 @@ const CardsEcommerce = ({producto}) => {
     //   return(
         
         <Col xs={6} sm={6} md={3} xl={3} >
-        <Card key={producto.id} style={{ width: '90%' }} className='mb-4'  border="light">
-          <Link to={`/ecommerce-producto/${producto.id}`}>
+        <Card key={producto._id} style={{ width: '90%' }} className='mb-4'  border="light">
+          <Link to={`/ecommerce-producto/${producto._id}`}>
           <Card.Img variant="top" src={producto.imagen} />
           </Link>
           <Card.Body>

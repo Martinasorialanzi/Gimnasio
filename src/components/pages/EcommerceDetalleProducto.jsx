@@ -12,8 +12,7 @@ import NavEcommerce from "../ecommerce/NavEcommerce";
 import { GetProducts } from "../helpers/GetProducts";
 
 const EcommerceDetalleProducto = () => {
-  const { id } = useParams();
-  const idNumber = parseInt(id);
+  const { _id } = useParams();
 
   const [talleValue, setTalleValue] = useState("");
   const [colorValue, setColorValue] = useState("");
@@ -50,13 +49,13 @@ const EcommerceDetalleProducto = () => {
     if (
       allProducts.find(
         (item) =>
-          item.detalles.id === detallesProducto.id &&
+          item.detalles._id === detallesProducto._id &&
           item.talle === talleValue &&
           item.color === colorValue
       )
     ) {
       const products = allProducts.map((item) =>
-        item.detalles.id === detallesProducto.id &&
+        item.detalles._id === detallesProducto._id &&
         item.talle === talleValue &&
         item.color === colorValue
           ? {
@@ -87,10 +86,10 @@ const EcommerceDetalleProducto = () => {
       <NavEcommerce allProducts={allProducts} setAllProducts={setAllProducts} />
 
       {productos
-        .filter((producto) => producto.id === idNumber)
+        .filter((producto) => producto._id === _id)
         .map((detallesProducto) => {
           return (
-            <Row key={detallesProducto.id} className="m-4 align-items-center">
+            <Row key={detallesProducto._id} className="m-4 align-items-center">
               <Col xs={12} sm={12} md={6} className="">
                 <img
                   src={detallesProducto.imagen}
@@ -104,11 +103,13 @@ const EcommerceDetalleProducto = () => {
                 <Stack direction="vertical" gap={4}>
                   <h1>{detallesProducto.nombre}</h1>
                   <h5>${detallesProducto.precio}</h5>
-                  {detallesProducto.talle.length !== 0 ? (
+                 
+                  {detallesProducto.talle.length > 1 ? (
                     <>
                       <h4>Talle</h4>
-
+                   
                       <ButtonGroup>
+                        
                         {detallesProducto.talle.map((talle, index) => (
                           <ToggleButton
                             key={index}
@@ -127,8 +128,32 @@ const EcommerceDetalleProducto = () => {
                         ))}
                       </ButtonGroup>
                     </>
-                  ) : null}
-                  {detallesProducto.color.length !== 0 ? (
+                  ) :detallesProducto.talle.length ===1 ?(
+                    <>
+                      <h4>Talle</h4>
+                   
+                      <ButtonGroup>
+                        
+                        {detallesProducto.talle[0].split(",").map((talle, index) => (
+                          <ToggleButton
+                            key={index}
+                            id={`talle-${index}`}
+                            type="radio"
+                            variant="outline-dark"
+                            name="talle"
+                            value={talle}
+                            checked={talleValue === talle}
+                            onChange={(e) =>
+                              setTalleValue(e.currentTarget.value)
+                            }
+                          >
+                            {talle}
+                          </ToggleButton>
+                        ))}
+                      </ButtonGroup>
+                    </>
+                  ) :null}
+                  {detallesProducto.color.length > 1 ? (
                     <>
                       <h4>Color</h4>
                       <ButtonGroup>
@@ -150,7 +175,28 @@ const EcommerceDetalleProducto = () => {
                         ))}
                       </ButtonGroup>
                     </>
-                  ) : null}
+                  ) : detallesProducto.color.length === 1 ? (
+                    <>
+                      <h4>Color</h4>
+                      <ButtonGroup>
+                        {detallesProducto.color[0].split(",").map((color, idx) => (
+                          <ToggleButton
+                            key={idx}
+                            id={`color-${idx}`}
+                            type="radio"
+                            variant="outline-dark"
+                            name="color"
+                            value={color}
+                            checked={colorValue === color}
+                            onChange={(e) =>
+                              setColorValue(e.currentTarget.value)
+                            }
+                          >
+                            {color}
+                          </ToggleButton>
+                        ))}
+                      </ButtonGroup>
+                    </> ):null}
 
                   <h4>Cantidad</h4>
                   <Stack direction="horizontal" gap={3}>
@@ -208,6 +254,7 @@ const EcommerceDetalleProducto = () => {
                   {detallesProducto.descripción}
                 </Stack>
               </Col>
+
             </Row>
           );
         })}

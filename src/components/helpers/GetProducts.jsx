@@ -9,9 +9,10 @@ export const GetProducts = async () => {
       method: "GET",
     });
 
+
     return response.data;
   } catch (error) {
-    console.log(error);
+    console.log(error.response.data);
   }
 };
 
@@ -20,7 +21,6 @@ export const AddProducts = async (productData) => {
      console.log(productData)
 
      const formData=new FormData()
-     formData.append("id",productData.id)
      formData.append("nombre",productData.nombre)
      formData.append("categoria",productData.categoria)
      formData.append("precio",productData.precio)
@@ -29,6 +29,7 @@ export const AddProducts = async (productData) => {
      formData.append("portada",productData.portada)
      formData.append("talle",productData.talle)
      formData.append("color",productData.color)
+     formData.append("stock",productData.stock)
 
     const response = await axios({
       url: `${baseUrl}/products`,
@@ -41,13 +42,16 @@ export const AddProducts = async (productData) => {
   }
 };
 
-// export const DeleteProducts= async()=>{
-//    try {
-//       const response=await axios ({
-//          url:`${baseUrl}/products:id`,
-//          method:"DELETE"
-//       })
-//        return
+export const deleteProduct= async(_id)=>{
+  console.log(_id)
+   try {
+    await axios ({
+         url:`${baseUrl}/product/${_id}`,
+         method:"DELETE"
+      })
+    
 
-//    }
-// }
+   }catch (error) {
+    console.log(error.response.data);
+  }
+}

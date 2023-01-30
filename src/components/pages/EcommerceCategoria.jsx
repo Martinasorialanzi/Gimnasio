@@ -73,7 +73,7 @@ const EcommerceCategoria = () => {
                   )
                   .map((producto) => {
                     return (
-                      <CardsEcommerce producto={producto} key={producto.id} />
+                      <CardsEcommerce producto={producto} key={producto._id} />
                     );
                   })}
               </>

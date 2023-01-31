@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import axios from "axios";
+
 import Swal from "sweetalert2";
 import { funcionRegistro } from "../../api/Register.api";
 
@@ -15,82 +15,82 @@ const Registro = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const regexName = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/;
-    const regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
-    const regexPassword =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,20}$/;
+    // const regexName = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/;
+    // const regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
+    // const regexPassword =
+    //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,20}$/;
 
-    if (password !== confirmPassword) {
-      setContraseña(true);
-    } else if (
-      name === "" ||
-      lastname === "" ||
-      email === "" ||
-      password === ""
-    ) {
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: "Los campos son obligatorios",
+    // if (password !== confirmPassword) {
+    //   setContraseña(true);
+    // } else if (
+    //   name === "" ||
+    //   lastname === "" ||
+    //   email === "" ||
+    //   password === ""
+    // ) {
+    //   Swal.fire({
+    //     icon: "error",
+    //     title: "Error",
+    //     text: "Los campos son obligatorios",
+    //   });
+    // } else if (!regexEmail.test(email)) {
+    //   Swal.fire({
+    //     icon: "error",
+    //     title: "Error",
+    //     text: "Debes escribir un email valido",
+    //   });
+    // } else if (!regexName.test(name)) {
+    //   Swal.fire({
+    //     icon: "error",
+    //     title: "Error",
+    //     text: "El nombre debe empezar por mayuscula y no contener numeros o caracteres especiales",
+    //   });
+    // } else if (!regexName.test(lastname)) {
+    //   Swal.fire({
+    //     icon: "error",
+    //     title: "Error",
+    //     text: "El apellido debe empezar por mayuscula y no contener numeros o caracteres especiales",
+    //   });
+    // } 
+    // else if (!regexPassword.test(password)) {
+    //   Swal.fire({
+    //     icon: "error",
+    //     title: "Error",
+    //     text: "La contraseña debe tener por lo menos un caracter an mayuscula, uno en minuscula,un numero, un caracter espacial y 8 caracteres minimos",
+    //   });
+    // } 
+    // else {
+      const formData = JSON.stringify({
+        name: name,
+        lastname: lastname,
+        email: email,
+        password: password,
+        
       });
-    } else if (!regexEmail.test(email)) {
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: "Debes escribir un email valido",
-      });
-    } else if (!regexName.test(name)) {
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: "El nombre debe empezar por mayuscula y no contener numeros o caracteres especiales",
-      });
-    } else if (!regexName.test(lastname)) {
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: "El apellido debe empezar por mayuscula y no contener numeros o caracteres especiales",
-      });
-    } else if (!regexPassword.test(password)) {
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: "La contraseña debe tener por lo menos un caracter an mayuscula, uno en minuscula,un numero, un caracter espacial y 8 caracteres minimos",
-      });
-    } else {
-      const data = {
-        name,
-        lastname,
-        email,
-        password,
-        confirmPassword,
-      };
   
-      console.log(data);
-
-      funcionRegistro(data);
-     
-
-     
-        Swal.fire({
-          icon: "success",
-          title: "Registrado",
-          text: "Registro exitoso",
-        });
+      console.log(formData);
+     funcionRegistro(formData);
       
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "hay algun error en tu registro",
-        });
-      
-
+      // if (response.status === 200) {
+      //   Swal.fire({
+      //     icon: "success",
+      //     title: "Registrado",
+      //     text: "Registro exitoso",
+      //   });
+      // } else {
+      //   Swal.fire({
+      //     icon: "error",
+      //     title: "Error",
+      //     text: "hay algun error en tu registro",
+      //   });
+      // }
+       
       setName("");
       setLastname("");
       setEmail("");
       setPassword("");
       setConfirmPassword("");
-    }
+    // }
   };
 
   return (
@@ -98,10 +98,11 @@ const Registro = () => {
       <Form.Group className="mb-3" controlId="formBasicName">
         <Form.Label>Nombre</Form.Label>
         <Form.Control
-          type="name"
+          type="text"
           placeholder="Enter name"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          required
         />
       </Form.Group>
       <Form.Text className="text-muted">
@@ -111,10 +112,11 @@ const Registro = () => {
       <Form.Group className="mb-3" controlId="formBasicLastname">
         <Form.Label>Apellido</Form.Label>
         <Form.Control
-          type="lastname"
+          type="text"
           placeholder="Enter lastname"
           value={lastname}
           onChange={(e) => setLastname(e.target.value)}
+          required
         />
       </Form.Group>
 
@@ -125,6 +127,7 @@ const Registro = () => {
           placeholder="Enter email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
         />
       </Form.Group>
 
@@ -135,6 +138,7 @@ const Registro = () => {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          required
         />
       </Form.Group>
 
@@ -145,6 +149,7 @@ const Registro = () => {
           placeholder="Password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
+        
         />
         <Form.Text className="text-muted">
           {contraseña && <p>Las contraseñas no coinciden</p>}

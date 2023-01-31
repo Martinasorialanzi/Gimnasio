@@ -17,7 +17,7 @@ const FichasPlanes = () => {
     const navegar = useNavigate();
 
     useEffect(() => {
-        axios.get('/v2/obtenerlistadeplanes').then(res => {
+        axios.get('/v1/obtenerlistadeplanes').then(res => {
             console.log(res.data)
             setDataplan(res.data)
         }).catch(err => {
@@ -26,7 +26,7 @@ const FichasPlanes = () => {
     }, [])
 
     const borrarPlan = (codigoPlan) => {
-        axios.post('/v2/borrarPlan', { codigoPlan: codigoPlan }).then(res => {
+        axios.post('/v1/borrarPlan', { codigoPlan: codigoPlan }).then(res => {
             console.log(res.data)
             // alert(res.data)
             Swal.fire('Listo', 'Usuario Eliminado Correctamente', 'info', 'Ok')

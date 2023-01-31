@@ -29,7 +29,7 @@ const AgregarPlan = () => {
 
 
 
-        axios.post('/v2/agregarplan', plan)
+        axios.post('/v1/agregarplan', plan)
             .then(res => {
                 // alert(res.data)
 

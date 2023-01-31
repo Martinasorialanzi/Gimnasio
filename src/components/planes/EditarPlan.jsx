@@ -20,7 +20,7 @@ const EditarPlan = () => {
    
 
     useEffect(() => {
-        axios.post('/v2/obtenerdataplan', { codigoPlan: params.codigoPlan }).then(res => {
+        axios.post('/v1/obtenerdataplan', { codigoPlan: params.codigoPlan }).then(res => {
             console.log(res.data[0])
             const dataPlan = res.data[0]
             setIdplan(dataPlan.idPlan)
@@ -40,7 +40,7 @@ const EditarPlan = () => {
             codigoPlan: params.codigoPlan
         }
 
-        axios.post('/v2/actualizarplan', actualizarPlan).then(() => {
+        axios.post('/v1/actualizarplan', actualizarPlan).then(() => {
             // alert(res.data)
             Swal.fire('Listo', 'Usuario editado Exitosamente', 'success')
         }).then(err => {

@@ -1,0 +1,40 @@
+.preguntasFrecuentes {
+  display: flex;
+
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #e95821;
+}
+
+.preguntas {
+  gap: 5rem;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  color: #fefefe;
+}
+
+h1{
+    text-decoration: underline;
+}
+h3{
+    font-style: italic;
+}
+
+@media screen and (max-width: 770px) {
+  .preguntasFrecuentes {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  .preguntas {
+    flex-direction: column;
+    gap: 1rem;
+    font-size: x-large;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    text-align: center;
+  }
+}

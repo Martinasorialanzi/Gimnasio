@@ -3,12 +3,14 @@ import { useParams } from "react-router-dom";
 import NavEcommerce from "../ecommerce/NavEcommerce";
 import { GetProducts } from "../helpers/GetProducts";
 import CardsEcommerce from "../ecommerce/CardsEcommerce";
-import { Row, Container, Col } from "react-bootstrap";
+import { Row, Container, Col,Offcanvas, Button } from "react-bootstrap";
 import {
   FiltrosColor,
   FiltrosPrecio,
   FiltrosTalle,
 } from "../ecommerce/FiltrosEcommerce";
+import { MdFilterAlt } from "react-icons/md";
+
 
 const EcommerceCategoria = () => {
   const [allProducts, setAllProducts] = useState(() => {
@@ -41,15 +43,36 @@ const EcommerceCategoria = () => {
   const precioNum = parseInt(precio);
   console.log(precioNum);
 
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const toggleShow = () => setShow((s) => !s);
+
   return (
     <>
       <NavEcommerce allProducts={allProducts} setAllProducts={setAllProducts} />
-      <Row>
+
+
+      <Button variant="dark" onClick={toggleShow} className="me-2">
+         <MdFilterAlt/>
+      </Button>
+      <Offcanvas show={show} onHide={handleClose} scroll="true" >
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
         <Col sm={1} className="">
           <FiltrosTalle talle={talle} setTalle={setTalle} />
           <FiltrosPrecio precio={precio} setPrecio={setPrecio} />
           <FiltrosColor color={color} setColor={setColor} />
         </Col>
+        </Offcanvas.Body>
+      </Offcanvas>
+
+      
+      <Row>
+       
         <Col className="p-0 m-0">
           <Container className="">
             <Row className="justify-content-center">

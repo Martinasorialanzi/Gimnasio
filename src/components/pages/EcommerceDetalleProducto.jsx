@@ -89,7 +89,7 @@ const EcommerceDetalleProducto = () => {
         .filter((producto) => producto._id === _id)
         .map((detallesProducto) => {
           return (
-            <Row key={detallesProducto._id} className="m-4 align-items-center">
+            <Row key={detallesProducto._id} className="m-4 align-items-center justify-content-center">
               <Col xs={12} sm={12} md={6} className="">
                 <img
                   src={detallesProducto.imagen}
@@ -251,7 +251,7 @@ const EcommerceDetalleProducto = () => {
                   )}
 
                   <h4>Descripcion</h4>
-                  {detallesProducto.descripción}
+                  {detallesProducto.descripcion}
                 </Stack>
               </Col>
 

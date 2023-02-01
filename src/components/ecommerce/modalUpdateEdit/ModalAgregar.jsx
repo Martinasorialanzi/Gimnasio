@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Form, Button, Modal } from "react-bootstrap";
+import React, { useState, useRef } from "react";
+import { Form, Button, Modal, Stack } from "react-bootstrap";
 import { AddProducts } from "../../helpers/GetProducts";
 import { tallesProductos, coloresProductos } from "../../helpers/productos";
 import { categorias } from "../../helpers/categorias";
@@ -20,13 +20,15 @@ const ModalAgregar = () => {
   const [color, setColor] = useState([]);
   const [stock, setStock] = useState();
 
+  const fileInput = useRef();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {
       nombre: nombre,
       categoria: categoria,
       precio: precio,
-      urlImagen: urlImagen,
+      fileInput: fileInput.current.files,
       descripcion: descripcion,
       portada: portada,
       talle: talle,
@@ -34,12 +36,14 @@ const ModalAgregar = () => {
       stock: stock,
     };
     console.log(formData);
+    console.log(fileInput.current.files);
     AddProducts(formData);
   };
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+    <div classname= "">
+      <Button  variant="dark" onClick={handleShow}>
         Add Products
       </Button>
 
@@ -61,8 +65,10 @@ const ModalAgregar = () => {
                 }}
               />
             </Form.Group>
+
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Categoria</Form.Label>
+              <br />
               {categorias.map((categoria) => {
                 return (
                   <Form.Check
@@ -94,7 +100,7 @@ const ModalAgregar = () => {
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Descripcion</Form.Label>
+              <Form.Label>Descripcion </Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Descripcion"
@@ -110,7 +116,7 @@ const ModalAgregar = () => {
               <Form.Control
                 type="file"
                 placeholder="Imagen"
-                value={urlImagen}
+                ref={fileInput}
                 onChange={(e) => {
                   setUrlImagen(e.target.value);
                 }}
@@ -119,34 +125,8 @@ const ModalAgregar = () => {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Portada</Form.Label>
-              <Form.Select
-                aria-label="Default select example"
-                value={portada}
-                onChange={(e) => {
-                  setPortada(e.target.value);
-                }}
-                required
-              >
-                <option value="false">False</option>
-                <option value="true">True</option>
-              </Form.Select>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Stock</Form.Label>
-                <Form.Control
-                  type="number"
-                  placeholder="Stock"
-                  value={stock}
-                  onChange={(e) => {
-                    setStock(e.target.value);
-                  }}
-                  required
-                />
-              </Form.Group>
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Talle</Form.Label>
+              <Form.Label>Talle </Form.Label>
+              <br />
               {tallesProductos.map((talle) => {
                 return (
                   <Form.Check
@@ -166,7 +146,8 @@ const ModalAgregar = () => {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Color</Form.Label>
+              <Form.Label>Color </Form.Label>
+              <br />
               {coloresProductos.map((color) => {
                 return (
                   <Form.Check
@@ -184,23 +165,48 @@ const ModalAgregar = () => {
                 );
               })}
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="Check me out" />
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Stock </Form.Label>
+              <Form.Control
+                type="number"
+                placeholder="Stock"
+                value={stock}
+                onChange={(e) => {
+                  setStock(e.target.value);
+                }}
+                required
+              />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>
+                Portada
+                <br />
+              </Form.Label>
+              <Form.Select
+                aria-label="Default select example"
+                value={portada}
+                onChange={(e) => {
+                  setPortada(e.target.value);
+                }}
+                required
+              >
+                <option value="false">False</option>
+                <option value="true">True</option>
+              </Form.Select>
+            </Form.Group>
+
+            <Button variant="dark" size="lg" type="submit" centerded>
               Submit
             </Button>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="dark" size="lg" onClick={handleClose}>
             Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
           </Button>
         </Modal.Footer>
       </Modal>
+      </div>
     </>
   );
 };

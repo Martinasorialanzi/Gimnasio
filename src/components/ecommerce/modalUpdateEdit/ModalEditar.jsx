@@ -1,22 +1,25 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 import { GetProduct, UpdateProduct } from "../../helpers/GetProducts";
 import { tallesProductos, coloresProductos } from "../../helpers/productos";
 import { categorias } from "../../helpers/categorias";
 
 const ModalEditar = (_id) => {
+    
   const [show, setShow] = useState(false);
 
   const [nombre, setNombre] = useState("");
   const [categoria, setCategoria] = useState([]);
   const [precio, setPrecio] = useState();
-  const [urlImagen, setUrlImagen] = useState("");
+  const [urlImagen, setUrlImagen] = useState();
   const [descripcion, setDescripcion] = useState("");
   const [portada, setPortada] = useState(false);
   const [talle, setTalle] = useState([]);
   const [color, setColor] = useState([]);
   const [stock, setStock] = useState();
 
+  const fileInput=useRef()
+  
   const handleClose = () => setShow(false);
 
   const handleShow = (_id) => {
@@ -27,7 +30,7 @@ const ModalEditar = (_id) => {
         setNombre(response.nombre);
         setCategoria(response.categoria);
         setPrecio(response.precio);
-        //   setUrlImagen(response.urlImagen)
+        setUrlImagen(response.urlImagen)
         setDescripcion(response.descripcion);
         setPortada(response.portada);
         setTalle(response.talle);
@@ -47,7 +50,8 @@ const ModalEditar = (_id) => {
       nombre: nombre,
       categoria: categoria,
       precio: precio,
-      urlImagen: urlImagen,
+      fileInput: fileInput.current.files,
+      urlImagen:urlImagen,
       descripcion: descripcion,
       portada: portada,
       talle: talle,
@@ -60,8 +64,8 @@ const ModalEditar = (_id) => {
 
   return (
     <>
-      <Button variant="primary" onClick={(e) => handleShow(_id)}>
-        Add Products
+      <Button size="lg"variant="dark" onClick={(e) => handleShow(_id)}>
+        Editar
       </Button>
 
       <Modal show={show} onHide={handleClose}>
@@ -83,7 +87,7 @@ const ModalEditar = (_id) => {
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Categoria</Form.Label>
+              <Form.Label>Categoria</Form.Label><br/>
               {categorias.map((categoria) => {
                 return (
                   <Form.Check
@@ -131,43 +135,20 @@ const ModalEditar = (_id) => {
               <Form.Control
                 type="file"
                 placeholder="Imagen"
-                value={urlImagen}
+                ref={fileInput}
                 onChange={(e) => {
-                  setUrlImagen(e.target.value);
+                  setUrlImagen(e.target.files[0].name);
                 }}
                 required
               />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Portada</Form.Label>
-              <Form.Select
-                aria-label="Default select example"
-                value={portada}
-                onChange={(e) => {
-                  setPortada(e.target.value);
-                }}
-                required
-              >
-                <option value="false">False</option>
-                <option value="true">True</option>
-              </Form.Select>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Stock</Form.Label>
-                <Form.Control
-                  type="number"
-                  placeholder="Stock"
-                  value={stock}
-                  onChange={(e) => {
-                    setStock(e.target.value);
-                  }}
-                  required
-                />
-              </Form.Group>
-            </Form.Group>
+            
+              
+            
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Talle</Form.Label>
+              <Form.Label>Talle</Form.Label><br/>
               {tallesProductos.map((talle) => {
                 return (
                   <Form.Check
@@ -187,7 +168,7 @@ const ModalEditar = (_id) => {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Color</Form.Label>
+              <Form.Label>Color</Form.Label><br/>
               {coloresProductos.map((color) => {
                 return (
                   <Form.Check
@@ -205,21 +186,43 @@ const ModalEditar = (_id) => {
                 );
               })}
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
-            <Button variant="primary" type="submit">
+
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Stock</Form.Label>
+                <Form.Control
+                  type="number"
+                  placeholder="Stock"
+                  value={stock}
+                  onChange={(e) => {
+                    setStock(e.target.value);
+                  }}
+                  required
+                />
+              </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Portada</Form.Label>
+              <Form.Select
+                aria-label="Default select example"
+                value={portada}
+                onChange={(e) => {
+                  setPortada(e.target.value);
+                }}
+                required
+              >
+                <option value="false">False</option>
+                <option value="true">True</option>
+              </Form.Select>
+              </Form.Group>
+            <Button size="lg"variant="dark" type="submit">
               Submit
             </Button>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button size="lg"variant="dark" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
+
         </Modal.Footer>
       </Modal>
     </>

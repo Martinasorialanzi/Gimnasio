@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Table, Button } from "react-bootstrap";
+import { Table, Button, Modal, Stack } from "react-bootstrap";
 import { deleteProduct, GetProducts } from "../helpers/GetProducts";
 
 import ModalAgregar from "../ecommerce/modalUpdateEdit/ModalAgregar";
 import ModalEditar from "../ecommerce/modalUpdateEdit/ModalEditar";
+import ModalViewProduct from "../ecommerce/modalUpdateEdit/ModalViewProduct";
 
 const AdminProducts = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
@@ -19,24 +25,20 @@ const AdminProducts = () => {
 
   return (
     <>
+    
+     <div className="container ">
+      <h2>Products</h2><br/>
       <ModalAgregar />
-      <h1>Add Products</h1>
-
-      <Table striped bordered hover size="sm">
+      <Table striped bordered hover size="xl" responsive="xl" className="m-4 p-4">
         <thead>
           <tr>
             <th>id</th>
             <th>Nombre</th>
             <th>Categoria</th>
             <th>Precio</th>
-            <th>Descripción</th>
             <th>Imagen</th>
             <th>Portada</th>
-            <th>Talle</th>
-            <th>Color</th>
-            <th>Stock</th>
-            <th>Edit</th>
-            <th>Delete</th>
+            <th>Ver producto</th>
           </tr>
         </thead>
         <tbody>
@@ -46,34 +48,25 @@ const AdminProducts = () => {
                 <td>{producto._id}</td>
                 <td>{producto.nombre}</td>
                 <td>{producto.categoria[0]}</td>
-                <td>{producto.precio}</td>
-                <td>{producto.descripcion}</td>
+                <td>${producto.precio}</td>
+                 <td>{producto.portada.toString()}</td> 
                 <td>
                   <img
+                    alt="fotos productos"
                     src={producto.imagen}
-                    alt="imagen producto"
-                    height={300}
+                    width={140}
+                    heigth={140}
                   />
                 </td>
-                <td>{producto.portada.toString()}</td>
-                <td>{producto.talle}</td>
-                <td>{producto.color}</td>
-                <td>{producto.stock}</td>
                 <td>
-                  <ModalEditar _id={producto._id} />
-                </td>
-                <td>
-                  {
-                    <Button onClick={(e) => deleteProduct(producto._id)}>
-                      Delete
-                    </Button>
-                  }
+                  <ModalViewProduct producto={producto} _id={producto._id} />
                 </td>
               </tr>
             );
           })}
         </tbody>
       </Table>
+      </div>
     </>
   );
 };

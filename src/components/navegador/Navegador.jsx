@@ -6,7 +6,7 @@ const Navegador = () => {
   return (
     <Navbar bg="dark" variant="dark" expand="lg" className="navbar">
       <Container>
-        <Navbar.Brand href="/home">GYM</Navbar.Brand>
+        <Navbar.Brand href="/">GYM</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

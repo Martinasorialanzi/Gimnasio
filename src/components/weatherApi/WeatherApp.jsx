@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"; 
 import WeatherMainInfo from "../weatherApi/WeatherMainInfo";
+
 import styles from "../weatherApi/weatherApp.module.css";
 
 export default function WeatherApp() {
@@ -11,7 +12,7 @@ export default function WeatherApp() {
 
 
 
-  async function loadInfo(city = "London") {
+  async function loadInfo(city = "tucuman") {
     console.log(
       `${process.env.REACT_APP_URL}&key=${process.env.REACT_APP_KEY}&q=${city}`
     );

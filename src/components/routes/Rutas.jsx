@@ -5,12 +5,14 @@ import Home from "../home/Home";
 
 
 
+
 const Rutas = () => {
   return (
     <Routes>
       
        <Route path="/" element={<Home/>} />
        <Route path="/acercade" element={<AcercaDe/>} />
+       
        
     </Routes>
   )

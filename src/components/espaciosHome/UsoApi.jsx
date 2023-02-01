@@ -1,8 +1,8 @@
 import React from "react";
-
+import WeatherApp from "../weatherApi/WeatherApp";
 
 import "../espaciosHome/usoApi.css";
-import WeatherApp from "../weatherApi/WeatherApp";
+
 
 
 const usoApi = () => {

@@ -1,24 +1,26 @@
 import martina from "../imagenes/Martina.jpeg"
 import victoria from "../imagenes/Victoria.jpeg"
 import delfina from "../imagenes/Delfina.jpeg"
+import fabrizio from "../imagenes/Fabrizio.jpeg"
+import lucas from "../imagenes/Lucas.jpeg"
 
 export const aboutInfo = [
   {
     photo: (
       <img
-        src="https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        src={fabrizio}
         alt=""
         width="150"
         height="150"
         viewBox="0 0 16 15"
       />
     ),
-    heading: "Fabrizio ",
+    heading: "Fabrizio Escalante ",
   },
   {
     photo: (
       <img
-        src="https://images.pexels.com/photos/6551438/pexels-photo-6551438.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        src={lucas}
         alt=""
         width="150"
         height="150"

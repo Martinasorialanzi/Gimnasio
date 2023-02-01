@@ -21,7 +21,7 @@ const Navegador = () => {
               
             </NavDropdown>
             <Nav.Link href="/about">Acerca de nosotros</Nav.Link>
-            <Nav.Link href="#home">Contacto</Nav.Link>
+        
           </Nav>
           <Nav.Link href="/registro">Crear cuenta&nbsp;&nbsp;|</Nav.Link>
           <Nav.Link href="/login">

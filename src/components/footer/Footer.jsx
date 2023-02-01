@@ -10,7 +10,7 @@ const Footer = () => {
         
         <Nav.Link eventKey="link-1">Trabaja con nosotros</Nav.Link>
         <Nav.Link eventKey="link-2">Preguntas frecuentes</Nav.Link>
-        <p>© 2022 Company, Inc. All rights reserved.</p>
+        <p>GYM © 2022 Company, Inc. All rights reserved.</p>
       </Navbar>
     </>
   );

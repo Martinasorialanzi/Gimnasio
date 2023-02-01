@@ -20,7 +20,7 @@ const Navegador = () => {
               <NavDropdown.Item href="#action/3.2">Suplementos</NavDropdown.Item>
               
             </NavDropdown>
-            <Nav.Link href="/about">Acerca de nosotros</Nav.Link>
+            <Nav.Link href="/acercade">Acerca de nosotros</Nav.Link>
         
           </Nav>
           <Nav.Link href="/registro">Crear cuenta&nbsp;&nbsp;|</Nav.Link>

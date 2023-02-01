@@ -21,8 +21,7 @@ console.log(formData)
       text: "Registro exitoso",
     });
   
-
-   }else {
+}else {
     Swal.fire({
       icon: "error",
       title: "Error",

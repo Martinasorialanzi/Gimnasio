@@ -6,7 +6,7 @@ import UsersAdmin from '../pages/UsersAdmin'
 const Rutas = () => {
   return (
     <Routes>
-       <Route path="/UsersAdmin" element={<UsersAdmin />} />
+       <Route path="/admin/users" element={<UsersAdmin />} />
     </Routes>
   )
 }

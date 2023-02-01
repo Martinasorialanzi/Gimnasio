@@ -13,7 +13,7 @@ const UsersAdmin = () => {
     const getUsers = async () => {
       const response = await GetUsers();
       setUsers(response.data.users);
-      console.log(response)
+      
     };
     
     getUsers();

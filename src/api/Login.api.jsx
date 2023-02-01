@@ -17,10 +17,10 @@ export const funcionLogin = async (login) => { //le paso los datos del login por
     if (response.status === 200) {  //auth es un atributo del objeto response q es un booleano.
         Swal.fire({
           icon: "success",
-          title: "Bienvenido",
+          title: `Bienvenido `,
           text: "Ingreso exitoso",
         }, setTimeout(() => {
-          window.location.href = "/home"; //una vez q se logue lo redirecciono al home
+          window.location.href = "/"; //una vez q se logue lo redirecciono al home
           }, 2000));;
       } else {
         Swal.fire({

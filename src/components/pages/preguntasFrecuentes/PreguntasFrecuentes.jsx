@@ -1,6 +1,6 @@
 import React from "react";
-import Footer from "../footer/Footer";
-import Navegador from "../navegador/Navegador";
+import Footer from "../../footer/Footer";
+import Navegador from "../../navegador/Navegador";
 
 import "../preguntasFrecuentes/preguntasFrecuentes.css";
 

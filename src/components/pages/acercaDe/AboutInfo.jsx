@@ -1,8 +1,8 @@
-import martina from "../imagenes/Martina.jpeg"
-import victoria from "../imagenes/Victoria.jpeg"
-import delfina from "../imagenes/Delfina.jpeg"
-import fabrizio from "../imagenes/Fabrizio.jpeg"
-import lucas from "../imagenes/Lucas.jpeg"
+import martina from "../../imagenes/Martina.jpeg"
+import victoria from "../../imagenes/Victoria.jpeg"
+import delfina from "../../imagenes/Delfina.jpeg"
+import fabrizio from "../../imagenes/Fabrizio.jpeg"
+import lucas from "../../imagenes/Lucas.jpeg"
 
 export const aboutInfo = [
   {

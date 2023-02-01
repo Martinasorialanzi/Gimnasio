@@ -1,8 +1,8 @@
 import React from 'react'
 import "../acercaDe/acercaDe.css"
 import { aboutInfo } from './AboutInfo'
-import Navegador from "../navegador/Navegador"
-import Footer from "../footer/Footer"
+import Navegador from "../../navegador/Navegador"
+import Footer from "../../footer/Footer"
 
 const AcercaDe = () => {
   return (

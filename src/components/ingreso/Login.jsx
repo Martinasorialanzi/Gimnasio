@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {funcionLogin} from '../../api/Login.api'
 import Swal from 'sweetalert2'
+import {response} from '../../api/Login.api'
 
 const Login = () => {
 
@@ -14,30 +15,27 @@ const Login = () => {
     
         const handleSubmit = (e) =>{
             e.preventDefault();
+
+            try{
+             
+
+                const login = {
+                  email,
+                  password,
+                }
+                funcionLogin(login);
+        
+      
+          }
     
-            const login = {
-              email,
-              password,
-            }
-            const response = funcionLogin(login);
-    console.log(response)
+          catch (error){
+            console.log(error)
+          }
     
-    if (response.auth === true) {  //auth es un atributo del objeto response q es un booleano.
-      Swal.fire({
-        icon: "success",
-        title: "Bienvenido",
-        text: "Ingreso exitoso",
-      }, setTimeout(() => {
-        window.location.href = "/home"; //una vez q se logue lo redirecciono al home
-        }, 2000));;
-    } else {
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: "Usuario o contraseña incorrectos",
-      });
-    }
-        }
+    
+
+           } 
+        
     
         
     

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-
 import Swal from "sweetalert2";
+
+
 import { funcionRegistro } from "../../api/Register.api";
+
 
 const Registro = () => {
   const [name, setName] = useState("");
@@ -60,30 +62,31 @@ const Registro = () => {
     //   });
     // } 
     // else {
-      const formData = JSON.stringify({
-        name: name,
-        lastname: lastname,
-        email: email,
-        password: password,
+      const formData = {
+        name,
+        lastname,
+        email,
+        password,
         
-      });
+      };
   
       console.log(formData);
      funcionRegistro(formData);
+    
+      // Swal.fire({
+      //   icon: "success",
+      //   title: "Registrado",
+      //   text: "Registro exitoso",
+      // });
+    
+      // Swal.fire({
+      //   icon: "error",
+      //   title: "Error",
+      //   text: "hay algun error en tu registro",
+      // });
+   
       
-      // if (response.status === 200) {
-      //   Swal.fire({
-      //     icon: "success",
-      //     title: "Registrado",
-      //     text: "Registro exitoso",
-      //   });
-      // } else {
-      //   Swal.fire({
-      //     icon: "error",
-      //     title: "Error",
-      //     text: "hay algun error en tu registro",
-      //   });
-      // }
+      
        
       setName("");
       setLastname("");

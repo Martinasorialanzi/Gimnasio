@@ -12,7 +12,8 @@ const UsersAdmin = () => {
   useEffect(() => {
     const getUsers = async () => {
       const response = await GetUsers();
-      setUsers(response.users);
+      setUsers(response.data.users);
+      console.log(response)
     };
     
     getUsers();

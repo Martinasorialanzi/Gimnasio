@@ -1,0 +1,16 @@
+.weatherContainer {
+    width: 500px;
+    height: 500px;
+  }
+  @media screen and (max-width: 770px) {
+    .weatherContainer {
+      display: flex;
+      width: auto;
+      justify-content: center;
+      align-items: center;
+      
+      
+      
+  
+    }
+  }

@@ -9,7 +9,6 @@ export const GetProducts = async () => {
       method: "GET",
     });
 
-
     return response.data;
   } catch (error) {
     console.log(error.response);
@@ -17,13 +16,13 @@ export const GetProducts = async () => {
 };
 
 export const AddProducts = async (formData) => {
-   try {
-     console.log(formData)
+  try {
+    console.log(formData);
 
     const response = await axios({
       url: `${baseUrl}/products`,
       method: "POST",
-      data: formData
+      data: formData,
     });
     return response;
   } catch (error) {
@@ -31,50 +30,43 @@ export const AddProducts = async (formData) => {
   }
 };
 
-export const deleteProduct= async(_id)=>{
-  console.log(_id)
-   try {
-    await axios ({
-         url:`${baseUrl}/product/${_id}`,
-         method:"DELETE"
-      })
-    
-
-   }catch (error) {
+export const deleteProduct = async (_id) => {
+  console.log(_id);
+  try {
+    await axios({
+      url: `${baseUrl}/product/${_id}`,
+      method: "DELETE",
+    });
+  } catch (error) {
     console.log(error.response.data);
   }
-}
-
+};
 
 export const GetProduct = async (_id) => {
-  console.log(_id)
+  console.log(_id);
   try {
     const response = await axios({
       url: `${baseUrl}/product/${_id}`,
       method: "GET",
     });
 
-    console.log(response.data.product)
+    console.log(response.data.product);
     return response.data.product;
   } catch (error) {
     console.log(error.response.data);
   }
 };
 
-
-export const UpdateProduct = async (_id,formData) => {
-  console.log(_id)
-  console.log(formData)
+export const UpdateProduct = async (_id, formData) => {
+  console.log(_id);
+  console.log(formData);
   try {
- 
-      await axios({
-     url: `${baseUrl}/product/${_id}`,
-     method: "PUT",
-     data: formData,
-     
-   });
-   
- } catch (error) {
-   console.log(error.response);
- }
+    await axios({
+      url: `${baseUrl}/product/${_id}`,
+      method: "PUT",
+      data: formData,
+    });
+  } catch (error) {
+    console.log(error.response);
+  }
 };

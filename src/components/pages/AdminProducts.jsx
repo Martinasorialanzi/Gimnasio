@@ -1,31 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { Table, Button } from "react-bootstrap";
-import {deleteProduct, GetProducts } from "../helpers/GetProducts";
+import { deleteProduct, GetProducts } from "../helpers/GetProducts";
 
 import ModalAgregar from "../ecommerce/modalUpdateEdit/ModalAgregar";
 import ModalEditar from "../ecommerce/modalUpdateEdit/ModalEditar";
 
-
 const AdminProducts = () => {
-    
   const [productos, setProductos] = useState([]);
-  
+
   useEffect(() => {
     const getProducts = async () => {
       const response = await GetProducts();
       setProductos(response.products);
     };
-    
+
     getProducts();
   }, [productos]);
-  
 
-  
-  return(
+  return (
     <>
-      <ModalAgregar/>
+      <ModalAgregar />
       <h1>Add Products</h1>
-      
 
       <Table striped bordered hover size="sm">
         <thead>
@@ -60,25 +55,27 @@ const AdminProducts = () => {
                     height={300}
                   />
                 </td>
-                <td>{producto.portada.toString()}</td> {/* porque no aparece portada */}
+                <td>{producto.portada.toString()}</td>
                 <td>{producto.talle}</td>
                 <td>{producto.color}</td>
                 <td>{producto.stock}</td>
-                <td  >
-                  <ModalEditar _id={producto._id}/>
-                  {/* <Button onClick={(e)=>handleUpdate(producto._id)}>Edit</Button> */}
-                  </td>
-                <td>{<Button
-                 onClick={(e)=>deleteProduct(producto._id)}
-                 >Delete</Button>}</td>
+                <td>
+                  <ModalEditar _id={producto._id} />
+                </td>
+                <td>
+                  {
+                    <Button onClick={(e) => deleteProduct(producto._id)}>
+                      Delete
+                    </Button>
+                  }
+                </td>
               </tr>
             );
           })}
         </tbody>
       </Table>
     </>
-  
-  )
+  );
 };
 
 export default AdminProducts;

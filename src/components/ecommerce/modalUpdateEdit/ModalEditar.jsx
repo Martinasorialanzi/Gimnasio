@@ -1,54 +1,45 @@
-import React, { useEffect, useState } from "react";
-import { Table, Form, Button, Modal } from "react-bootstrap";
+import React, { useState } from "react";
+import { Form, Button, Modal } from "react-bootstrap";
 import { GetProduct, UpdateProduct } from "../../helpers/GetProducts";
 import { tallesProductos, coloresProductos } from "../../helpers/productos";
 import { categorias } from "../../helpers/categorias";
-import { useForm } from "react-hook-form";
-import axios from "axios";
+
 const ModalEditar = (_id) => {
   const [show, setShow] = useState(false);
 
-
-  const [nombre, setNombre] = useState("")
-  const [categoria, setCategoria] = useState([])
-  const [precio, setPrecio] = useState()
-  const [urlImagen, setUrlImagen] = useState("")
-  const [descripcion, setDescripcion] = useState("")
-  const [portada, setPortada] = useState(false)
-  const [talle, setTalle] = useState([])
-  const [color, setColor] = useState([])
-  const [stock, setStock] = useState()
+  const [nombre, setNombre] = useState("");
+  const [categoria, setCategoria] = useState([]);
+  const [precio, setPrecio] = useState();
+  const [urlImagen, setUrlImagen] = useState("");
+  const [descripcion, setDescripcion] = useState("");
+  const [portada, setPortada] = useState(false);
+  const [talle, setTalle] = useState([]);
+  const [color, setColor] = useState([]);
+  const [stock, setStock] = useState();
 
   const handleClose = () => setShow(false);
 
-
-  const [producto, setProducto] = useState({});
-  
   const handleShow = (_id) => {
-
     try {
-      const getProduct=async()=>{
-      const response= await GetProduct(_id._id);
-      console.log(response)
-      setNombre(response.nombre)
-      setCategoria(response.categoria)
-      setPrecio(response.precio)
-    //   setUrlImagen(response.urlImagen)
-      setDescripcion(response.descripcion)
-      setPortada(response.portada)
-      setTalle(response.talle)
-      setColor(response.color)
-      setStock(response.stock)
-    }
-      getProduct()
-      
+      const getProduct = async () => {
+        const response = await GetProduct(_id._id);
+        console.log(response);
+        setNombre(response.nombre);
+        setCategoria(response.categoria);
+        setPrecio(response.precio);
+        //   setUrlImagen(response.urlImagen)
+        setDescripcion(response.descripcion);
+        setPortada(response.portada);
+        setTalle(response.talle);
+        setColor(response.color);
+        setStock(response.stock);
+      };
+      getProduct();
     } catch (error) {
       console.log(error);
     }
     setShow(true);
   };
-
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -64,7 +55,7 @@ const ModalEditar = (_id) => {
       stock: stock,
     };
     console.log(formData);
-    UpdateProduct(_id._id,formData);
+    UpdateProduct(_id._id, formData);
   };
 
   return (
@@ -75,7 +66,7 @@ const ModalEditar = (_id) => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add Products</Modal.Title>
+          <Modal.Title>Edit</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
@@ -85,12 +76,10 @@ const ModalEditar = (_id) => {
                 type="text"
                 placeholder="Nombre del producto"
                 required
-                
                 value={nombre}
                 onChange={(e) => {
                   setNombre(e.target.value);
                 }}
-                defaultValue={producto.nombre}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -108,7 +97,6 @@ const ModalEditar = (_id) => {
                     onChange={(e) => {
                       setCategoria(e.target.value);
                     }}
-                    
                   />
                 );
               })}
@@ -124,7 +112,6 @@ const ModalEditar = (_id) => {
                   setPrecio(e.target.value);
                 }}
                 required
-                defaultValue={producto.precio}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -137,7 +124,6 @@ const ModalEditar = (_id) => {
                   setDescripcion(e.target.value);
                 }}
                 required
-                defaultValue={producto.descripcion}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -150,7 +136,6 @@ const ModalEditar = (_id) => {
                   setUrlImagen(e.target.value);
                 }}
                 required
-                defaultValue={producto.imagen}
               />
             </Form.Group>
 
@@ -163,7 +148,6 @@ const ModalEditar = (_id) => {
                   setPortada(e.target.value);
                 }}
                 required
-                defaultValue={producto.portada}
               >
                 <option value="false">False</option>
                 <option value="true">True</option>
@@ -178,7 +162,6 @@ const ModalEditar = (_id) => {
                     setStock(e.target.value);
                   }}
                   required
-                  
                 />
               </Form.Group>
             </Form.Group>

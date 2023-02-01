@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Table, Button } from "react-bootstrap";
-import { AddProducts, deleteProduct, GetProducts } from "../helpers/GetProducts";
-import { useForm } from "react-hook-form";
+import {deleteProduct, GetProducts } from "../helpers/GetProducts";
+
 import ModalAgregar from "../ecommerce/modalUpdateEdit/ModalAgregar";
+import ModalEditar from "../ecommerce/modalUpdateEdit/ModalEditar";
 
 
 const AdminProducts = () => {
@@ -51,7 +52,7 @@ const AdminProducts = () => {
                 <td>{producto.nombre}</td>
                 <td>{producto.categoria[0]}</td>
                 <td>{producto.precio}</td>
-                <td>{producto.descripción}</td>
+                <td>{producto.descripcion}</td>
                 <td>
                   <img
                     src={producto.imagen}
@@ -59,11 +60,14 @@ const AdminProducts = () => {
                     height={300}
                   />
                 </td>
-                <td>{producto.portada}</td> {/* porque no aparece portada */}
+                <td>{producto.portada.toString()}</td> {/* porque no aparece portada */}
                 <td>{producto.talle}</td>
                 <td>{producto.color}</td>
                 <td>{producto.stock}</td>
-                <td>{<Button>Edit</Button>}</td>
+                <td  >
+                  <ModalEditar _id={producto._id}/>
+                  {/* <Button onClick={(e)=>handleUpdate(producto._id)}>Edit</Button> */}
+                  </td>
                 <td>{<Button
                  onClick={(e)=>deleteProduct(producto._id)}
                  >Delete</Button>}</td>

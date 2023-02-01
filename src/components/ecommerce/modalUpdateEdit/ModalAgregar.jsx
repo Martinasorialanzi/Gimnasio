@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { Table, Form, Button, Modal } from "react-bootstrap";
+import React, { useState } from "react";
+import { Form, Button, Modal } from "react-bootstrap";
 import { AddProducts } from "../../helpers/GetProducts";
 import { tallesProductos, coloresProductos } from "../../helpers/productos";
 import { categorias } from "../../helpers/categorias";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 const ModalAgregar = () => {
     const [show, setShow] = useState(false);
@@ -11,11 +12,37 @@ const ModalAgregar = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   
-  const {register, handleSubmit}=useForm()
+
   
-  const onSubmit= async(data)=>{
-    AddProducts(data)
-  };
+  const [nombre, setNombre] = useState("")
+  const [categoria, setCategoria] = useState([])
+  const [precio, setPrecio] = useState()
+  const [urlImagen, setUrlImagen] = useState("")
+  const [descripcion, setDescripcion] = useState("")
+  const [portada, setPortada] = useState(false)
+  const [talle, setTalle] = useState([])
+  const [color, setColor] = useState([])
+  const [stock, setStock] = useState()
+  
+  const handleSubmit=(e)=>{
+    e.preventDefault()
+    const formData={
+      nombre:nombre,
+      categoria:categoria,
+      precio:precio,
+      urlImagen:urlImagen,
+      descripcion: descripcion,
+      portada:portada,
+      talle:talle,
+      color:color,stock:stock
+    }
+    console.log(formData)
+    AddProducts(formData)
+  }
+  
+
+ 
+  
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
@@ -27,11 +54,11 @@ const ModalAgregar = () => {
           <Modal.Title>Add Products</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        <Form  onSubmit={handleSubmit(onSubmit)}>
+        <Form  onSubmit={handleSubmit}>
 
 <Form.Group className="mb-3" controlId="formBasicEmail">
   <Form.Label>Nombre</Form.Label>
-  <Form.Control type="text" placeholder="Nombre del producto"  {...register("nombre")} required/>
+  <Form.Control type="text" placeholder="Nombre del producto"  required value={nombre} onChange={(e) => { setNombre(e.target.value) }}/>
 </Form.Group>
 <Form.Group className="mb-3" controlId="formBasicEmail">
   <Form.Label>Categoria</Form.Label>
@@ -43,9 +70,8 @@ const ModalAgregar = () => {
         name="group1"
         type="checkbox"
         id={`inline-radio`}
-        value={categoria}
         // key={}
-        {...register("categoria")} 
+        value={categoria} onChange={(e) => { setCategoria(e.target.value) }}
       />
     );
   })}
@@ -53,20 +79,20 @@ const ModalAgregar = () => {
 
 <Form.Group className="mb-3" controlId="formBasicPassword">
   <Form.Label>Precio</Form.Label>
-  <Form.Control type="number" placeholder="Precio"  {...register("precio")} required/>
+  <Form.Control type="number" placeholder="Precio"  value={precio} onChange={(e) => { setPrecio(e.target.value) }} required/>
 </Form.Group>
 <Form.Group className="mb-3" controlId="formBasicPassword">
   <Form.Label>Descripcion</Form.Label>
-  <Form.Control type="text" placeholder="Descripcion"  {...register("descripcion")} required/>
+  <Form.Control type="text" placeholder="Descripcion"  value={descripcion} onChange={(e) => { setDescripcion(e.target.value) }} required/>
 </Form.Group>
 <Form.Group className="mb-3" controlId="formBasicPassword">
   <Form.Label>Imagen</Form.Label>
-  <Form.Control type="file" placeholder="Imagen"  {...register("imagen")} required/>
+  <Form.Control type="file" placeholder="Imagen"  value={urlImagen} onChange={(e) => { setUrlImagen(e.target.value) }} required/>
 </Form.Group>
 
 <Form.Group className="mb-3" controlId="formBasicEmail">
   <Form.Label>Portada</Form.Label>
-  <Form.Select aria-label="Default select example"  {...register("portada")} required>
+  <Form.Select aria-label="Default select example"  value={portada} onChange={(e) => { setPortada(e.target.value) }} required>
     
     <option value="false">False</option>
     <option value="true">True</option>
@@ -74,7 +100,7 @@ const ModalAgregar = () => {
   </Form.Select>
   <Form.Group className="mb-3" controlId="formBasicPassword">
   <Form.Label>Stock</Form.Label>
-  <Form.Control type="number" placeholder="Stock"  {...register("stock")} required/>
+  <Form.Control type="number" placeholder="Stock"  value={stock} onChange={(e) => { setStock(e.target.value) }} required/>
 </Form.Group>
 </Form.Group>
 
@@ -91,7 +117,7 @@ const ModalAgregar = () => {
         id={`inline-radio`}
         value={talle}
         // key={}
-        {...register("talle")} 
+         onChange={(e) => { setTalle(e.target.value) }}
       />
     );
   })}
@@ -109,7 +135,7 @@ const ModalAgregar = () => {
         id={`inline-radio`}
         value={[color]}
         // key={}
-        {...register("color")} 
+        onChange={(e) => { setColor(e.target.value) }}
       />
     );
   })}

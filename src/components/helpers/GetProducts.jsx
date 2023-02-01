@@ -12,24 +12,13 @@ export const GetProducts = async () => {
 
     return response.data;
   } catch (error) {
-    console.log(error.response.data);
+    console.log(error.response);
   }
 };
 
-export const AddProducts = async (productData) => {
+export const AddProducts = async (formData) => {
    try {
-     console.log(productData)
-
-     const formData=new FormData()
-     formData.append("nombre",productData.nombre)
-     formData.append("categoria",productData.categoria)
-     formData.append("precio",productData.precio)
-     formData.append("descripcion",productData.descripcion)
-     formData.append("urlImagen",productData.imagen)
-     formData.append("portada",productData.portada)
-     formData.append("talle",productData.talle)
-     formData.append("color",productData.color)
-     formData.append("stock",productData.stock)
+     console.log(formData)
 
     const response = await axios({
       url: `${baseUrl}/products`,
@@ -55,3 +44,37 @@ export const deleteProduct= async(_id)=>{
     console.log(error.response.data);
   }
 }
+
+
+export const GetProduct = async (_id) => {
+  console.log(_id)
+  try {
+    const response = await axios({
+      url: `${baseUrl}/product/${_id}`,
+      method: "GET",
+    });
+
+    console.log(response.data.product)
+    return response.data.product;
+  } catch (error) {
+    console.log(error.response.data);
+  }
+};
+
+
+export const UpdateProduct = async (_id,formData) => {
+  console.log(_id)
+  console.log(formData)
+  try {
+ 
+      await axios({
+     url: `${baseUrl}/product/${_id}`,
+     method: "PUT",
+     data: formData,
+     
+   });
+   
+ } catch (error) {
+   console.log(error.response);
+ }
+};

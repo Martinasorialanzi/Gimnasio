@@ -9,14 +9,31 @@ import {
 } from "react-bootstrap";
 import Login from "../components/ingreso/Login";
 import Registro from "../components/ingreso/Register";
+import Swal from "sweetalert2";
 
 const Navegador = () => {
   const [showL, setShowL] = useState(false);
   const [showR, setShowR] = useState(false);
 
-  const handleShowR = () => {
-    setShowR(true);
+  const handleShowR = async() => {
+    const { value: password } = await Swal.fire({
+      title: 'Ingrese el codigo',
+      input: 'password',
+      inputLabel: 'El registro es unicamente para el personal, si usted es cliente solicite a su entrenador que realice su registro',
+      inputPlaceholder: 'Codigo',
+      inputAttributes: {
+        maxlength: 10,
+        autocapitalize: 'off',
+        autocorrect: 'off'
+      }
+    })
+    
+    if (password == 123 ) {
+      Swal.fire(`Codigo correcto`)
+      setShowR(true);
     setShowL(false);
+    }
+    
   };
 
   const handleShowL = () => {
@@ -50,7 +67,7 @@ const Navegador = () => {
               <Nav.Link href="/about">Acerca de nosotros</Nav.Link>
               <Nav.Link href="#home">Contacto</Nav.Link>
             </Nav>
-            <Nav.Link onClick={() => setShowR(true)}>
+            <Nav.Link onClick={handleShowR}>
               Crear cuenta&nbsp;&nbsp;|
             </Nav.Link>
             <Nav.Link onClick={() => setShowL(true)}>

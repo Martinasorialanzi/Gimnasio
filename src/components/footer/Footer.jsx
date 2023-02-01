@@ -8,8 +8,8 @@ const Footer = () => {
     <>
       <Navbar  bg="dark" className="flex-column footer">
         
-        <Nav.Link eventKey="link-1">Facebook</Nav.Link>
-        <Nav.Link eventKey="link-1">Instagram</Nav.Link>
+        <Nav.Link href="https://facebook.com">Facebook</Nav.Link>
+        <Nav.Link href="https://instagram.com">Instagram</Nav.Link>
         <Nav.Link href="https://twitter.com/?lang=es">Twitter</Nav.Link>
         <Nav.Link href="/preguntasfrecuentes">Preguntas frecuentes</Nav.Link>
         <p>GYM © 2022 Company, Inc. All rights reserved.</p>

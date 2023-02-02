@@ -17,10 +17,10 @@ const Registro = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const regexName = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/;
+    const regexName = "^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$";
     const regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
     const regexPassword =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,20}$/;
+    /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
 
     if (password !== confirmPassword) {
       setContraseña(true);
@@ -45,20 +45,20 @@ const Registro = () => {
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: "El nombre debe empezar por mayuscula y no contener numeros o caracteres especiales",
+        text: "El nombre no debe contener numeros o caracteres especiales",
       });
     } else if (!regexName.test(lastname)) {
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: "El apellido debe empezar por mayuscula y no contener numeros o caracteres especiales",
+        text: "El apellido no debe contener numeros o caracteres especiales",
       });
     } 
     else if (!regexPassword.test(password)) {
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: "La contraseña debe tener por lo menos un caracter an mayuscula, uno en minuscula,un numero, un caracter espacial y 8 caracteres minimos",
+        text: "La contraseña debe tener por lo menos un caracter en mayuscula, uno en minuscula, y 8 caracteres minimos",
       });
     } 
     else {

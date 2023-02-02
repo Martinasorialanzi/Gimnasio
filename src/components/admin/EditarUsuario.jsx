@@ -45,7 +45,7 @@ const EditarUsuario = () => {
             idUsuario: params.idUsuario
         }
 
-        axios.post('/v1/actualizarusuario', actualizarUsuario).then(() => {
+        axios.post('https://gimansio-backend-4phx-pbjp4i5n9-martinasorialanzi.vercel.app/v1/actualizarusuario', actualizarUsuario).then(() => {
             // alert(res.data)
             Swal.fire('Listo', 'Usuario editado Exitosamente', 'success')
         }).then(err => {

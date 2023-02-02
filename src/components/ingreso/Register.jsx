@@ -17,7 +17,7 @@ const Registro = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const regexName = "^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$";
+    const regexName = /^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/;
     const regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
     const regexPassword =
     /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;

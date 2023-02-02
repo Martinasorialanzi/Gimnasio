@@ -17,7 +17,7 @@ const ListasDeUsuarios = () => {
     
 
     useEffect(() => {
-        axios.get('https://gimansio-backend-4phx-pbjp4i5n9-martinasorialanzi.vercel.app/obtenerlistadeusuarios').then(res => {
+        axios.get('https://gimansio-backend-4phx-pbjp4i5n9-martinasorialanzi.vercel.app/v1/obtenerlistadeusuarios').then(res => {
             console.log(res.data)
             setDataUsuarios(res.data)
         }).catch(err => {
@@ -27,7 +27,7 @@ const ListasDeUsuarios = () => {
     // const Swal = require('sweetalert2')
 
     const borrarUsuario = (idUsuario) => {
-        axios.post('/v1/borrarusuario', { idUsuario: idUsuario }).then(res => {
+        axios.post('https://gimansio-backend-4phx-pbjp4i5n9-martinasorialanzi.vercel.app/v1/borrarusuario', { idUsuario: idUsuario }).then(res => {
             console.log(res.data)
             // alert(res.data)
             Swal.fire('Listo', 'Usuario Eliminado Correctamente', 'info', 'Ok')

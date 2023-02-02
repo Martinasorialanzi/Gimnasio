@@ -39,7 +39,7 @@ const AgregarUsuario = () => {
 
 
 
-        axios.post('/v1/agregarusuario', usuario)
+        axios.post('https://gimansio-backend-4phx-pbjp4i5n9-martinasorialanzi.vercel.app/v1/agregarusuario', usuario)
             .then(res => {
                 // alert(res.data)
 

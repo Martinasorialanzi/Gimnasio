@@ -1,6 +1,7 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
 import { Container } from 'react-bootstrap';
+import NavegadorAdmin from '../navegador/NavegadorAdmin';
 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -46,7 +47,8 @@ const Turnos = () => {
     })
   return (
       <>
-          <h1 className='text-center'>Turnos</h1>
+          <NavegadorAdmin />
+          <h1 className='text-center mt-5'>Turnos</h1>
           <Container className='text-center'>
           <Table striped bordered hover>
               <thead>

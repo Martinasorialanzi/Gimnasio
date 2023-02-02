@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { Routes, Route } from "react-router-dom"
 import Admin from '../admin/Admin'
 import AgregarUsuario from '../admin/AgregarUsuario'
@@ -11,12 +12,19 @@ import Clientes from '../listaClientes/Clientes'
 import Turnos from '../turnos/Turnos'
 import Planes from '../planes/Planes'
 import AgregarPlan from '../planes/AgregarPlan'
+
 import EditarPlan from '../planes/EditarPlan'
+import AcercaDe from '../pages/acercaDe/AcercaDe';
+import Home from "../pages/Home";
+import PreguntasFrecuentes from "../pages/preguntasFrecuentes/PreguntasFrecuentes"
+
+
 
 
 const Rutas = () => {
   return (
     <Routes>
+
       <Route path="/admin" element={<Admin />} />
       <Route path="/clientes" element={<Clientes />} />
       <Route path="/chat" element={<Chat />} />
@@ -31,6 +39,13 @@ const Rutas = () => {
       <Route path="/editarplan/:codigoPlan" element={<EditarPlan />} exact />
       {/* lo ponga aca al admin y lo hago libre de ingreso hasta que finalice la parte estetica despues empiezo a trabajar en el acceso restringido */}
       
+
+             <Route path="/" element={<Home/>} />
+       <Route path="/acercade" element={<AcercaDe/>} />
+       <Route path="/preguntasfrecuentes" element={<PreguntasFrecuentes/>} />
+       
+      
+
     </Routes>
   )
 }

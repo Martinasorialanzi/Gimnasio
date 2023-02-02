@@ -1,0 +1,58 @@
+.climaApi {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #e95821;
+  }
+  
+  .rightR {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-evenly;
+  }
+  
+  .laApi {
+    width: 555px;
+    height: 354px;
+    display: flex;
+    flex-direction: column;
+  
+    padding: 2rem;
+    gap: 1rem;
+  
+    justify-content: center;
+  }
+  
+  .leftR {
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 2rem;
+    color: #fefefe;
+    text-transform: uppercase;
+  }
+  
+  @media screen and (max-width: 770px) {
+    .climaApi {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .leftR {
+      flex-direction: column;
+      gap: 1rem;
+      font-size: x-large;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .laApi {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }

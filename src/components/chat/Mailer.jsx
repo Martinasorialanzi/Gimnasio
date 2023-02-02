@@ -38,13 +38,13 @@ const Mailer = () => {
           <h1 className='title-form text-center h1-chat '>Enviar mensaje a un usuario</h1>
           <form onSubmit={sendEmail} className="text-center mt-1">
             <label className='mt-1 label-chat'>Nombre</label><br />
-            <input required type="text" name="user_name" ref={inputform} className='mt-1 input-chat' /><br />
+            <input required type="text" name="user_name" ref={inputform} className='mt-1 input-chat' maxLength={15} minLength={3} /><br />
 
             <label className='mt-1 label-chat'>Email</label><br />
-            <input required type="email" name="user_email" className='mt-1 input-chat' /><br />
+            <input required type="email" name="user_email" className='mt-1 input-chat' maxLength={50} minLength={15} /><br />
 
             <label className='mt-1 label-chat'>Mensaje</label><br />
-            <textarea  required name="user_message" className='mt-1 textarea-chat ' /><br />
+            <textarea required name="user_message" className='mt-1 textarea-chat ' maxLength={50} minLength={4} /><br />
 
             <button className='button-chat mt-1' >Enviar</button>
             <Link to={'/admin'}><button className='button-chat mt-1' >Volver</button></Link>

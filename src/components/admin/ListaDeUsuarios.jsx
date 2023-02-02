@@ -17,7 +17,7 @@ const ListasDeUsuarios = () => {
     
 
     useEffect(() => {
-        axios.get('https://gimansio-backend-4phx-pbjp4i5n9-martinasorialanzi.vercel.app/v1/obtenerlistadeusuarios').then(res => {
+        axios.get('/v1/obtenerlistadeusuarios').then(res => {
             console.log(res.data)
             setDataUsuarios(res.data)
         }).catch(err => {
@@ -27,7 +27,7 @@ const ListasDeUsuarios = () => {
     // const Swal = require('sweetalert2')
 
     const borrarUsuario = (idUsuario) => {
-        axios.post('https://gimansio-backend-4phx-pbjp4i5n9-martinasorialanzi.vercel.app/v1/borrarusuario', { idUsuario: idUsuario }).then(res => {
+        axios.post('/v1/borrarusuario', { idUsuario: idUsuario }).then(res => {
             console.log(res.data)
             // alert(res.data)
             Swal.fire('Listo', 'Usuario Eliminado Correctamente', 'info', 'Ok')
@@ -52,7 +52,7 @@ const ListasDeUsuarios = () => {
                     <td>{usuario.correo}</td>
                     <td>{usuario.celular}</td>
                     <td>{usuario.plan}</td>
-                    <td><a href="/admin">Ver más</a></td>
+                    
                     <td><div className='text-center'>
                         <Link to={`/chatparticular/${usuario.idUsuario}`} ><GrMail className='me-3 fs-4 text-dark' /></Link>
                         <Link to={`/editarusuario/${usuario.idUsuario}`} ><FaPen className='fs-5 me-2 text-dark' /></Link>

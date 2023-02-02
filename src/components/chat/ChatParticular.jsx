@@ -14,7 +14,7 @@ import NavegadorAdmin from '../navegador/NavegadorAdmin';
 const ChatParticular = () => {
 
     const params = useParams();
-
+    const baseUrl = "https://gimansio-backend.vercel.app" 
     const navegar = useNavigate();
     const [nombre, setNombre] = useState('');
     const [correo, setCorreo] = useState('');
@@ -28,7 +28,7 @@ const ChatParticular = () => {
     })
 
     useEffect(() => {
-        axios.post('/v1/obtenerdatausuario', { idUsuario: params.idUsuario }).then(res => {
+        axios.post(`${baseUrl}/v1/obtenerdatausuario`, { idUsuario: params.idUsuario }).then(res => {
             console.log(res.data[0])
             const dataUsuario = res.data[0]
             setNombre(dataUsuario.nombre)

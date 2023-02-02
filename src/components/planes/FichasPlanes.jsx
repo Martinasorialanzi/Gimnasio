@@ -14,10 +14,10 @@ const FichasPlanes = () => {
   const [dataPlan, setDataplan] = useState([]);
 
   const navegar = useNavigate();
-
+  const baseUrl = "https://gimansio-backend.vercel.app"
   useEffect(() => {
     axios
-      .get("/v1/obtenerlistadeplanes")
+      .get(`${baseUrl}/v1/obtenerlistadeplanes`)
       .then((res) => {
         console.log(res.data);
         setDataplan(res.data);
@@ -29,7 +29,7 @@ const FichasPlanes = () => {
 
   const borrarPlan = (codigoPlan) => {
     axios
-      .post("/v1/borrarPlan", { codigoPlan: codigoPlan })
+      .post(`${baseUrl}/v1/borrarPlan`, { codigoPlan: codigoPlan })
       .then((res) => {
         console.log(res.data);
         // alert(res.data)

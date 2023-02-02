@@ -1,6 +1,10 @@
 import React from 'react'
+import {Routes, Route} from "react-router-dom"
+import AdminProducts from '../pages/AdminProducts'
+import EcommerceCategoria from '../pages/EcommerceCategoria'
+import EcommerceDetalleProducto from '../pages/EcommerceDetalleProducto'
+import EcommerceHome from '../pages/EcommerceHome'
 
-import { Routes, Route } from "react-router-dom"
 import Admin from '../admin/Admin'
 import AgregarUsuario from '../admin/AgregarUsuario'
 import EditarUsuario from '../admin/EditarUsuario'
@@ -24,6 +28,10 @@ import PreguntasFrecuentes from "../pages/preguntasFrecuentes/PreguntasFrecuente
 const Rutas = () => {
   return (
     <Routes>
+       <Route path='/ecommercehome' element={<EcommerceHome/>}/>
+       <Route path='/ecommerce-producto/:_id' element={<EcommerceDetalleProducto/>}/>
+       <Route path='/ecommerce-categoria/:categoria' element={<EcommerceCategoria/>}/>
+       <Route path='/admin/productos' element={<AdminProducts/>}/>
 
       <Route path="/admin" element={<Admin />} />
       <Route path="/clientes" element={<Clientes />} />
@@ -37,9 +45,7 @@ const Rutas = () => {
       <Route path="/planes" element={<Planes />} exact />
       <Route path="/agregarplan" element={<AgregarPlan />} exact />
       <Route path="/editarplan/:codigoPlan" element={<EditarPlan />} exact />
-      {/* lo ponga aca al admin y lo hago libre de ingreso hasta que finalice la parte estetica despues empiezo a trabajar en el acceso restringido */}
-      
-
+  
              <Route path="/" element={<Home/>} />
        <Route path="/acercade" element={<AcercaDe/>} />
        <Route path="/preguntasfrecuentes" element={<PreguntasFrecuentes/>} />

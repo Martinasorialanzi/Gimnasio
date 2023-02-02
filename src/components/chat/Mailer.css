@@ -1,0 +1,87 @@
+.mailer-color-boton{
+    background-color: green;
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+
+.body-mailer-chat {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(100deg, #bc6a17, #13110d);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.h1-chat {
+    color: #ff6600;
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Shadows Into Light', cursive;
+    margin: 0;
+}
+
+.form-mail-chat {
+    width: 20rem;
+    border: groove 3px #ffff;
+    border-radius: 15px;
+    /* box-shadow: -5px -15px 1px #353536; */
+    background: #030303 !important;
+    background: linear-gradient(to right, #414345, #232526);
+    opacity: 0.8;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.label-chat {
+    font-size: 1.3rem;
+    color: #FEFEFE;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+}
+
+.input-chat {
+    font-size: 1.1rem !important;
+    background: #ffff;
+    box-shadow: 0 -2px 2px #E95821;
+    border-radius: 25px;
+    color: black;
+    width: 15rem;
+    height: 2rem;
+    padding: 0.5rem;
+}
+
+.textarea-chat {
+    font-size: 1.2rem !important;
+    border-radius: 10px;
+    background-color: #ffff;
+    padding: 0.5rem;
+    box-shadow: 0 -2px 2px #E95821;
+    width: 15rem;
+    height: 8rem;
+}
+
+.button-chat {
+    width: 100%;
+    border-radius: 20px !important;
+    font-size: 1rem !important;
+    color: green;
+    background-color: #E95821 !important;
+    cursor: pointer;
+    color: white;
+}
+
+
+.button-chat:hover{
+    background-color: #ffff !important;
+    color: #E95821;
+    box-shadow: inset #E95821;
+    box-shadow: 0 4px 16px #E95821;
+    transition: all 0.2s ease;
+    border-color: #E95821 !important;
+}
+

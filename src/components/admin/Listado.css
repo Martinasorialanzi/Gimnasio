@@ -1,0 +1,80 @@
+.back-pagina-formularios{
+    background-color: #E95821 !important;
+}
+
+.back-tabla-listado{
+    background-color: #E95821 !important;
+}
+
+.button-listado{
+    width: 15%;
+        border-radius: 20px !important;
+        font-size: 1rem !important;
+        color: green;
+        background-color: #E95821 !important;
+        cursor: pointer;
+        color: white;
+}
+
+.button-listado:hover{
+        background-color: #ffff !important;
+        color: #E95821;
+        box-shadow: inset #E95821;
+        box-shadow: 0 4px 16px #E95821;
+        transition: all 0.2s ease;
+        border-color: #E95821 !important;
+        }
+
+.titulo-listado{
+    color:#5B5B5B!important;
+}
+
+.back-tabla-listado{
+    background-color: #FEFEFE;
+}
+
+.botones-formularios-ag-ed{
+    background-color: #E95821 !important;
+    width: 5rem;
+    border-color: #E95821 !important;
+
+}
+
+.botones-formularios-ag-ed:hover{
+    background-color: #ffff !important;
+    color: #E95821 !important;
+    box-shadow: inset #E95821;
+    box-shadow: 0 4px 16px #E95821;
+    transition: all 0.2s ease;
+    border-color: #E95821 !important;
+}
+
+.etiqueta-formulario-ag-ed{
+    color: #5B5B5B !important ;
+    font-weight: 900 !important;
+    margin-bottom: 0.5rem !important;
+    font-size: 1.2rem !important;
+    
+}
+
+.input-form-ag-ed{
+        font-size: 1.1rem !important;
+        background: #ffff !important;
+        box-shadow: 0 -2px 2px #E95821 !important;
+        border-radius: 25px !important;
+        color: black !important;
+        width: 20rem !important;
+        height: 2.3rem !important;
+        padding: 0.5rem !important;
+        border-color: #E95821 !important;
+
+}
+
+.h1-titulo-form-ag-ed{
+    color: #ff6600;
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Shadows Into Light', cursive;
+    margin: 0;
+    
+}

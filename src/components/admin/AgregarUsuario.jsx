@@ -21,7 +21,7 @@ const AgregarUsuario = () => {
     const [plan, setPlan] = useState('')
     const navegar = useNavigate();
 
-  
+    const baseUrl = "https://gimansio-backend.vercel.app/"
 
 
 
@@ -39,7 +39,7 @@ const AgregarUsuario = () => {
 
 
 
-        axios.post('/v1/agregarusuario', usuario)
+        axios.post(`${baseUrl}/v1/agregarusuario`, usuario)
             .then(res => {
                 // alert(res.data)
 

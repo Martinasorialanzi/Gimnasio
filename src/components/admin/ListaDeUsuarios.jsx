@@ -14,7 +14,7 @@ const ListasDeUsuarios = () => {
     const navegar = useNavigate()
 
 
-    const baseUrl = "https://gimansio-backend.vercel.app/v1" 
+    const baseUrl = "https://gimansio-backend.vercel.app/" 
 
     useEffect(() => {
         axios.get(`${baseUrl}/v1/obtenerlistadeusuarios`).then(res => {

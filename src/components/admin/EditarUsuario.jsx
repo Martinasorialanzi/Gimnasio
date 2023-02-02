@@ -21,7 +21,7 @@ const EditarUsuario = () => {
 
     const navegar = useNavigate();
 
-    const baseUrl = "https://gimansio-backend.vercel.app/" 
+    const baseUrl = "https://gimansio-backend.vercel.app" 
     useEffect(() => {
         axios.post(`${baseUrl}/v1/obtenerdatausuario`, { idUsuario: params.idUsuario }).then(res => {
             console.log(res.data[0])

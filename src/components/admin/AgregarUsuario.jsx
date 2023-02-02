@@ -21,7 +21,7 @@ const AgregarUsuario = () => {
     const [plan, setPlan] = useState('')
     const navegar = useNavigate();
 
-    const baseUrl = "https://gimansio-backend.vercel.app/"
+    const baseUrl = "https://gimansio-backend.vercel.app"
 
 
 

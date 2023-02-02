@@ -58,7 +58,7 @@ const Registro = () => {
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: "La contraseña debe tener por lo menos un caracter en mayuscula, uno en minuscula, y 8 caracteres minimos",
+        text: "La contraseña debe tener por lo menos un caracter en mayuscula, uno en minuscula, git y 8 caracteres minimos",
       });
     } 
     else {

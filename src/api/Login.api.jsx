@@ -2,7 +2,7 @@ import axios from "axios";
 import Swal from 'sweetalert2'
 
 // funcion de login con conexion a la api
-const baseUrl = "http://localhost:8080/v1";
+const baseUrl = "https://gimansio-backend.vercel.app/v1";
 
 export const funcionLogin = async (login) => { //le paso los datos del login por parametro
   console.log(login)

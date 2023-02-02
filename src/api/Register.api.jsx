@@ -2,7 +2,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 // funcion de registro con conexion a la api
 export const funcionRegistro = async (formData) => {
-  const baseUrl = "http://localhost:8080/v1";  //la ruta la saco de rutas del back, el local host 4000 es xq el puerto de nuestro back es el 4000
+  const baseUrl = "https://gimansio-backend.vercel.app/v1";  //la ruta la saco de rutas del back, el local host 4000 es xq el puerto de nuestro back es el 4000
 console.log(formData)
   try {
     const response = await axios({

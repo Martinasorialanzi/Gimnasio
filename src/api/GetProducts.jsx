@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "http://localhost:8080/v1";
+const baseUrl = "https://gimansio-backend-4phx-git-main-martinasorialanzi.vercel.app/";
 
 export const GetProducts = async () => {
   try {

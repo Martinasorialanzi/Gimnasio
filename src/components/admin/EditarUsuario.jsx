@@ -21,9 +21,9 @@ const EditarUsuario = () => {
 
     const navegar = useNavigate();
 
-
+    const baseUrl = "https://gimansio-backend.vercel.app/v1" 
     useEffect(() => {
-        axios.post('/v1/obtenerdatausuario', { idUsuario: params.idUsuario }).then(res => {
+        axios.post(`${baseUrl}/v1/obtenerdatausuario`, { idUsuario: params.idUsuario }).then(res => {
             console.log(res.data[0])
             const dataUsuario = res.data[0]
             setNombre(dataUsuario.nombre)
@@ -45,7 +45,7 @@ const EditarUsuario = () => {
             idUsuario: params.idUsuario
         }
 
-        axios.post('/v1/actualizarusuario', actualizarUsuario).then(() => {
+        axios.post(`${baseUrl}/v1/actualizarusuario`, actualizarUsuario).then(() => {
             // alert(res.data)
             Swal.fire('Listo', 'Usuario editado Exitosamente', 'success')
         }).then(err => {

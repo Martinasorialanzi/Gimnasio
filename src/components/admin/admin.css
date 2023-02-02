@@ -1,0 +1,39 @@
+.iconosAdmin{
+    font-size: 5em;
+    text-align: center !important;
+    color: #E95821;
+
+}
+
+.color-titulo-admin{
+    color: #5B5B5B;
+}
+
+.card-body-admin{
+    background: white;
+    
+}
+
+/* .fondo-admin{
+    background-color: #E1E2E2;
+} */
+
+
+.card-admin{
+    box-shadow: 2px 2px 3px #5B5B5B;
+}
+
+/* .iconosAdmin:hover{
+    color: white;
+} */
+
+.card-body-admin:hover{
+    box-shadow: 10px 10px 5px #5B5B5B;
+    transition: all 0.2s;
+    transform: skew(0 , 1);
+}
+
+/* .card-body-admin:hover::after{
+    transition: all 0.3s ease-out;
+    transform: skewX(45deg) scale(1, 1);
+} */

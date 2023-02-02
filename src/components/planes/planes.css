@@ -1,0 +1,9 @@
+.textarea-chat {
+    font-size: 1.2rem !important;
+    border-radius: 10px;
+    background-color: #ffff;
+    padding: 0.5rem;
+    box-shadow: 0 -2px 2px #E95821;
+    width: 15rem;
+    height: 8rem;
+}

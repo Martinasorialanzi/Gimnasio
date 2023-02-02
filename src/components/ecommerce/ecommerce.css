@@ -1,0 +1,12 @@
+
+
+.nav {
+    background-color:rgb(209, 209, 212) !important;
+    border-color: rgb(209, 209, 212);
+  }
+
+  .cards-container{
+    background-color:#FEFEFE ;
+    max-width: 100%;
+    
+  }

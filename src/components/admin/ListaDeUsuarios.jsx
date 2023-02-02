@@ -14,10 +14,10 @@ const ListasDeUsuarios = () => {
     const navegar = useNavigate()
 
 
-    
+    const baseUrl = "https://gimansio-backend.vercel.app/v1 " 
 
     useEffect(() => {
-        axios.get('/v1/obtenerlistadeusuarios').then(res => {
+        axios.get('baseUrl/v1/obtenerlistadeusuarios').then(res => {
             console.log(res.data)
             setDataUsuarios(res.data)
         }).catch(err => {
@@ -27,7 +27,7 @@ const ListasDeUsuarios = () => {
     // const Swal = require('sweetalert2')
 
     const borrarUsuario = (idUsuario) => {
-        axios.post('/v1/borrarusuario', { idUsuario: idUsuario }).then(res => {
+        axios.post('baseUrl/v1/borrarusuario', { idUsuario: idUsuario }).then(res => {
             console.log(res.data)
             // alert(res.data)
             Swal.fire('Listo', 'Usuario Eliminado Correctamente', 'info', 'Ok')

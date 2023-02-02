@@ -11,7 +11,7 @@ const Turnos = () => {
     const baseUrl = "https://gimansio-backend.vercel.app"
 
 
-    const nombres = ["Juan", "Maria", "Pedro"];
+    const nombres = ["Gabriel Londero", "Diego Olmi", "Lionel Messi"];
     const aleatoriosprofesor = () => {
         const aleatorio = nombres[Math.floor(Math.random() * nombres.length)]; 
         return aleatorio

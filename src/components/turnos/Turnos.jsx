@@ -16,6 +16,7 @@ const Turnos = () => {
         const aleatorio = nombres[Math.floor(Math.random() * nombres.length)]; 
         return aleatorio
     }
+
     const turnos = ["Mañana", "Tarde", "Noche"];
     const aleatoriosTurnos = () => {
         const aleatoriosTurno = turnos[Math.floor(Math.random() * turnos.length)];

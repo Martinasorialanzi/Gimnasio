@@ -23,6 +23,10 @@ import AcercaDe from '../pages/acercaDe/AcercaDe';
 import Home from "../pages/Home";
 import PreguntasFrecuentes from "../pages/preguntasFrecuentes/PreguntasFrecuentes"
 
+import Navegadorutinas from '../rutinas/Navegadorutinas'
+import Boxeo from '../rutinas/boxeo/Boxeo'
+import Yoga from '../rutinas/yoga/Yoga'
+import Libre from '../rutinas/libre/Libre'
 
 
 
@@ -51,6 +55,26 @@ const Rutas = () => {
              <Route path="/" element={<Home/>} />
        <Route path="/acercade" element={<AcercaDe/>} />
        <Route path="/preguntasfrecuentes" element={<PreguntasFrecuentes/>} />
+
+
+
+<BrowserRouter>
+
+<Navegadorutinas/>
+
+<Routes>
+    <Route path='/Boxeo' element={<Boxeo/>}></Route>
+</Routes>
+
+<Routes>
+    <Route path='/Yoga' element={<Yoga/>}></Route>
+</Routes>
+
+<Routes>
+    <Route path='/Libre' element={<Libre/>}></Route>
+</Routes>
+
+</BrowserRouter>
        
       
 

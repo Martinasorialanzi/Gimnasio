@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Form, Button, Modal, Stack } from "react-bootstrap";
 import { AddProducts } from "../../../api/GetProducts";
-import { tallesProductos, coloresProductos } from "../../helpers/productos";
+import { tallesProductos, coloresProductos } from "../../helpers/Productos";
 import { categorias } from "../../helpers/categorias";
 
 const ModalAgregar = () => {

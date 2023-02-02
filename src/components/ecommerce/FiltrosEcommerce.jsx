@@ -1,6 +1,6 @@
 import {  React } from 'react' 
 import { Row,Form, Container } from 'react-bootstrap'
-import { tallesProductos, coloresProductos } from '../helpers/productos'
+import { tallesProductos, coloresProductos } from '../helpers/Productos'
 
 
 export const FiltrosPrecio = ({precio,setPrecio}) => {

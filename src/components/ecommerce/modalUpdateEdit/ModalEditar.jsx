@@ -1,7 +1,7 @@
 import React, { useState,useRef } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 import { GetProduct, UpdateProduct } from "../../../api/GetProducts";
-import { tallesProductos, coloresProductos } from "../../helpers/productos";
+import { tallesProductos, coloresProductos } from "../../helpers/Productos";
 import { categorias } from "../../helpers/categorias";
 
 import Swal from 'sweetalert2'

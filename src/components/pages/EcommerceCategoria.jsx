@@ -1,7 +1,7 @@
 import { React, useState,useEffect } from "react";
 import { useParams } from "react-router-dom";
 import NavEcommerce from "../ecommerce/NavEcommerce";
-import { GetProducts } from "../helpers/GetProducts";
+import { GetProducts } from "../../api/GetProducts";
 import CardsEcommerce from "../ecommerce/CardsEcommerce";
 import { Row, Container, Col,Offcanvas, Button } from "react-bootstrap";
 import {
@@ -10,6 +10,7 @@ import {
   FiltrosTalle,
 } from "../ecommerce/FiltrosEcommerce";
 import { MdFilterAlt } from "react-icons/md";
+import "../ecommerce/detallesProductos.css"
 
 
 const EcommerceCategoria = () => {
@@ -54,10 +55,10 @@ const EcommerceCategoria = () => {
       <NavEcommerce allProducts={allProducts} setAllProducts={setAllProducts} />
 
 
-      <Button variant="dark" onClick={toggleShow} className="me-2">
+      <Button variant="dark" onClick={toggleShow} className="m-2" size="lg">
          <MdFilterAlt/>
       </Button>
-      <Offcanvas show={show} onHide={handleClose} scroll="true" >
+      <Offcanvas show={show} onHide={handleClose} scroll="true" className="modalFiltros" >
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Offcanvas</Offcanvas.Title>
         </Offcanvas.Header>
@@ -71,11 +72,11 @@ const EcommerceCategoria = () => {
       </Offcanvas>
 
       
-      <Row>
+      <Row className="p-2 m-2">
        
         <Col className="p-0 m-0">
-          <Container className="">
-            <Row className="justify-content-center">
+          <Container className="conteinerCategorias">
+            <Row className="justify-content-center cardProductosCategoria">
               <>
                 {productos
                   .filter(

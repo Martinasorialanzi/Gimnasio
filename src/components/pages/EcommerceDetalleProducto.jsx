@@ -9,7 +9,9 @@ import {
 } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import NavEcommerce from "../ecommerce/NavEcommerce";
-import { GetProducts } from "../helpers/GetProducts";
+import { GetProducts } from "../../api/GetProducts";
+import "../ecommerce/detallesProductos.css"
+
 
 const EcommerceDetalleProducto = () => {
   const { _id } = useParams();
@@ -89,15 +91,18 @@ const EcommerceDetalleProducto = () => {
         .filter((producto) => producto._id === _id)
         .map((detallesProducto) => {
           return (
-            <Row key={detallesProducto._id} className="m-4 align-items-center justify-content-center">
-              <Col xs={12} sm={12} md={6} className="">
+            <div className="colDetalle">
+            <Row key={detallesProducto._id} className="m-4 ">
+              <Col xs={12} sm={12} md={6} >
+                <div className="imgDetalle">
                 <img
                   src={detallesProducto.imagen}
                   alt=""
                   width="60%"
                   height="70%"
-                  className=""
+                 
                 />
+                </div>
               </Col>
               <Col className="">
                 <Stack direction="vertical" gap={4}>
@@ -256,6 +261,7 @@ const EcommerceDetalleProducto = () => {
               </Col>
 
             </Row>
+            </div>
           );
         })}
     </>

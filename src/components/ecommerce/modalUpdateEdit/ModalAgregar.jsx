@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Form, Button, Modal, Stack } from "react-bootstrap";
-import { AddProducts } from "../../helpers/GetProducts";
+import { AddProducts } from "../../../api/GetProducts";
 import { tallesProductos, coloresProductos } from "../../helpers/productos";
 import { categorias } from "../../helpers/categorias";
 
@@ -13,14 +13,12 @@ const ModalAgregar = () => {
   const [nombre, setNombre] = useState("");
   const [categoria, setCategoria] = useState([]);
   const [precio, setPrecio] = useState();
-  const [urlImagen, setUrlImagen] = useState("");
+  const [imagen, setImagen] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const [portada, setPortada] = useState(false);
   const [talle, setTalle] = useState([]);
   const [color, setColor] = useState([]);
   const [stock, setStock] = useState();
-
-  const fileInput = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,7 +26,7 @@ const ModalAgregar = () => {
       nombre: nombre,
       categoria: categoria,
       precio: precio,
-      fileInput: fileInput.current.files,
+      imagen:imagen,
       descripcion: descripcion,
       portada: portada,
       talle: talle,
@@ -36,13 +34,23 @@ const ModalAgregar = () => {
       stock: stock,
     };
     console.log(formData);
-    console.log(fileInput.current.files);
+  
     AddProducts(formData);
+    handleClose()
+    setNombre("")
+  setCategoria ([]);
+  setPrecio();
+  setImagen("");
+  setDescripcion("");
+  setPortada(false);
+  setTalle([]);
+  setColor([]);
+  setStock();
   };
 
   return (
     <>
-    <div classname= "">
+    <div className= "">
       <Button  variant="dark" onClick={handleShow}>
         Add Products
       </Button>
@@ -53,7 +61,7 @@ const ModalAgregar = () => {
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3" controlId="">
               <Form.Label>Nombre</Form.Label>
               <Form.Control
                 type="text"
@@ -66,7 +74,7 @@ const ModalAgregar = () => {
               />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3" controlId="">
               <Form.Label>Categoria</Form.Label>
               <br />
               {categorias.map((categoria) => {
@@ -87,7 +95,7 @@ const ModalAgregar = () => {
               })}
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-3" controlId="">
               <Form.Label>Precio</Form.Label>
               <Form.Control
                 type="number"
@@ -99,7 +107,7 @@ const ModalAgregar = () => {
                 required
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-3" controlId="">
               <Form.Label>Descripcion </Form.Label>
               <Form.Control
                 type="text"
@@ -111,20 +119,22 @@ const ModalAgregar = () => {
                 required
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Imagen</Form.Label>
+            <Form.Group className="mb-3" controlId="">
+              <Form.Label >Imagen</Form.Label>
               <Form.Control
-                type="file"
+                type="text"
                 placeholder="Imagen"
-                ref={fileInput}
+               
+                value={imagen}
                 onChange={(e) => {
-                  setUrlImagen(e.target.value);
+                  
+                  setImagen(e.target.value);
                 }}
                 required
               />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3" controlId="">
               <Form.Label>Talle </Form.Label>
               <br />
               {tallesProductos.map((talle) => {
@@ -145,7 +155,7 @@ const ModalAgregar = () => {
               })}
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3" controlId="">
               <Form.Label>Color </Form.Label>
               <br />
               {coloresProductos.map((color) => {
@@ -165,7 +175,7 @@ const ModalAgregar = () => {
                 );
               })}
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-3" controlId="">
               <Form.Label>Stock </Form.Label>
               <Form.Control
                 type="number"

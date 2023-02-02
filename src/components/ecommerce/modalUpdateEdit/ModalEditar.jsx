@@ -1,8 +1,10 @@
 import React, { useState,useRef } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
-import { GetProduct, UpdateProduct } from "../../helpers/GetProducts";
+import { GetProduct, UpdateProduct } from "../../../api/GetProducts";
 import { tallesProductos, coloresProductos } from "../../helpers/productos";
 import { categorias } from "../../helpers/categorias";
+
+import Swal from 'sweetalert2'
 
 const ModalEditar = (_id) => {
     
@@ -11,14 +13,14 @@ const ModalEditar = (_id) => {
   const [nombre, setNombre] = useState("");
   const [categoria, setCategoria] = useState([]);
   const [precio, setPrecio] = useState();
-  const [urlImagen, setUrlImagen] = useState();
+  const [imagen, setImagen] = useState();
   const [descripcion, setDescripcion] = useState("");
   const [portada, setPortada] = useState(false);
   const [talle, setTalle] = useState([]);
   const [color, setColor] = useState([]);
   const [stock, setStock] = useState();
 
-  const fileInput=useRef()
+
   
   const handleClose = () => setShow(false);
 
@@ -30,7 +32,7 @@ const ModalEditar = (_id) => {
         setNombre(response.nombre);
         setCategoria(response.categoria);
         setPrecio(response.precio);
-        setUrlImagen(response.urlImagen)
+        setImagen(response.imagen)
         setDescripcion(response.descripcion);
         setPortada(response.portada);
         setTalle(response.talle);
@@ -46,20 +48,36 @@ const ModalEditar = (_id) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = {
-      nombre: nombre,
-      categoria: categoria,
-      precio: precio,
-      fileInput: fileInput.current.files,
-      urlImagen:urlImagen,
-      descripcion: descripcion,
-      portada: portada,
-      talle: talle,
-      color: color,
-      stock: stock,
-    };
-    console.log(formData);
-    UpdateProduct(_id._id, formData);
+
+    Swal.fire({
+      title: 'Esta seguro que quiere guardar los cambios?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Guardar',
+      denyButtonText: `No guardar`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire('Guardado!', '', 'success')
+        const formData = {
+          nombre: nombre,
+          categoria: categoria,
+          precio: precio,
+          imagen:imagen,
+          descripcion: descripcion,
+          portada: portada,
+          talle: talle,
+          color: color,
+          stock: stock,
+        };
+        console.log(formData);
+        UpdateProduct(_id._id, formData);
+        handleClose()
+      } else if (result.isDenied) {
+        Swal.fire('Los cambios no se guardaron', '', 'info')
+      }
+    })
+  
   };
 
   return (
@@ -133,11 +151,11 @@ const ModalEditar = (_id) => {
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Imagen</Form.Label>
               <Form.Control
-                type="file"
+                type="text"
                 placeholder="Imagen"
-                ref={fileInput}
+                value={imagen}
                 onChange={(e) => {
-                  setUrlImagen(e.target.files[0].name);
+                  setImagen(e.target.value);
                 }}
                 required
               />

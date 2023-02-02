@@ -10,7 +10,7 @@ import "../ecommerce/ecommerce.css";
 import CarruselEcommerceHome from "../ecommerce/CarruselEcommerceHome";
 import NavEcommerce from "../ecommerce/NavEcommerce";
 import CardsEcommerce from "../ecommerce/CardsEcommerce";
-import { GetProducts } from "../helpers/GetProducts";
+import { GetProducts } from "../../api/GetProducts";
 import { Link } from "react-router-dom";
 
 const EcommerceHome = () => {

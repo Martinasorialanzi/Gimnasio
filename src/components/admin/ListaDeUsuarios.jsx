@@ -12,7 +12,6 @@ const ListasDeUsuarios = () => {
     const [dataUsuarios, setDataUsuarios] = useState([])
     const navegar = useNavigate()
 
-
     
 
     useEffect(() => {

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Table, Button } from "react-bootstrap";
 import {  GetUsers } from "../helpers/GetUsers";
+import NavegadorAdmin from "../navegador/NavegadorAdmin";
 
 // import ModalAgregar from "../ecommerce/modalUpdateEdit/ModalAgregar";
 
@@ -23,6 +24,7 @@ const UsersAdmin = () => {
   
   return(
     <>
+    <NavegadorAdmin/>
       {/* <ModalAgregar/> */}
       <h1>Control de usuarios</h1>
       

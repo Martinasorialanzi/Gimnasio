@@ -1,13 +1,21 @@
-import React from "react";
+import React,{useState} from "react";
 import Footer from "../../footer/Footer";
 import Navegador from "../../navegador/Navegador";
 
 import "../preguntasFrecuentes/preguntasFrecuentes.css";
 
-const preguntasFrecuentes = () => {
+const PreguntasFrecuentes = () => {
+  const [allProducts, setAllProducts] = useState(() => {
+    try {
+      const productosEnLocalStorage = localStorage.getItem("productos carrito");
+      return productosEnLocalStorage ? JSON.parse(productosEnLocalStorage) : [];
+    } catch (error) {
+      return [];
+    }
+  });
   return (
     <>
-    <Navegador/>
+    <Navegador allProducts={allProducts} setAllProducts={setAllProducts}/>
       <div className="preguntasFrecuentes" id="clima">
         <div className="preguntas">
           <h1>PREGUNTAS FRECUENTES</h1>
@@ -37,4 +45,4 @@ const preguntasFrecuentes = () => {
   );
 };
 
-export default preguntasFrecuentes;
+export default PreguntasFrecuentes;

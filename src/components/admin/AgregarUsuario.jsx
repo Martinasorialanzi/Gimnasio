@@ -8,6 +8,7 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import './Listado.css'
+import NavegadorAdmin from '../navegador/NavegadorAdmin';
 
 
 
@@ -52,7 +53,7 @@ const AgregarUsuario = () => {
     }
   return (
       <>
-          
+          <NavegadorAdmin/>
           <h1 className='text-center h1-titulo-form-ag-ed mt-4 mb-4'>Agregar Usuario</h1>
           
           <Container>

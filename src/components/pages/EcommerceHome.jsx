@@ -12,6 +12,8 @@ import NavEcommerce from "../ecommerce/NavEcommerce";
 import CardsEcommerce from "../ecommerce/CardsEcommerce";
 import { GetProducts } from "../../api/GetProducts";
 import { Link } from "react-router-dom";
+import Navegador from "../navegador/Navegador";
+import Footer from "../footer/Footer";
 
 const EcommerceHome = () => {
   const [allProducts, setAllProducts] = useState(()=>{
@@ -37,7 +39,8 @@ const EcommerceHome = () => {
   
   return (
     <>
-      <NavEcommerce allProducts={allProducts} setAllProducts={setAllProducts}/>
+    <Navegador allProducts={allProducts} setAllProducts={setAllProducts}/>
+      {/* <NavEcommerce allProducts={allProducts} setAllProducts={setAllProducts}/> */}
 
       <CarruselEcommerceHome />
 
@@ -64,7 +67,7 @@ const EcommerceHome = () => {
           </Row>
         </Container>
 
-        <Stack direction="horizontal" gap={3}>
+        <Stack direction="horizontal" gap={3} className="m-4">
           <Carousel>
             <Carousel.Item>
               <img
@@ -99,7 +102,7 @@ const EcommerceHome = () => {
         </Stack>
       </Container>
 
-     
+     <Footer/>
     </>
   );
 };

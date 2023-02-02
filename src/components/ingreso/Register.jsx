@@ -17,51 +17,51 @@ const Registro = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const regexName = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/;
-    // const regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
-    // const regexPassword =
-    //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,20}$/;
+    const regexName = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/;
+    const regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
+    const regexPassword =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,20}$/;
 
-    // if (password !== confirmPassword) {
-    //   setContraseña(true);
-    // } else if (
-    //   name === "" ||
-    //   lastname === "" ||
-    //   email === "" ||
-    //   password === ""
-    // ) {
-    //   Swal.fire({
-    //     icon: "error",
-    //     title: "Error",
-    //     text: "Los campos son obligatorios",
-    //   });
-    // } else if (!regexEmail.test(email)) {
-    //   Swal.fire({
-    //     icon: "error",
-    //     title: "Error",
-    //     text: "Debes escribir un email valido",
-    //   });
-    // } else if (!regexName.test(name)) {
-    //   Swal.fire({
-    //     icon: "error",
-    //     title: "Error",
-    //     text: "El nombre debe empezar por mayuscula y no contener numeros o caracteres especiales",
-    //   });
-    // } else if (!regexName.test(lastname)) {
-    //   Swal.fire({
-    //     icon: "error",
-    //     title: "Error",
-    //     text: "El apellido debe empezar por mayuscula y no contener numeros o caracteres especiales",
-    //   });
-    // } 
-    // else if (!regexPassword.test(password)) {
-    //   Swal.fire({
-    //     icon: "error",
-    //     title: "Error",
-    //     text: "La contraseña debe tener por lo menos un caracter an mayuscula, uno en minuscula,un numero, un caracter espacial y 8 caracteres minimos",
-    //   });
-    // } 
-    // else {
+    if (password !== confirmPassword) {
+      setContraseña(true);
+    } else if (
+      name === "" ||
+      lastname === "" ||
+      email === "" ||
+      password === ""
+    ) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Los campos son obligatorios",
+      });
+    } else if (!regexEmail.test(email)) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Debes escribir un email valido",
+      });
+    } else if (!regexName.test(name)) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "El nombre debe empezar por mayuscula y no contener numeros o caracteres especiales",
+      });
+    } else if (!regexName.test(lastname)) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "El apellido debe empezar por mayuscula y no contener numeros o caracteres especiales",
+      });
+    } 
+    else if (!regexPassword.test(password)) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "La contraseña debe tener por lo menos un caracter an mayuscula, uno en minuscula,un numero, un caracter espacial y 8 caracteres minimos",
+      });
+    } 
+    else {
       const formData = {
         name,
         lastname,
@@ -73,19 +73,6 @@ const Registro = () => {
       console.log(formData);
      funcionRegistro(formData);
     
-      // Swal.fire({
-      //   icon: "success",
-      //   title: "Registrado",
-      //   text: "Registro exitoso",
-      // });
-    
-      // Swal.fire({
-      //   icon: "error",
-      //   title: "Error",
-      //   text: "hay algun error en tu registro",
-      // });
-   
-      
       
        
       setName("");
@@ -93,7 +80,7 @@ const Registro = () => {
       setEmail("");
       setPassword("");
       setConfirmPassword("");
-    // }
+    }
   };
 
   return (
@@ -158,9 +145,7 @@ const Registro = () => {
           {contraseña && <p>Las contraseñas no coinciden</p>}
         </Form.Text>
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
+     
       <Button variant="primary" type="submit">
         Submit
       </Button>

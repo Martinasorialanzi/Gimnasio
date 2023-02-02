@@ -38,7 +38,7 @@ const Rutas = () => {
       <Route path="/admin" element={<Admin />} />
       <Route path="/clientes" element={<Clientes />} />
       <Route path="/chat" element={<Chat />} />
-      <Route path="/turnos" element={<Turnos />} />
+
       <Route path="/agregarusuario" element={<AgregarUsuario />} exact />
       <Route path="/listadeusuarios" element={<ListasDeUsuarios />} exact />
       <Route path="/editarusuario/:idUsuario" element={<EditarUsuario />} exact />

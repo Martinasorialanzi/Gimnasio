@@ -20,7 +20,7 @@ export const funcionLogin = async (login) => { //le paso los datos del login por
           title: `Bienvenido `,
           text: "Ingreso exitoso",
         }, setTimeout(() => {
-          window.location.href = "/"; //una vez q se logue lo redirecciono al home
+          window.location.href = "/admin"; //una vez q se logue lo redirecciono al home
           }, 2000));;
       } else {
         Swal.fire({

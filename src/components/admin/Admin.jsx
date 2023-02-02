@@ -7,12 +7,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStore, faUsers, faCalendarDays, faDumbbell, faCalendarCheck, faCreditCard, faListCheck, faComments } from '@fortawesome/free-solid-svg-icons'
 import '../admin/admin.css'
 import { Link } from 'react-router-dom';
+import NavegadorAdmin from '../navegador/NavegadorAdmin';
 
 
 
 const Admin = () => {
 
   return (
+    <>
+    <NavegadorAdmin/>
       <div className='fondo-admin body-mailer'>
          
           <h1 className='text-center mb-5 color-titulo-admin'>Panel del Administrador</h1>
@@ -36,10 +39,11 @@ const Admin = () => {
                   </Col>
                   <Col xs={6} xl={3}>
                       <Card style={{ width: '15rem', height: '15rem' }} className='mb-4 m-2 card-admin card-body-admin'>
+                          <Link to="/admin/productos" className='text-decoration-none text-dark'>
                           <Card.Body className='Container'>
                               <Card.Subtitle className="text-center mt-5"><FontAwesomeIcon icon={faStore} className='iconosAdmin' /></Card.Subtitle>
                               <Card.Title className='text-center mt-5'>Productos</Card.Title>
-                          </Card.Body>
+                          </Card.Body></Link>
                       </Card>
                   </Col>
                   
@@ -90,6 +94,7 @@ const Admin = () => {
               </Container>
           
       </div>
+      </>
   )
 }
 

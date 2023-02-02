@@ -6,6 +6,7 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import './Listado.css'
+import NavegadorAdmin from '../navegador/NavegadorAdmin';
 
 
 const ListasDeUsuarios = () => {
@@ -41,6 +42,8 @@ const ListasDeUsuarios = () => {
     //MAPEAMOS LISTA DE USUARIOS
     const listausuarios = dataUsuarios.map(usuario => {
         return (
+            <>
+           
             <tbody className='text-center'>
                 <tr>
                     <td>{usuario.idUsuario}</td>
@@ -56,12 +59,13 @@ const ListasDeUsuarios = () => {
                         <FaTrash className='ms-2 fs-5' type='button' onClick={() => { borrarUsuario(usuario.idUsuario) }} /></div></td>
                 </tr>
             </tbody>
+            </>
         )
     })
 
     return (
         <>
-            
+             <NavegadorAdmin/>
             <h1 className='text-center mt-5 titulo-listado'>Listado de Usuarios</h1>
             <div className='text-center mb-2'>
                 <Link to='/agregarusuario'><button className='mb-5 mt-5 button-listado'>Agregar Usuario</button></Link>
@@ -74,7 +78,7 @@ const ListasDeUsuarios = () => {
                             <th className='back-tabla-listado text-light'>Correo</th>
                             <th className='back-tabla-listado text-light'>Celular</th>
                             <th className='back-tabla-listado text-light'>Plan Asignado</th>
-                            <th className='back-tabla-listado text-light'>Cuotas</th>
+                            {/* <th className='back-tabla-listado text-light'>Cuotas</th> */}
                             <th className='back-tabla-listado text-light'>Editar</th>
                         </tr>
                     </thead>

@@ -11,6 +11,8 @@ import { useParams } from "react-router-dom";
 import NavEcommerce from "../ecommerce/NavEcommerce";
 import { GetProducts } from "../../api/GetProducts";
 import "../ecommerce/detallesProductos.css"
+import Navegador from "../navegador/Navegador";
+import Footer from "../footer/Footer";
 
 
 const EcommerceDetalleProducto = () => {
@@ -85,8 +87,7 @@ const EcommerceDetalleProducto = () => {
 
   return (
     <>
-      <NavEcommerce allProducts={allProducts} setAllProducts={setAllProducts} />
-
+      <Navegador allProducts={allProducts} setAllProducts={setAllProducts}/>
       {productos
         .filter((producto) => producto._id === _id)
         .map((detallesProducto) => {
@@ -264,6 +265,7 @@ const EcommerceDetalleProducto = () => {
             </div>
           );
         })}
+        <Footer/>
     </>
   );
 };

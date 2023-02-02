@@ -17,7 +17,7 @@ const ListasDeUsuarios = () => {
     
 
     useEffect(() => {
-        axios.get('/v1/obtenerlistadeusuarios').then(res => {
+        axios.get('https://gimansio-backend-4phx-pbjp4i5n9-martinasorialanzi.vercel.app/obtenerlistadeusuarios').then(res => {
             console.log(res.data)
             setDataUsuarios(res.data)
         }).catch(err => {

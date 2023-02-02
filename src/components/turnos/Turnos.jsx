@@ -1,9 +1,49 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
 import { Container } from 'react-bootstrap';
-import { FaPen, FaTrash } from "react-icons/fa";
+
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const Turnos = () => {
+    const [dataUsuarios, setDataUsuarios] = useState([])
+    const baseUrl = "https://gimansio-backend.vercel.app"
+
+
+    const nombres = ["Juan", "Maria", "Pedro"];
+    const aleatoriosprofesor = () => {
+        const aleatorio = nombres[Math.floor(Math.random() * nombres.length)]; 
+        return aleatorio
+    }
+    const turnos = ["Mañana", "Tarde", "Noche"];
+    const aleatoriosTurnos = () => {
+        const aleatoriosTurno = turnos[Math.floor(Math.random() * turnos.length)];
+        return aleatoriosTurno
+    }
+    
+
+    useEffect(() => {
+        axios.get(`${baseUrl}/v1/obtenerlistadeusuarios`).then(res => {
+            console.log(res.data)
+            setDataUsuarios(res.data)
+        }).catch(err => {
+            console.log(err)
+        })
+    }, [])
+
+    const listaTurnos = dataUsuarios.map(turno => {
+        return (
+            <tbody>
+            <tr>
+                    <th>{aleatoriosTurnos()}</th>
+                <th>{turno.nombre}</th>
+                    <th>{aleatoriosprofesor()} </th>
+
+                </tr>
+                </tbody>
+
+        )
+    })
   return (
       <>
           <h1 className='text-center'>Turnos</h1>
@@ -11,36 +51,13 @@ const Turnos = () => {
           <Table striped bordered hover>
               <thead>
                   <tr>
-                      <th>Horario</th>
-                      <th>Cupo Total</th>
-                      <th>Disponibles</th>
+                      <th>Turno</th>
+                      <th>Usuario</th>
                       <th>Entrenador</th>
-                      <th>Editar</th>
+                      
                   </tr>
               </thead>
-              <tbody>
-                  <tr>
-                      <td>Mañana</td>
-                      <td>20</td>
-                      <td>20</td>
-                          <td>Juan</td>
-                          <td><div className='text-center'><FaPen className='fs-5 me-3' /><FaTrash className='ms-3 fs-5' /></div></td>
-                  </tr>
-                  <tr>
-                      <td>Tarde</td>
-                      <td>20</td>
-                      <td>20</td>
-                          <td>Graciela</td>
-                          <td><div className='text-center'><FaPen className='fs-5 me-3' /><FaTrash className='ms-3 fs-5' /></div></td>
-                  </tr>
-                  <tr>
-                      <td>Noche</td>
-                      <td>20</td>
-                      <td>20</td>
-                          <td>Nicolas</td>
-                          <td><div className='text-center'><FaPen className='fs-5 me-3' /><FaTrash className='ms-3 fs-5' /></div></td>
-                  </tr>
-              </tbody>
+                  {listaTurnos}
               </Table>
           </Container>
       </>

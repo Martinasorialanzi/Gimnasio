@@ -47,6 +47,7 @@ const Rutas = () => {
       <Route path="/planes" element={<Planes />} exact />
       <Route path="/agregarplan" element={<AgregarPlan />} exact />
       <Route path="/editarplan/:codigoPlan" element={<EditarPlan />} exact />
+      <Route path="/turnos" element={<Turnos />} exact />
   
              <Route path="/" element={<Home/>} />
        <Route path="/acercade" element={<AcercaDe/>} />

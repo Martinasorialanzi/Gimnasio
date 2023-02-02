@@ -7,6 +7,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import './Listado.css'
+import NavegadorAdmin from '../navegador/NavegadorAdmin';
 
 const EditarUsuario = () => {
     const params = useParams();
@@ -56,6 +57,7 @@ const EditarUsuario = () => {
     return (
 
         <>
+        <NavegadorAdmin/>
             <h1 className='text-center h1-titulo-form-ag-ed mt-4 mb-4'>Editar Usuario</h1>
             <Container>
                 <Form className='text-center' onSubmit={editarUsuario}>

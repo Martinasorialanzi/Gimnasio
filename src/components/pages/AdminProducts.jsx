@@ -5,8 +5,10 @@ import { deleteProduct, GetProducts } from "../../api/GetProducts";
 import ModalAgregar from "../ecommerce/modalUpdateEdit/ModalAgregar";
 import ModalViewProduct from "../ecommerce/modalUpdateEdit/ModalViewProduct";
 import "../ecommerce/detallesProductos.css"
+import NavegadorAdmin from "../navegador/NavegadorAdmin";
 
 const AdminProducts = () => {
+  
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -25,6 +27,7 @@ const AdminProducts = () => {
 
   return (
     <>
+    <NavegadorAdmin/>
       <div className="container padreAdmin ">
         <Col>
         <h2 className="">Productos</h2>

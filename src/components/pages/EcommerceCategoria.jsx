@@ -11,6 +11,8 @@ import {
 } from "../ecommerce/FiltrosEcommerce";
 import { MdFilterAlt } from "react-icons/md";
 import "../ecommerce/detallesProductos.css"
+import Navegador from "../navegador/Navegador";
+import Footer from "../footer/Footer";
 
 
 const EcommerceCategoria = () => {
@@ -51,9 +53,10 @@ const EcommerceCategoria = () => {
   const toggleShow = () => setShow((s) => !s);
 
   return (
+  
     <>
-      <NavEcommerce allProducts={allProducts} setAllProducts={setAllProducts} />
-
+    <Navegador allProducts={allProducts} setAllProducts={setAllProducts}/>
+     
 
       <Button variant="dark" onClick={toggleShow} className="m-2" size="lg">
          <MdFilterAlt/>
@@ -105,6 +108,7 @@ const EcommerceCategoria = () => {
           </Container>
         </Col>
       </Row>
+      <Footer/>
     </>
   );
 };

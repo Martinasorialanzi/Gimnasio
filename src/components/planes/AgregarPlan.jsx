@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './planes.css'
 import uniquid from 'uniqid';
+import NavegadorAdmin from '../navegador/NavegadorAdmin';
 
 const AgregarPlan = () => {
     const [idPlan, setIdplan] = useState('');
@@ -45,6 +46,7 @@ const AgregarPlan = () => {
 
   return (
       <>
+      <NavegadorAdmin/>
       
           <div className='body-mailer-chat'>
               <div className='form-mail-chat  mt-2 '>

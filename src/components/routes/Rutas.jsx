@@ -1,5 +1,6 @@
 import React from 'react'
 import {Routes, Route} from "react-router-dom"
+import UsersAdmin from '../pages/UsersAdmin'
 import AdminProducts from '../pages/AdminProducts'
 import EcommerceCategoria from '../pages/EcommerceCategoria'
 import EcommerceDetalleProducto from '../pages/EcommerceDetalleProducto'
@@ -28,6 +29,7 @@ import PreguntasFrecuentes from "../pages/preguntasFrecuentes/PreguntasFrecuente
 const Rutas = () => {
   return (
     <Routes>
+       <Route path="/admin/users" element={<UsersAdmin />} />
        <Route path='/ecommercehome' element={<EcommerceHome/>}/>
        <Route path='/ecommerce-producto/:_id' element={<EcommerceDetalleProducto/>}/>
        <Route path='/ecommerce-categoria/:categoria' element={<EcommerceCategoria/>}/>
@@ -36,7 +38,7 @@ const Rutas = () => {
       <Route path="/admin" element={<Admin />} />
       <Route path="/clientes" element={<Clientes />} />
       <Route path="/chat" element={<Chat />} />
-      <Route path="/turnos" element={<Turnos />} />
+
       <Route path="/agregarusuario" element={<AgregarUsuario />} exact />
       <Route path="/listadeusuarios" element={<ListasDeUsuarios />} exact />
       <Route path="/editarusuario/:idUsuario" element={<EditarUsuario />} exact />

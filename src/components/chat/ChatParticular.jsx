@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import emailjs from '@emailjs/browser';
+import NavegadorAdmin from '../navegador/NavegadorAdmin';
 
 
 
@@ -49,6 +50,9 @@ const ChatParticular = () => {
 
 
   return (
+    <>
+    <NavegadorAdmin/>
+ 
       <div className='body-mailer-chat'>
           <div className='form-mail-chat  mt-2 '>
               <h1 className='title-form text-center h1-chat '>Enviar mensaje a un usuario</h1>
@@ -67,6 +71,7 @@ const ChatParticular = () => {
               </form>
           </div>
       </div>
+      </>
   )
 }
 

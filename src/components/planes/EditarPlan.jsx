@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './planes.css'
 import Swal from 'sweetalert2';
+import NavegadorAdmin from '../navegador/NavegadorAdmin';
 
 
 const EditarPlan = () => {
@@ -52,6 +53,7 @@ const EditarPlan = () => {
 
   return (
       <>
+      <NavegadorAdmin/>
           <div className='body-mailer-chat'>
               <div className='form-mail-chat  mt-2 '>
                   <h1 className='title-form text-center h1-chat '>Plan</h1>

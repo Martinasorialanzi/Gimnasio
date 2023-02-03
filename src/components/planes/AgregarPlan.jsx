@@ -63,7 +63,7 @@ const AgregarPlan = () => {
                       
 
                       <label className='mt-1 label-chat'>Precio por hora</label><br />
-                      <input required type="number" className='mt-1 mb-2 input-chat' onChange={(e) => { setPrecio(e.target.value) }} /><br />
+                      <input required type="number" className='mt-1 mb-2 input-chat' onChange={(e) => { setPrecio(e.target.value) }} max={100000} min={1000 } /><br />
 
                       <button className='button-chat mt-1' >Enviar</button>
                       <Link to={'/planes'}><button className='button-chat mt-1' >Volver</button></Link>

@@ -8,7 +8,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import NavegadorAdmin from "../navegador/NavegadorAdmin";
+
 
 const FichasPlanes = () => {
   const [dataPlan, setDataplan] = useState([]);
@@ -25,6 +25,7 @@ const FichasPlanes = () => {
       .catch((err) => {
         console.log(err);
       });
+    navegar("/planes")
   }, []);
 
   const borrarPlan = (codigoPlan) => {
@@ -39,6 +40,7 @@ const FichasPlanes = () => {
       .catch((err) => {
         console.log(err);
       });
+    navegar("/planes")
   };
 
   //MAPEAMOS LISTA DE USUARIOS
@@ -78,7 +80,7 @@ const FichasPlanes = () => {
 
   return (
     <>
-
+  
       <h1 className="text-center">Planes</h1>
       <Link to={"/agregarplan"}>
         <div className="text-center mt-4">

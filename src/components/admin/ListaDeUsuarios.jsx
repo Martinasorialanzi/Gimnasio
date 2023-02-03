@@ -23,10 +23,12 @@ const ListasDeUsuarios = () => {
         }).catch(err => {
             console.log(err)
         })
+        navegar("/listadeusuarios")
     }, [])
     // const Swal = require('sweetalert2')
 
     const borrarUsuario = (idUsuario) => {
+       
         axios.post(`${baseUrl}/v1/borrarusuario`, { idUsuario: idUsuario }).then(res => {
             console.log(res.data)
             // alert(res.data)
@@ -37,6 +39,7 @@ const ListasDeUsuarios = () => {
 
 
         })
+        navegar("/listadeusuarios")
     }
 
     //MAPEAMOS LISTA DE USUARIOS

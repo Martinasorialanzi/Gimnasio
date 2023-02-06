@@ -20,12 +20,12 @@ const ListasDeUsuarios = () => {
         axios.get(`${baseUrl}/v1/obtenerlistadeusuarios`).then(res => {
             console.log(res.data)
             setDataUsuarios(res.data)
-            navegar("/listadeusuarios")
+            
         }).catch(err => {
             console.log(err)
         })
-        navegar("/listadeusuarios")
-    }, [])
+        
+    }, [dataUsuarios])
     // const Swal = require('sweetalert2')
 
     const borrarUsuario = (idUsuario) => {

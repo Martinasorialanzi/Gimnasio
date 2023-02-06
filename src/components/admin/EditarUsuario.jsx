@@ -48,10 +48,11 @@ const EditarUsuario = () => {
         axios.post(`${baseUrl}/v1/actualizarusuario`, actualizarUsuario).then(() => {
             // alert(res.data)
             Swal.fire('Listo', 'Usuario editado Exitosamente', 'success')
+            navegar("/listadeusuarios")
         }).then(err => {
             console.log(err)
         })
-        navegar('/listadeusuarios')
+        navegar("/listadeusuarios")
     }
 
     return (

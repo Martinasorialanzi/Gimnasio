@@ -40,17 +40,21 @@ const AgregarUsuario = () => {
 
 
         axios.post(`${baseUrl}/v1/agregarusuario`, usuario)
-            .then(res => {
+            .then(
                 // alert(res.data)
 
                 Swal.fire('Listo', 'Usuario agregado exitosamente', 'success')
-            })
+                
+        )
+        navegar("/listadeusuarios")
             .then(err => { console.log(err) })
         navegar('/listadeusuarios')
 
 
 
     }
+
+    
   return (
       <>
           <NavegadorAdmin/>

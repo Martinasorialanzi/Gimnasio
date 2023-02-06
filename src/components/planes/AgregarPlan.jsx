@@ -35,6 +35,7 @@ const AgregarPlan = () => {
                 // alert(res.data)
 
                 // Swal.fire('Listo', 'Usuario agregado exitosamente', 'success')
+                navegar('/planes')
             })
             .then(err => { console.log(err) })
         navegar('/planes')

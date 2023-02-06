@@ -21,13 +21,13 @@ const FichasPlanes = () => {
       .then((res) => {
         console.log(res.data);
         setDataplan(res.data);
-        navegar("/planes")
+        
       })
       .catch((err) => {
         console.log(err);
       });
-    navegar("/planes")
-  }, []);
+    
+  }, [dataPlan]);
 
   const borrarPlan = (codigoPlan) => {
     axios

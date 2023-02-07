@@ -23,7 +23,7 @@ const ListasDeUsuarios = () => {
             console.log(err)
         })
         
-    }, [])
+    }, [])//probar lo que diego mande
     // const Swal = require('sweetalert2')
 
     const borrarUsuario = (idUsuario) => {

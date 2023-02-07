@@ -27,7 +27,7 @@ const FichasPlanes = () => {
         console.log(err);
       });
     
-  }, []);
+  }, []); //probar lo que diego mande
 
   const borrarPlan = (codigoPlan) => {
     Swal.fire({

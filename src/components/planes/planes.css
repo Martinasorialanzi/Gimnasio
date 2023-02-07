@@ -7,3 +7,12 @@
     width: 15rem;
     height: 8rem;
 }
+
+.color-boton-planes{
+    background-color: #E95821 !important;
+    border: #E95821 !important;
+}
+
+.card-estilo-planes{
+    border-color: #E95821 !important;
+}

@@ -18,29 +18,39 @@ const ListasDeUsuarios = () => {
 
     useEffect(() => {
         axios.get(`${baseUrl}/v1/obtenerlistadeusuarios`).then(res => {
-            console.log(res.data)
             setDataUsuarios(res.data)
-            
         }).catch(err => {
             console.log(err)
         })
         
-    }, [dataUsuarios])
+    }, [setDataUsuarios])
     // const Swal = require('sweetalert2')
 
     const borrarUsuario = (idUsuario) => {
-       
-        axios.post(`${baseUrl}/v1/borrarusuario`, { idUsuario: idUsuario }).then(res => {
-            console.log(res.data)
-            // alert(res.data)
-            Swal.fire('Listo', 'Usuario Eliminado Correctamente', 'info', 'Ok')
-            navegar(0)
-        }).catch((err) => {
-            console.log(err)
-
-
-        })
-        navegar("/listadeusuarios")
+        Swal.fire({
+            title: `¿Estas seguro de querer eliminar los datos del usuario ${idUsuario} de manera definitiva?`,
+            text: "Se perderán para siempre",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, borrar!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axios.post(`${baseUrl}/v1/borrarusuario`, { idUsuario: idUsuario }).then(res => {
+                    // console.log(res.data)
+                    // alert(res.data)
+                    Swal.fire('Listo', 'Usuario Eliminado Correctamente', 'info', 'Ok')
+                    navegar(0)
+                }).catch((err) => {
+                    console.log(err)
+                })
+            }
+        }
+        
+        
+        )
+        
     }
 
     //MAPEAMOS LISTA DE USUARIOS

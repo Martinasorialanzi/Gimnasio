@@ -27,29 +27,39 @@ const FichasPlanes = () => {
         console.log(err);
       });
     
-  }, [dataPlan]);
+  }, [setDataplan]);
 
   const borrarPlan = (codigoPlan) => {
-    axios
-      .post(`${baseUrl}/v1/borrarPlan`, { codigoPlan: codigoPlan })
-      .then((res) => {
-        console.log(res.data);
-        // alert(res.data)
-        Swal.fire("Listo", "Usuario Eliminado Correctamente", "info", "Ok");
-        navegar(0);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    navegar("/planes")
+    Swal.fire({
+      title: `¿Estas seguro de querer eliminar los datos del plan ${codigoPlan} de manera definitiva?`,
+      text: "Se perderán para siempre",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, borrar!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios.post(`${baseUrl}/v1/borrarPlan`, { codigoPlan: codigoPlan }).then((res) => {
+          console.log(res.data);
+          // alert(res.data)
+          Swal.fire("Listo", "Plan eliminado Correctamente", "info", "Ok");
+          navegar(0);
+        })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+    }
+    )
   };
 
   //MAPEAMOS LISTA DE USUARIOS
   const listaPlanes = dataPlan.map((plan) => {
     return (
-      <Col className="m-2">
-        <Card border="primary" style={{ width: "18rem" }} className="h-100">
-          <Card.Header className="text-center ">00{plan.idPlan}</Card.Header>
+      <Col className="m-2 " >
+        <Card style={{ width: "18rem" }} className="h-100 card-estilo-planes">
+          <Card.Header className="text-center card-estilo-planes">00{plan.idPlan}</Card.Header>
           <Card.Body>
             <Card.Title className="text-center ">{plan.nombrePlan}</Card.Title>
             <Card.Text className="text-center ">{plan.description}</Card.Text>
@@ -59,7 +69,7 @@ const FichasPlanes = () => {
             <Card.Text className="text-center ">{plan.codigoPlan}</Card.Text>
             <div className="text-center">
               <Button
-                className="m-1 w-50 text-center"
+                className="m-1 w-50 text-center color-boton-planes"
                 variant="success"
                 onClick={() => {
                   borrarPlan(plan.codigoPlan);
@@ -68,7 +78,7 @@ const FichasPlanes = () => {
                 Borrar
               </Button>
               <Link to={`/editarplan/${plan.codigoPlan}`}>
-                <Button className="m-1 w-50" variant="success">
+                <Button className="m-1 w-50 color-boton-planes" variant="success">
                   Editar
                 </Button>
               </Link>
@@ -84,9 +94,9 @@ const FichasPlanes = () => {
   
       <h1 className="text-center">Planes</h1>
       <Link to={"/agregarplan"}>
-        <div className="text-center mt-4">
+        <div className="text-center mt-4 ">
           {" "}
-          <Button variant="success">Agregar Plan</Button>
+          <Button className="color-boton-planes">Agregar Plan</Button>
         </div>
       </Link>
       <h4 className="text-center mt-3">Administre hasta 9 planes</h4>

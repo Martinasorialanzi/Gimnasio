@@ -83,7 +83,7 @@ const AgregarUsuario = () => {
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formBasicPassword">
                       <Form.Label className='etiqueta-formulario-ag-ed'>Plan</Form.Label>
-                      <Form.Control required  className=' m-auto input-form-ag-ed' value={plan} onChange={(e) => { setPlan(e.target.value) }} type="number" max="004" min="001"  />
+                      <Form.Control required  className=' m-auto input-form-ag-ed' value={plan} onChange={(e) => { setPlan(e.target.value) }} type="number" max="009" min="001"  />
                   </Form.Group>
                   <Button variant="primary" type="submit" n className='me-2 botones-formularios-ag-ed' >
                       Guardar

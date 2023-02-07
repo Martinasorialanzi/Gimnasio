@@ -21,7 +21,7 @@ const FichasPlanes = () => {
       .then((res) => {
         console.log(res.data);
         setDataplan(res.data);
-        return dataPlan
+        
       })
       .catch((err) => {
         console.log(err);

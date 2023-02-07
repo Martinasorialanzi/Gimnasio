@@ -27,7 +27,7 @@ const FichasPlanes = () => {
         console.log(err);
       });
     
-  }, [dataPlan.data]);
+  }, [setDataplan.dataPlan]);
 
   const borrarPlan = (codigoPlan) => {
     Swal.fire({

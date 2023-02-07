@@ -19,10 +19,11 @@ const ListasDeUsuarios = () => {
     useEffect(() => {
         axios.get(`${baseUrl}/v1/obtenerlistadeusuarios`).then(res => {
             setDataUsuarios(res.data)
+            return dataUsuarios
         }).catch(err => {
             console.log(err)
         })
-        
+    
     }, [setDataUsuarios])
     // const Swal = require('sweetalert2')
 

@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Table, Button, Modal, Stack,Col } from "react-bootstrap";
-import { deleteProduct, GetProducts } from "../../api/GetProducts";
+import { Table,Col } from "react-bootstrap";
+import { GetProducts } from "../../api/GetProducts";
 
 import ModalAgregar from "../ecommerce/modalUpdateEdit/ModalAgregar";
 import ModalViewProduct from "../ecommerce/modalUpdateEdit/ModalViewProduct";
 import "../ecommerce/detallesProductos.css"
+import "../ecommerce/ecommerce.css"
 import NavegadorAdmin from "../navegador/NavegadorAdmin";
 
 const AdminProducts = () => {
   
-  const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   const [productos, setProductos] = useState([]);
 
@@ -28,7 +26,7 @@ const AdminProducts = () => {
   return (
     <>
     <NavegadorAdmin/>
-      <div className="container padreAdmin ">
+      <div className="container padreAdmin  ">
         <Col>
         <h2 className="">Productos</h2>
         <br />

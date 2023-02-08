@@ -17,7 +17,7 @@ export const FiltrosPrecio = ({precio,setPrecio}) => {
 
         <Form.Check
             inline
-            label="all"
+            label="VER TODO"
             name="group1"
             type="radio"
             id={`inline-radio`}
@@ -93,7 +93,7 @@ export const FiltrosTalle = ({talle,setTalle}) => {
         <Row  className="m-3">
         <Form.Check
             inline
-            label="all"
+            label="VER TODO"
             name="group1"
             type="radio"
             id={`inline-radio`}
@@ -105,7 +105,7 @@ export const FiltrosTalle = ({talle,setTalle}) => {
         return (
             <Form.Check
             inline
-            label={talle}
+            label={talle.toUpperCase()}
             name="group1"
             type="radio"
             id={`inline-radio`}
@@ -135,7 +135,7 @@ export const FiltrosColor = ({color,setColor}) => {
     <Row  className="m-3">
     <Form.Check
         inline
-        label="all"
+        label="VER TODO"
         name="group1"
         type="radio"
         id={`inline-radio`}
@@ -148,7 +148,7 @@ export const FiltrosColor = ({color,setColor}) => {
     return (
         <Form.Check
         inline
-        label={color}
+        label={color.toUpperCase()}
         name="group1"
         type="radio"
         id={`inline-radio`}

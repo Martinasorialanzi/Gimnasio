@@ -4,11 +4,15 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { BsFillCartFill } from "react-icons/bs";
 import "../carritoCompras/carritoCompras.css";
 
-const CarritoCompras = ({ allProducts, setAllProducts }) => {
+const CarritoCompras = ({ allProducts, setAllProducts,abrirCarrito}) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+   abrirCarrito=()=>{
+    handleShow()
+  }
 
   const onDeleteProduct = (productsCarrito) => {
     let index = allProducts.indexOf(productsCarrito);
@@ -40,8 +44,8 @@ const CarritoCompras = ({ allProducts, setAllProducts }) => {
                     <img
                       alt="fotos productos carrito"
                       src={productsCarrito.detalles.imagen}
-                      width={60}
-                      heigth={60}
+                      width={115}
+                      heigth={115}
                     />
                     <div className="info-cart-product">
                       <Stack direction="vertical" gap={0}>

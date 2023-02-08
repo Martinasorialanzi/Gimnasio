@@ -3,6 +3,7 @@ import { Form, Button, Modal, Stack } from "react-bootstrap";
 import { AddProducts } from "../../../api/GetProducts";
 import { tallesProductos, coloresProductos } from "../../helpers/Productos";
 import { categorias } from "../../helpers/categorias";
+import "../../ecommerce/ecommerce.css"
 
 const ModalAgregar = () => {
   const [show, setShow] = useState(false);
@@ -38,22 +39,23 @@ const ModalAgregar = () => {
     AddProducts(formData);
     handleClose()
     setNombre("")
-  setCategoria ([]);
-  setPrecio();
-  setImagen("");
-  setDescripcion("");
-  setPortada(false);
-  setTalle([]);
-  setColor([]);
-  setStock();
+    setCategoria ([]);
+    setPrecio();
+    setImagen("");
+    setDescripcion("");
+    setPortada(false);
+    setTalle([]);
+    setColor([]);
+    setStock();
   };
-
+  
   return (
     <>
-    <div className= "">
+    <div className= "container-agregar-producto">
       <Button  variant="dark" onClick={handleShow}>
         Add Products
       </Button>
+    </div>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -90,9 +92,9 @@ const ModalAgregar = () => {
                     onChange={(e) => {
                       setCategoria(e.target.value);
                     }}
-                  />
-                );
-              })}
+                    />
+                    );
+                  })}
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="">
@@ -105,7 +107,7 @@ const ModalAgregar = () => {
                   setPrecio(e.target.value);
                 }}
                 required
-              />
+                />
             </Form.Group>
             <Form.Group className="mb-3" controlId="">
               <Form.Label>Descripcion </Form.Label>
@@ -117,21 +119,21 @@ const ModalAgregar = () => {
                   setDescripcion(e.target.value);
                 }}
                 required
-              />
+                />
             </Form.Group>
             <Form.Group className="mb-3" controlId="">
               <Form.Label >Imagen</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Imagen"
-               
+                
                 value={imagen}
                 onChange={(e) => {
                   
                   setImagen(e.target.value);
                 }}
                 required
-              />
+                />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="">
@@ -140,19 +142,19 @@ const ModalAgregar = () => {
               {tallesProductos.map((talle) => {
                 return (
                   <Form.Check
-                    inline
-                    label={talle}
-                    name="group1"
-                    type="checkbox"
-                    id={`inline-radio`}
-                    value={talle}
-                    // key={}
+                  inline
+                  label={talle}
+                  name="group1"
+                  type="checkbox"
+                  id={`inline-radio`}
+                  value={talle}
+                  // key={}
                     onChange={(e) => {
                       setTalle(e.target.value);
                     }}
-                  />
-                );
-              })}
+                    />
+                    );
+                  })}
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="">
@@ -161,19 +163,19 @@ const ModalAgregar = () => {
               {coloresProductos.map((color) => {
                 return (
                   <Form.Check
-                    inline
-                    label={color}
-                    name="group1"
-                    type="checkbox"
-                    id={`inline-radio`}
-                    value={[color]}
-                    // key={}
-                    onChange={(e) => {
-                      setColor(e.target.value);
-                    }}
+                  inline
+                  label={color}
+                  name="group1"
+                  type="checkbox"
+                  id={`inline-radio`}
+                  value={[color]}
+                  // key={}
+                  onChange={(e) => {
+                    setColor(e.target.value);
+                  }}
                   />
-                );
-              })}
+                  );
+                })}
             </Form.Group>
             <Form.Group className="mb-3" controlId="">
               <Form.Label>Stock </Form.Label>
@@ -185,7 +187,7 @@ const ModalAgregar = () => {
                   setStock(e.target.value);
                 }}
                 required
-              />
+                />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>
@@ -199,7 +201,7 @@ const ModalAgregar = () => {
                   setPortada(e.target.value);
                 }}
                 required
-              >
+                >
                 <option value="false">False</option>
                 <option value="true">True</option>
               </Form.Select>
@@ -216,7 +218,6 @@ const ModalAgregar = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-      </div>
     </>
   );
 };

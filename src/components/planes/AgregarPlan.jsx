@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import './planes.css'
 import uniquid from 'uniqid';
 import NavegadorAdmin from '../navegador/NavegadorAdmin';
+import Swal from 'sweetalert2';
 
 const AgregarPlan = () => {
     const [idPlan, setIdplan] = useState('');
@@ -34,7 +35,7 @@ const AgregarPlan = () => {
             .then(res => {
                 // alert(res.data)
 
-                // Swal.fire('Listo', 'Usuario agregado exitosamente', 'success')
+                Swal.fire('Listo', 'Usuario agregado exitosamente', 'success')
                 navegar('/planes')
                 
             })

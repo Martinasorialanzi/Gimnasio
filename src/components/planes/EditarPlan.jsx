@@ -43,7 +43,7 @@ const EditarPlan = () => {
 
         axios.post(`${baseUrl}/v1/actualizarplan`, actualizarPlan).then(() => {
             // alert(res.data)
-            Swal.fire('Listo', 'Usuario editado Exitosamente', 'success')
+            Swal.fire('Listo', 'Plan editado Exitosamente', 'success')
             navegar("/planes")
         }).then(err => {
             console.log(err)

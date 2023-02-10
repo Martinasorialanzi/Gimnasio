@@ -12,6 +12,7 @@ import Swal from "sweetalert2";
 
 const FichasPlanes = () => {
   const [dataPlan, setDataplan] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const navegar = useNavigate();
   const baseUrl = "https://gimansio-backend.vercel.app"
@@ -19,15 +20,17 @@ const FichasPlanes = () => {
     axios
       .get(`${baseUrl}/v1/obtenerlistadeplanes`)
       .then((res) => {
-        console.log(res.data);
+        
         setDataplan(res.data);
+        
+        setIsLoading(false)
         
       })
       .catch((err) => {
         console.log(err);
       });
     
-  }, []);
+  }, [isLoading]);
 
   const borrarPlan = (codigoPlan) => {
     Swal.fire({

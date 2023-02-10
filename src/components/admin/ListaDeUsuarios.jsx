@@ -12,6 +12,7 @@ import NavegadorAdmin from '../navegador/NavegadorAdmin';
 const ListasDeUsuarios = () => {
     const [dataUsuarios, setDataUsuarios] = useState([])
     const navegar = useNavigate()
+    const [isLoading, setIsLoading] = useState(true)
 
 
     const baseUrl = "https://gimansio-backend.vercel.app" 
@@ -19,11 +20,12 @@ const ListasDeUsuarios = () => {
     useEffect(() => {
         axios.get(`${baseUrl}/v1/obtenerlistadeusuarios`).then(res => {
             setDataUsuarios(res.data)
+            setIsLoading(false)
         }).catch(err => {
             console.log(err)
         })
         
-    }, [])
+    }, [isLoading])
     // const Swal = require('sweetalert2')
 
     const borrarUsuario = (idUsuario) => {

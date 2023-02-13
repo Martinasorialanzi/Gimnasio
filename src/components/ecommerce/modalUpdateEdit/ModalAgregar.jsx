@@ -1,9 +1,11 @@
-import React, { useState, useRef } from "react";
-import { Form, Button, Modal, Stack } from "react-bootstrap";
+import React, { useState } from "react";
+import { Form, Button, Modal } from "react-bootstrap";
 import { AddProducts } from "../../../api/GetProducts";
 import { tallesProductos, coloresProductos } from "../../helpers/Productos";
 import { categorias } from "../../helpers/categorias";
 import "../../ecommerce/ecommerce.css"
+import Swal from 'sweetalert2'
+
 
 const ModalAgregar = () => {
   const [show, setShow] = useState(false);
@@ -23,6 +25,17 @@ const ModalAgregar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    Swal.fire({
+      title: 'Esta seguro que quiere agregar un producto',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Guardar',
+      denyButtonText: `No guardar`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire('Guardado!', '', 'success')
     const formData = {
       nombre: nombre,
       categoria: categoria,
@@ -47,7 +60,10 @@ const ModalAgregar = () => {
     setTalle([]);
     setColor([]);
     setStock();
-  };
+  } else if (result.isDenied) {
+    Swal.fire('El producto no fue agregado', '', 'info')
+  }
+})}
   
   return (
     <>
@@ -67,6 +83,7 @@ const ModalAgregar = () => {
               <Form.Label>Nombre</Form.Label>
               <Form.Control
                 type="text"
+                maxLength={30}
                 placeholder="Nombre del producto"
                 required
                 value={nombre}
@@ -79,15 +96,15 @@ const ModalAgregar = () => {
             <Form.Group className="mb-3" controlId="">
               <Form.Label>Categoria</Form.Label>
               <br />
-              {categorias.map((categoria) => {
+              {categorias.map((categoria,idx) => {
                 return (
                   <Form.Check
                     inline
-                    label={categoria}
+                    label={categoria==="all"?("Ver todo"):categoria}
                     name="group1"
                     type="checkbox"
                     id={`inline-radio`}
-                    // key={}
+                    key={idx}
                     value={categoria}
                     onChange={(e) => {
                       setCategoria(e.target.value);
@@ -106,6 +123,7 @@ const ModalAgregar = () => {
                 onChange={(e) => {
                   setPrecio(e.target.value);
                 }}
+                min={1}
                 required
                 />
             </Form.Group>
@@ -122,10 +140,10 @@ const ModalAgregar = () => {
                 />
             </Form.Group>
             <Form.Group className="mb-3" controlId="">
-              <Form.Label >Imagen</Form.Label>
+              <Form.Label >Url imagen</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Imagen"
+                placeholder="Url imagen"
                 
                 value={imagen}
                 onChange={(e) => {
@@ -139,7 +157,7 @@ const ModalAgregar = () => {
             <Form.Group className="mb-3" controlId="">
               <Form.Label>Talle </Form.Label>
               <br />
-              {tallesProductos.map((talle) => {
+              {tallesProductos.map((talle,idx) => {
                 return (
                   <Form.Check
                   inline
@@ -148,7 +166,7 @@ const ModalAgregar = () => {
                   type="checkbox"
                   id={`inline-radio`}
                   value={talle}
-                  // key={}
+                  key={idx}
                     onChange={(e) => {
                       setTalle(e.target.value);
                     }}
@@ -160,7 +178,7 @@ const ModalAgregar = () => {
             <Form.Group className="mb-3" controlId="">
               <Form.Label>Color </Form.Label>
               <br />
-              {coloresProductos.map((color) => {
+              {coloresProductos.map((color,idx) => {
                 return (
                   <Form.Check
                   inline
@@ -169,7 +187,7 @@ const ModalAgregar = () => {
                   type="checkbox"
                   id={`inline-radio`}
                   value={[color]}
-                  // key={}
+                  key={idx}
                   onChange={(e) => {
                     setColor(e.target.value);
                   }}
@@ -186,6 +204,7 @@ const ModalAgregar = () => {
                 onChange={(e) => {
                   setStock(e.target.value);
                 }}
+                min={0}
                 required
                 />
             </Form.Group>
@@ -207,15 +226,13 @@ const ModalAgregar = () => {
               </Form.Select>
             </Form.Group>
 
-            <Button variant="dark" size="lg" type="submit" centerded>
+            <Button variant="dark" size="lg" type="submit" >
               Submit
             </Button>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="dark" size="lg" onClick={handleClose}>
-            Close
-          </Button>
+
         </Modal.Footer>
       </Modal>
     </>

@@ -98,6 +98,7 @@ const ModalEditar = (_id) => {
                 type="text"
                 placeholder="Nombre del producto"
                 required
+                 maxLength={30}
                 value={nombre}
                 onChange={(e) => {
                   setNombre(e.target.value);
@@ -106,7 +107,7 @@ const ModalEditar = (_id) => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Categoria</Form.Label><br/>
-              {categorias.map((categoria) => {
+              {categorias.map((categoria,idx) => {
                 return (
                   <Form.Check
                     inline
@@ -114,7 +115,8 @@ const ModalEditar = (_id) => {
                     name="group1"
                     type="checkbox"
                     id={`inline-radio`}
-                    // key={}
+                    key={idx}
+                    
                     value={categoria}
                     onChange={(e) => {
                       setCategoria(e.target.value);
@@ -133,6 +135,7 @@ const ModalEditar = (_id) => {
                 onChange={(e) => {
                   setPrecio(e.target.value);
                 }}
+                min={1}
                 required
               />
             </Form.Group>
@@ -167,7 +170,7 @@ const ModalEditar = (_id) => {
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Talle</Form.Label><br/>
-              {tallesProductos.map((talle) => {
+              {tallesProductos.map((talle,idx) => {
                 return (
                   <Form.Check
                     inline
@@ -176,7 +179,7 @@ const ModalEditar = (_id) => {
                     type="checkbox"
                     id={`inline-radio`}
                     value={talle}
-                    // key={}
+                    key={idx}
                     onChange={(e) => {
                       setTalle(e.target.value);
                     }}
@@ -187,7 +190,7 @@ const ModalEditar = (_id) => {
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Color</Form.Label><br/>
-              {coloresProductos.map((color) => {
+              {coloresProductos.map((color,idx) => {
                 return (
                   <Form.Check
                     inline
@@ -196,7 +199,7 @@ const ModalEditar = (_id) => {
                     type="checkbox"
                     id={`inline-radio`}
                     value={[color]}
-                    // key={}
+                    key={idx}
                     onChange={(e) => {
                       setColor(e.target.value);
                     }}
@@ -214,6 +217,7 @@ const ModalEditar = (_id) => {
                   onChange={(e) => {
                     setStock(e.target.value);
                   }}
+                  min={0}
                   required
                 />
               </Form.Group>
@@ -237,9 +241,7 @@ const ModalEditar = (_id) => {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button size="lg"variant="dark" onClick={handleClose}>
-            Close
-          </Button>
+ 
 
         </Modal.Footer>
       </Modal>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Modal, Stack } from "react-bootstrap";
 import { deleteProduct } from "../../../api/GetProducts";
 import ModalEditar from "./ModalEditar";
-import "../../ecommerce/detallesProductos.css"
+import "../../ecommerce/ModalViewProducts.css"
 import Swal from 'sweetalert2'
 
 const ModalViewProduct = ({ producto }, _id) => {
@@ -41,11 +41,11 @@ const ModalViewProduct = ({ producto }, _id) => {
 
       <Modal show={show} onHide={handleClose} centered size="xl">
         <Modal.Header closeButton>
-          <Modal.Title>{producto.nombre}</Modal.Title>
+          <Modal.Title className="titulo-view-product">{producto.nombre}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className="row-product">
-            <Stack direction="horizontal" gap={2}>
+          <div className="">
+            <Stack direction="horizontal" gap={4}>
               <img
                 alt="fotos productos carrito"
                 src={producto.imagen}
@@ -53,31 +53,34 @@ const ModalViewProduct = ({ producto }, _id) => {
                 heigth={300}
               />
 
-              <div className="info-cart-product">
+              <div className="">
                 <Stack direction="vertical" gap={0}>
-                  <p className="precio-producto-carrito">{producto.nombre}</p>
-                  <p className="cantidad-producto-carrito">
-                    Categorias: {producto.categoria[0]}
+                  <p className="titulo-view-product"><b>{producto.nombre}</b></p>
+                  <p className="categorias-view-product">
+                   <b>Categorias: </b> {producto.categoria[0]}
                   </p>
-                  <p className="cantidad-producto-carrito">
+                  <p className="categorias-view-product">
                     ${producto.precio}
                   </p>
-                  <p className="cantidad-producto-carrito">
-                    Stock: {producto.stock}
+                  <p className="categorias-view-product">
+                   <b>Stock: </b> {producto.stock}
                   </p>
-                  <p className="cantidad-producto-carrito">
-                    Colores:{producto.color}
+     
+                  <p className="categorias-view-product">
+                  <b> Colores:</b>  {producto.color}
                   </p>
-
-                  <p className="cantidad-producto-carrito">
-                    Talles: {producto.talle.toString()}
-                  </p>
-                  <p className="cantidad-producto-carrito">
-                    Descripción: <br />
+             
+                    {producto.talle.length>1?(<>
+                  <p className="categorias-view-product">
+                    <b>Talles:</b>  {producto.talle.toString()}</p></>):null
+                  
+                  }
+                  <p className="categorias-view-product">
+                   <b>Descripción:</b>  <br />
                     {producto.descripcion}
                   </p>
-                  <p className="cantidad-producto-carrito">
-                    Portada: {producto.portada.toString()}
+                  <p className="categorias-view-product">
+                   <b>Portada:</b>  {producto.portada.toString()}
                   </p>
                 </Stack>
               </div>

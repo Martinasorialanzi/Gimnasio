@@ -104,6 +104,7 @@ const EcommerceDetalleProducto = () => {
 
   return (
     <>
+    <div className="padreDetalles">
       <Navegador allProducts={allProducts} setAllProducts={setAllProducts}/>
       {productos
         .filter((producto) => producto._id === _id)
@@ -283,8 +284,10 @@ const EcommerceDetalleProducto = () => {
             </div>
           );
         })}
+      </div>
       <Footer />
     </>
+
   );
 };
 

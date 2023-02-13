@@ -28,9 +28,11 @@ const AdminProducts = () => {
     <NavegadorAdmin/>
       <div className="container padreAdmin  ">
         <Col>
-        <h2 className="">Productos</h2>
+        <h2 className="mt-4 ">Productos</h2>
         <br />
-        <ModalAgregar className="botonModalAgregar" />
+        <hr/>
+        <ModalAgregar className="botonModalAgregar mb-2" />
+        <hr/>
         <Table
           striped
           bordered

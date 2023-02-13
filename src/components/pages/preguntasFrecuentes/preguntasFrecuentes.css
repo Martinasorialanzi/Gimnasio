@@ -1,11 +1,12 @@
 
 .preguntasFrecuentes {
   display: flex;
-
+  height: 28rem;
   gap: 2rem;
   padding: 2rem;
   background-color: #e95821;
 }
+
 
 .preguntas {
   gap: 5rem;

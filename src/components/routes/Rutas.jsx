@@ -22,6 +22,8 @@ import EditarPlan from '../planes/EditarPlan'
 import AcercaDe from '../pages/acercaDe/AcercaDe';
 import Home from "../pages/Home";
 import PreguntasFrecuentes from "../pages/preguntasFrecuentes/PreguntasFrecuentes"
+import Error from '../pages/error404/Error'
+
 
 
 
@@ -52,6 +54,7 @@ const Rutas = () => {
              <Route path="/" element={<Home/>} />
        <Route path="/acercade" element={<AcercaDe/>} />
        <Route path="/preguntasfrecuentes" element={<PreguntasFrecuentes/>} />
+       <Route path='/error' element={<Error/>}/>
        
       
 

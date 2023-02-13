@@ -1,5 +1,7 @@
 .footer {
   color: #fefefe;
+  display: flex;
+  align-items: flex-end;
 }
 
 .footer > :nth-child(1) {
@@ -17,3 +19,4 @@
   .footer > :nth-child(4) {
     text-decoration: underline;
   }
+

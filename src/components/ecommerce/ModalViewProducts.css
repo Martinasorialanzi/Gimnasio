@@ -88,3 +88,12 @@
     border-radius: 0;
   }
   
+  .titulo-view-product{
+    font-size: 30px;
+    font-weight: 250;
+  }
+
+  .categorias-view-product{
+    font-size: 20px;
+    /* font-weight: 250; */
+  }

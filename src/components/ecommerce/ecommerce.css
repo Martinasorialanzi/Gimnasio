@@ -10,3 +10,48 @@
     max-width: 100%;
     
   }
+
+  /* pagina categorias productos */
+
+  .offcanvasFiltros {
+    max-width: 55% !important;
+    width: 300px !important;
+  }
+  
+  .container-filtro{
+    display: flex;
+    justify-content:flex-end;
+  }
+  
+
+
+  /* admin productos */
+
+  .filaVerProducto {
+    display: flex;
+  }
+  
+  .botonVerProducto {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .tablaProductos {
+    text-align: center;
+    align-content: center;
+  }
+  
+  .padreAdmin {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .botonModalAgregar {
+    align-self: flex-end;
+  }
+  
+  .container-agregar-producto{
+    display: flex;
+    justify-content:flex-end;
+  }
+  

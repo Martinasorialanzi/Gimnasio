@@ -1,7 +1,7 @@
-.conteinerCategorias{
+.conteinerCategorias {
   display: flex;
 }
-.cardProductosCategoria{
+.cardProductosCategoria {
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -9,7 +9,7 @@
 }
 
 .colDetalle {
-    display: flex;
+  display: flex;
 }
 .imgDetalle {
   justify-content: center;
@@ -18,30 +18,7 @@
   align-content: center;
 }
 
-.filaVerProducto{
-  display: flex;
+.padreDetalles{
+  height:49.6rem;
+ 
 }
-
-.botonVerProducto{
-  justify-content: center;
-  align-items: center;
-}
-
-.tablaProductos{
-  text-align: center;
-  align-content: center;
-}
-
-
-.padreAdmin{
-  display: flex;
-  flex-direction:row;
-  
-}
-
-.botonModalAgregar{
-
-  align-self:flex-end;
-
-}
-

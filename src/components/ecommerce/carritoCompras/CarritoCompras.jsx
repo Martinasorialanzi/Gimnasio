@@ -95,7 +95,7 @@ const CarritoCompras = ({ allProducts, setAllProducts,abrirCarrito}) => {
               <>
                 <div className="cart-total">
                   <h3>
-                    Total:
+                    Total: $
                     {allProducts.reduce(
                       (acumulador, actual) => acumulador + actual.total,
                       0

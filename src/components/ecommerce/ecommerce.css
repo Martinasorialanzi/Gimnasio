@@ -11,7 +11,7 @@
     
   }
 
-  /* pagina categorias prodcutos */
+  /* pagina categorias productos */
 
   .offcanvasFiltros {
     max-width: 55% !important;
@@ -20,7 +20,7 @@
   
   .container-filtro{
     display: flex;
-    justify-content:end;
+    justify-content:flex-end;
   }
   
 
@@ -52,6 +52,6 @@
   
   .container-agregar-producto{
     display: flex;
-    justify-content:end;
+    justify-content:flex-end;
   }
   

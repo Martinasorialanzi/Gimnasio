@@ -13,15 +13,16 @@ const AdminProducts = () => {
 
 
   const [productos, setProductos] = useState([]);
-
+  const [isLoading,setLoading]=useState(true)
   useEffect(() => {
     const getProducts = async () => {
       const response = await GetProducts();
       setProductos(response.products);
+      setLoading(false)
     };
 
     getProducts();
-  }, [productos]);
+  }, [isLoading]);
 
   return (
     <>

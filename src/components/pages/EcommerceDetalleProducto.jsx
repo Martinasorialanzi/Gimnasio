@@ -59,7 +59,7 @@ const EcommerceDetalleProducto = () => {
         const b = Swal.getHtmlContainer().querySelector('b')
         timerInterval = setInterval(() => {
           b.textContent = Swal.getTimerLeft()
-        }, 100)
+        }, 140)
       },
       willClose: () => {
         clearInterval(timerInterval)

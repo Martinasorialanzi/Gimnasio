@@ -17,9 +17,10 @@ const ModalViewProduct = ({ producto }, _id) => {
       text: "No se podra revertir!",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
+      confirmButtonColor: '#E95821',
+      cancelButtonColor: '#5B5B5B',
       confirmButtonText: 'Si, borrar!'
+      
     }).then((result) => {
       if (result.isConfirmed) {
         deleteProduct(_id)

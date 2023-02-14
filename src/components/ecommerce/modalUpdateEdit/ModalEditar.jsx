@@ -1,4 +1,4 @@
-import React, { useState,useRef } from "react";
+import React, { useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 import { GetProduct, UpdateProduct } from "../../../api/GetProducts";
 import { tallesProductos, coloresProductos } from "../../helpers/Productos";
@@ -52,9 +52,10 @@ const ModalEditar = (_id) => {
     Swal.fire({
       title: 'Esta seguro que quiere guardar los cambios?',
       showDenyButton: true,
-      showCancelButton: true,
       confirmButtonText: 'Guardar',
       denyButtonText: `No guardar`,
+      confirmButtonColor: '#E95821',
+      denyButtonColor: '#5B5B5B',
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {

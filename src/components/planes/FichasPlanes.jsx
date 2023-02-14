@@ -97,7 +97,7 @@ const FichasPlanes = () => {
   
 <div className="container">
       <h1 className="text-center mt-4 ">Planes</h1>
-          <hr className="m-5 mb-0"/>
+          <hr className="m-5 mt-0 mb-0"/>
         <div className="text-center m-4 container-agregar-plan ">
       <Link to={"/agregarplan"}>
           <Button className=" button-agregar-planes m-4 mb-0 mt-0" variant="dark">Agregar Plan</Button>

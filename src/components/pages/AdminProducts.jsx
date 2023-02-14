@@ -29,8 +29,8 @@ const AdminProducts = () => {
     <NavegadorAdmin/>
       <div className="container padreAdmin  ">
         <Col>
-        <h2 className="mt-4 ">Productos</h2>
-        <br />
+        <h1 className="text-center mt-4 ">Productos</h1>
+     
         <hr/>
         <ModalAgregar className="botonModalAgregar mb-2" />
         <hr/>
@@ -38,32 +38,32 @@ const AdminProducts = () => {
           striped
           bordered
           hover
-          size="xl"
+          size="xs"
           responsive="xl"
-          className="m-4 p-4 tablaProductos"
+          className="m-4 p-4 tablaProductos "
           
         >
           <thead>
             <tr>
-              <th>id</th>
-              <th>Nombre</th>
-              <th>Categoria</th>
-              <th>Precio</th>
-              <th>Imagen</th>
-              <th>Portada</th>
-              <th  className="filaVerProducto">Ver producto</th>
+            <th className='back-tabla-listado text-light' >id</th>
+              <th className='back-tabla-listado text-light'>Nombre</th>
+              <th className='back-tabla-listado text-light'>Categoria</th>
+              <th className='back-tabla-listado text-light'>Precio</th>
+              <th className='back-tabla-listado text-light'>Imagen</th>
+              <th className='back-tabla-listado text-light'>Portada</th>
+              <th  className="filaVerProducto back-tabla-listado text-light">Ver producto</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className='justify-content-center'>
             {productos.map((producto) => {
               return (
                 <tr key={producto._id}>
-                  <td>{producto._id}</td>
-                  <td>{producto.nombre}</td>
-                  <td>{producto.categoria[0]}</td>
-                  <td>${producto.precio}</td>
-                  <td>{producto.portada.toString()}</td>
-                  <td>
+                  <td  style={{lineHeight:"200px"}}>{producto._id}</td>
+                  <td style={{lineHeight:"200px"}}>{producto.nombre}</td>
+                  <td style={{lineHeight:"200px"}}>{producto.categoria[0]}</td>
+                  <td style={{lineHeight:"200px"}}>${producto.precio}</td>
+                  <td style={{lineHeight:"200px"}}>{producto.portada.toString()}</td>
+                  <td style={{lineHeight:"200px"}}>
                     <img
                       alt="fotos productos"
                       src={producto.imagen}
@@ -71,7 +71,7 @@ const AdminProducts = () => {
                       heigth={140}
                     />
                   </td>
-                  <td
+                  <td style={{lineHeight:"200px"}}
                    
                   >
                     <ModalViewProduct producto={producto} _id={producto._id} className="botonVerProducto"/>

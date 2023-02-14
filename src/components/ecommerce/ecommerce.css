@@ -29,11 +29,13 @@
 
   .filaVerProducto {
     display: flex;
+    justify-content: center;
   }
   
   .botonVerProducto {
     justify-content: center;
     align-items: center;
+    background-color: #E95821 !important;
   }
   
   .tablaProductos {
@@ -55,3 +57,30 @@
     justify-content:flex-end;
   }
   
+  .back-tabla-listado{
+    background-color: #E95821 !important;
+}
+
+.celdasTabla{
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.boton-agregar-producto{
+
+        border-radius: 20px !important;
+        /* font-size: 1rem !important; */
+        background-color: #E95821 !important;
+        cursor: pointer;
+        color: white;
+}
+.boton-agregar-producto:hover{
+  background-color: #ffff !important;
+  color: #E95821!important;
+  box-shadow: inset #E95821;
+  box-shadow: 0 4px 16px #E95821;
+  transition: all 0.2s ease;
+  border-color: #E95821 !important;
+  }
+

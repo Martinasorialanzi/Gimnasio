@@ -5,7 +5,7 @@ import NavegadorAdmin from '../navegador/NavegadorAdmin';
 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import"../admin/Listado.css"
 const Turnos = () => {
     const [dataUsuarios, setDataUsuarios] = useState([])
     const baseUrl = "https://gimansio-backend.vercel.app"
@@ -49,14 +49,14 @@ const Turnos = () => {
   return (
       <>
           <NavegadorAdmin />
-          <h1 className='text-center mt-5'>Turnos</h1>
+          <h1 className='text-center m-4'>Turnos</h1>
           <Container className='text-center'>
           <Table striped bordered hover>
               <thead>
                   <tr>
-                      <th>Turno</th>
-                      <th>Usuario</th>
-                      <th>Entrenador</th>
+                      <th className='back-tabla-listado text-light'>Turno</th>
+                      <th className='back-tabla-listado text-light'>Usuario</th>
+                      <th className='back-tabla-listado text-light'>Entrenador</th>
                       
                   </tr>
               </thead>

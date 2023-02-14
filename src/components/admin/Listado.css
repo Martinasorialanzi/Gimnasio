@@ -7,10 +7,10 @@
 }
 
 .button-listado{
-    width: 15%;
+
         border-radius: 20px !important;
-        font-size: 1rem !important;
-        color: green;
+        /* font-size: 1rem !important; */
+        padding:8px;
         background-color: #E95821 !important;
         cursor: pointer;
         color: white;
@@ -77,4 +77,8 @@
     font-family: 'Shadows Into Light', cursive;
     margin: 0;
     
+}
+.container-agregar-usuario{
+    display: flex;
+    justify-content:flex-end;
 }

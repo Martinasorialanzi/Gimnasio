@@ -36,7 +36,7 @@ const ModalViewProduct = ({ producto }, _id) => {
 
   return (
     <>
-      <Button variant="dark" onClick={handleShow} className="botonModalAgregar">
+      <Button variant="dark" onClick={handleShow} className="botonVerProducto">
         Ver Producto
       </Button>
 

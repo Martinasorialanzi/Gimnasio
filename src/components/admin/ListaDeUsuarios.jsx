@@ -34,8 +34,8 @@ const ListasDeUsuarios = () => {
             text: "Se perderán para siempre",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
+            confirmButtonColor: '#E95821',
+      cancelButtonColor: '#5B5B5B',
             confirmButtonText: 'Si, borrar!'
         }).then((result) => {
             if (result.isConfirmed) {
@@ -82,10 +82,14 @@ const ListasDeUsuarios = () => {
     return (
         <>
              <NavegadorAdmin/>
-            <h1 className='text-center mt-5 titulo-listado'>Listado de Usuarios</h1>
-            <div className='text-center mb-2'>
-                <Link to='/agregarusuario'><button className='mb-5 mt-5 button-listado'>Agregar Usuario</button></Link>
-                <Table striped bordered hover size="sm">
+             <h1 className="text-center mt-4 ">Listado de Usuarios</h1>
+            <div className='text-center mb-2 container'>
+            <hr/>
+            <div className="container-agregar-usuario">
+                <Link to='/agregarusuario'><button className='button-listado m-2'>  Agregar Usuario </button></Link>
+                </div>
+                <hr/>
+                <Table striped bordered hover size="xs" responsive="xl">
                     <thead className='text-center'>
                         <tr>
                             <th className='back-tabla-listado text-light'>Codigo Usuario</th>

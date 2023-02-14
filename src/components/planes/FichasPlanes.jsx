@@ -38,9 +38,9 @@ const FichasPlanes = () => {
       text: "Se perderán para siempre",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Si, borrar!'
+      confirmButtonText: 'Si, borrar!',
+      confirmButtonColor: '#E95821',
+      cancelButtonColor: '#5B5B5B',
     }).then((result) => {
       if (result.isConfirmed) {
         axios.post(`${baseUrl}/v1/borrarPlan`, { codigoPlan: codigoPlan }).then((res) => {
@@ -60,8 +60,8 @@ const FichasPlanes = () => {
   //MAPEAMOS LISTA DE USUARIOS
   const listaPlanes = dataPlan.map((plan) => {
     return (
-      <Col className="m-2 " >
-        <Card style={{ width: "18rem" }} className="h-100 card-estilo-planes">
+      <Col className="m-3 container" xs={12} sm={6} md={4} xl={3}>
+        <Card  className="h-100 card-estilo-planes">
           <Card.Header className="text-center card-estilo-planes">00{plan.idPlan}</Card.Header>
           <Card.Body>
             <Card.Title className="text-center ">{plan.nombrePlan}</Card.Title>
@@ -70,7 +70,8 @@ const FichasPlanes = () => {
               $ {plan.precio} por hora
             </Card.Text>
             <Card.Text className="text-center ">{plan.codigoPlan}</Card.Text>
-            <div className="text-center">
+          </Card.Body>
+            <div className="text-center mb-2">
               <Button
                 className="m-1 w-50 text-center color-boton-planes"
                 variant="success"
@@ -86,7 +87,6 @@ const FichasPlanes = () => {
                 </Button>
               </Link>
             </div>
-          </Card.Body>
         </Card>
       </Col>
     );
@@ -95,17 +95,20 @@ const FichasPlanes = () => {
   return (
     <>
   
-      <h1 className="text-center">Planes</h1>
+<div className="container">
+      <h1 className="text-center mt-4 ">Planes</h1>
+          <hr className="m-5 mb-0"/>
+        <div className="text-center m-4 container-agregar-plan ">
       <Link to={"/agregarplan"}>
-        <div className="text-center mt-4 ">
-          {" "}
-          <Button className="color-boton-planes">Agregar Plan</Button>
-        </div>
+          <Button className=" button-agregar-planes m-4 mb-0 mt-0" variant="dark">Agregar Plan</Button>
       </Link>
-      <h4 className="text-center mt-3">Administre hasta 9 planes</h4>
+        </div>
+        <hr className="m-5 mt-0"/>
+      <h5 className="text-center mt-2">Administre hasta 9 planes</h5>
       <Container>
-        <Row className="justify-content-md-center mt-5">{listaPlanes}</Row>
+        <Row className="justify-content-center m-4">{listaPlanes}</Row>
       </Container>
+      </div>
     </>
   );
 };

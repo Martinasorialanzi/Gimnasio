@@ -69,7 +69,7 @@ const ModalAgregar = () => {
   return (
     <>
       <div className="container-agregar-producto">
-        <Button variant="dark" onClick={handleShow}>
+        <Button className="boton-agregar-producto" variant="dark" onClick={handleShow}>
           Add Products
         </Button>
       </div>

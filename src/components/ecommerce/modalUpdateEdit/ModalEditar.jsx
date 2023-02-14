@@ -52,6 +52,7 @@ const ModalEditar = (_id) => {
     Swal.fire({
       title: 'Esta seguro que quiere guardar los cambios?',
       showDenyButton: true,
+      showConfirmButton:true,
       confirmButtonText: 'Guardar',
       denyButtonText: `No guardar`,
       confirmButtonColor: '#E95821',
@@ -59,7 +60,10 @@ const ModalEditar = (_id) => {
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        Swal.fire('Guardado!', '', 'success')
+        Swal.fire({icon: 'success',
+        title: 'Guardado!',
+        showConfirmButton: false,
+        timer: 1500})
         const formData = {
           nombre: nombre,
           categoria: categoria,
@@ -75,7 +79,10 @@ const ModalEditar = (_id) => {
         UpdateProduct(_id._id, formData);
         handleClose()
       } else if (result.isDenied) {
-        Swal.fire('Los cambios no se guardaron', '', 'info')
+        Swal.fire({icon: 'info',
+        title: 'Los cambios no se guardaron!',
+        showConfirmButton: false,
+        timer: 1500})
       }
     })
   
@@ -237,7 +244,7 @@ const ModalEditar = (_id) => {
               </Form.Select>
               </Form.Group>
             <Button size="lg"variant="dark" type="submit">
-              Submit
+              Guardar
             </Button>
           </Form>
         </Modal.Body>

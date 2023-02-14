@@ -19,16 +19,19 @@ const ModalViewProduct = ({ producto }, _id) => {
       showCancelButton: true,
       confirmButtonColor: '#E95821',
       cancelButtonColor: '#5B5B5B',
-      confirmButtonText: 'Si, borrar!'
+      confirmButtonText: 'Si, borrar!',
+      confirmButtonColor: '#E95821',
       
     }).then((result) => {
       if (result.isConfirmed) {
         deleteProduct(_id)
         Swal.fire(
-          'Borrado!',
-          'Su producto fue borrado.',
-          'success'
+          {icon: 'success',
+          title: 'Producto borrado!',
+          showConfirmButton: false,
+          timer: 1500}
         )
+        setShow(false)
 
       }
     })

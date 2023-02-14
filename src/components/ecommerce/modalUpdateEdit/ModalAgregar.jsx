@@ -35,7 +35,10 @@ const ModalAgregar = () => {
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        Swal.fire("Guardado!", "", "success");
+        Swal.fire({icon: 'success',
+        title: 'Guardado!',
+        showConfirmButton: false,
+        timer: 1500});
         const formData = {
           nombre: nombre,
           categoria: categoria,
@@ -61,7 +64,10 @@ const ModalAgregar = () => {
         setColor([]);
         setStock();
       } else if (result.isDenied) {
-        Swal.fire("El producto no fue agregado", "", "info");
+        Swal.fire({icon: 'info',
+        title: 'El pruducto no fue agregado',
+        showConfirmButton: false,
+        timer: 1500});
       }
     });
   };
@@ -226,7 +232,7 @@ const ModalAgregar = () => {
             </Form.Group>
 
             <Button variant="dark" size="lg" type="submit">
-              Submit
+              Guardar
             </Button>
           </Form>
         </Modal.Body>

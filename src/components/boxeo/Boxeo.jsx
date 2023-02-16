@@ -3,6 +3,10 @@ import "../boxeo/Boxeo.css"
 import Carousel from 'react-bootstrap/Carousel';
 import Accordion from 'react-bootstrap/Accordion';
 import Table from 'react-bootstrap/Table';
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
+import Button from 'react-bootstrap/Button';
+
 
 import Footer from "../footer/Footer"
 import NavegadorAdmin from '../navegador/NavegadorAdmin';
@@ -19,7 +23,7 @@ const Boxeo = () => {
 
    
 
-    <Carousel>
+        <Carousel>
 
         <Carousel.Item>
         <img
@@ -115,7 +119,53 @@ const Boxeo = () => {
         </tbody>
 
         </Table>
+
+        <h4 className='horariosletra'>NUESTROS PLANES</h4>
+
+        <CardGroup className='grupocards'>
+        <Card className='cardplanes'>
+        <Card.Img variant="top" src="https://media.gq.com.mx/photos/5be9e88e802158671c66f886/1:1/w_1200,h_1200,c_limit/box_9903.jpg" />
+        <Card.Body>
+        <Card.Title className='letratarjetas' style={{color: "black"}}>BOXEO</Card.Title>
+        <Card.Text className='letratarjetas'>
+            Tenemos los mejores entrenadores, el mejor ambiente y los mejores precios.
+            No esperes más e inscribite para entrenar con nosotros.
+        </Card.Text>
+        </Card.Body>
+        <Card.Footer>
+        <Button variant="outline-dark" className='buttomcard'>Inscribirse</Button>
+        </Card.Footer>
+        </Card>
+
+        <Card className='cardplanes'>
+        <Card.Img variant="top" src="https://www.cuerpomente.com/medio/2020/07/08/1144083_1ee10942_1200x1200.jpg" />
+        <Card.Body>
+        <Card.Title className='letratarjetas' style={{color: "black"}}>YOGA</Card.Title>
+        <Card.Text className='letratarjetas'>
+            Si descontracturar tu vida es lo que estas buscando, inscribite a nuestras clases de yoga, tenemos a la mejor gurú. {' '}
+        </Card.Text>
+        </Card.Body>
+        <Card.Footer>
+        <Button variant="outline-dark" className='buttomcard'>Inscribirse</Button>
+        </Card.Footer>
+        </Card>
+
+        <Card className='cardplanes'>
+        <Card.Img variant="top" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mancuernas-1559227736.jpg?resize=480:*" />
+        <Card.Body>
+        <Card.Title>LIBRE</Card.Title>
+        <Card.Text className='letratarjetas'>
+            Tenemos las mejores instalaciones, las mejores maquinas y los mejores trainers. Inscribite y logra tus objetivos con nosotros.
+        </Card.Text>
+        </Card.Body>
+        <Card.Footer>
+        <Button variant="outline-dark" className='buttomcard'>Inscribirse</Button>
+        </Card.Footer>
+        </Card>
+        </CardGroup>
         
+
+
 </div>
 
         <Footer/>

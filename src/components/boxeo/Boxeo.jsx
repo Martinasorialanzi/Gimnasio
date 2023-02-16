@@ -5,13 +5,57 @@ import Accordion from 'react-bootstrap/Accordion';
 import Table from 'react-bootstrap/Table';
 import Footer from "../footer/Footer"
 // import NavegadorAdmin from '../navegador/NavegadorAdmin';
+// import Navegador from '../navegador/Navegador';
 
 const Boxeo = () => {
   return (
 <> 
+{/* <Navegador/> */}
+
 {/* <NavegadorAdmin/> */}
 
- <div className='clasedivf'>
+ <div className='fondobox'>
+
+
+     <h4 className='horariosletra'>HORARIOS</h4>
+
+
+     <Table striped bordered hover variant="dark">
+
+        <thead>
+        <tr>
+        <th>Horarios</th>
+        <th>Lunes - Martes</th>
+        <th>Miercoles - Jueves</th>
+        <th>Viernes - Sabado</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>BOXEO</td>
+        <td>14:00 a 16:00</td>
+        <td>16:00 a 18:00</td>
+        <td>18:00 a 20:00</td>
+        </tr>
+        <tr>
+        <td>YOGA</td>
+        <td>09:00 a 11:00</td>
+        <td>13:00 a 15:00</td>
+        <td>16:00 a 18:00</td>
+        </tr>
+        <tr>
+        <td>LIBRE</td>
+        <td colSpan={2}>08:00 a 22:00</td>
+        <td>10:00 a 21:00</td>
+        </tr>
+        </tbody>
+
+        </Table>
+
+
+
+        <h2 className='boxeoletra'>BOXEO</h2>
+        <h5 className='boxeoletra'>SÉ MÁS FUERTE, ENTRENA CON NOSOTROS</h5>
 
 
         <Carousel>
@@ -19,7 +63,7 @@ const Boxeo = () => {
         <Carousel.Item>
         <img
         className="d-block w-100"
-        src="https://d2y8hg1io93jyo.cloudfront.net/wp-content/uploads/Diseno-sin-titulo-2022-11-13T231856.935.jpg"
+        src="https://wallpaperaccess.com/full/1154757.jpg"
         alt="First slide"
         />
         <Carousel.Caption>
@@ -31,7 +75,7 @@ const Boxeo = () => {
         <Carousel.Item>
         <img
         className="d-block w-100"
-        src="https://www.sabervivirtv.com/medio/2022/05/25/los-beneficios-de-practicar-boxeo_5ded1591_1280x720.jpg"
+        src="https://wallpaperaccess.com/full/2769888.jpg"
         alt="Second slide"
         />
       
@@ -70,37 +114,7 @@ const Boxeo = () => {
         </Accordion>
 
 
-        <Table striped bordered hover variant="dark">
-
-        <thead>
-        <tr>
-        <th>Horarios</th>
-        <th>Lunes - Martes</th>
-        <th>Miercoles - Jueves</th>
-        <th>Viernes - Sabado</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-        <td>BOXEO</td>
-        <td>14:00 a 16:00</td>
-        <td>16:00 a 18:00</td>
-        <td>18:00 a 20:00</td>
-        </tr>
-        <tr>
-        <td>YOGA</td>
-        <td>09:00 a 11:00</td>
-        <td>13:00 a 15:00</td>
-        <td>16:00 a 18:00</td>
-        </tr>
-        <tr>
-        <td>LIBRE</td>
-        <td colSpan={2}>08:00 a 22:00</td>
-        <td>10:00 a 21:00</td>
-        </tr>
-        </tbody>
-
-        </Table>
+       
 
    
 

@@ -1,6 +1,18 @@
-.titulof {
-text-align: center;
+.fondobox{
+    background-color: #E95821;
 }
-.accof {
-    background-color: #2B2A29;
+
+.horariosletra{
+    color:#ffffff;
+    text-align: center;
+    text-overflow: clip;
+}
+
+.boxeoletra {
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+}
+.h3 {
+    font-family: Arial, Helvetica, sans-serif
 }

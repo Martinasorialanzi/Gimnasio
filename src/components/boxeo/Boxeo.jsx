@@ -4,12 +4,12 @@ import Carousel from 'react-bootstrap/Carousel';
 import Accordion from 'react-bootstrap/Accordion';
 import Table from 'react-bootstrap/Table';
 import Footer from "../footer/Footer"
-import NavegadorAdmin from '../navegador/NavegadorAdmin';
+// import NavegadorAdmin from '../navegador/NavegadorAdmin';
 
 const Boxeo = () => {
   return (
 <> 
-<NavegadorAdmin/>
+{/* <NavegadorAdmin/> */}
 
  <div className='clasedivf'>
 

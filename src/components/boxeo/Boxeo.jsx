@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import "../boxeo/Boxeo.css"
 import Carousel from 'react-bootstrap/Carousel';
 import Accordion from 'react-bootstrap/Accordion';
 import Table from 'react-bootstrap/Table';
+
 import Footer from "../footer/Footer"
-// import NavegadorAdmin from '../navegador/NavegadorAdmin';
+import NavegadorAdmin from '../navegador/NavegadorAdmin';
 // import Navegador from '../navegador/Navegador';
 
 const Boxeo = () => {
@@ -12,15 +13,78 @@ const Boxeo = () => {
 <> 
 {/* <Navegador/> */}
 
-{/* <NavegadorAdmin/> */}
+<NavegadorAdmin/>
 
- <div className='fondobox'>
+<div className='fondobox'>
+
+   
+
+    <Carousel>
+
+        <Carousel.Item>
+        <img
+        className="d-block w-100"
+        src="https://wallpaperaccess.com/full/1154757.jpg"
+        alt="First slide"
+        />
+        <Carousel.Caption>
+        <h3>ENTRENA CON NOSOTROS</h3>
+        <p>Tenemos los mejores entrenadores del NOA</p>
+        </Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item>
+        <img
+        className="d-block w-100"
+        src="https://wallpaperaccess.com/full/2769888.jpg"
+        alt="Second slide"
+        />
+      
+        <Carousel.Caption>
+        <h3>ENTRENA CON NOSOTROS</h3>
+        <p>Tenemos los mejores entrenadores del NOA</p>
+        </Carousel.Caption>
+        </Carousel.Item>
+
+        </Carousel>
+
+        
+        <h2 className='boxeoletra'>CLASES DE BOXEO</h2>
+        <h5 className='boxeoletra'>QUERÉS SER MÁS FUERTE? ENTRENA CON NOSOTROS</h5>
 
 
-     <h4 className='horariosletra'>HORARIOS</h4>
+
+        <Accordion className='mt-5 p-3'>
+
+        <Accordion.Item eventKey="0" className='item'>
+        <Accordion.Header>Acerca del Boxeo</Accordion.Header>
+        <Accordion.Body>
+        El boxeo, también llamado a veces boxeo inglés, boxeo irlandés o pugilismo, y comúnmente conocido como box, es un deporte de contacto en el que dos contrincantes luchan utilizando únicamente sus puños con guantes, golpeando a su adversario de la cintura hacia arriba, dentro de un cuadrilátero especialmente diseñado para tal fin; la pelea se lleva a cabo en breves secuencias de lucha denominadas asaltos y de acuerdo a un preciso reglamento, el cual regula categorías de pesos y duración del encuentro, entre otros aspectos.
+        </Accordion.Body>
+        </Accordion.Item>
+
+        <Accordion.Item eventKey="1" className='item'>
+        <Accordion.Header>Beneficios</Accordion.Header>
+        <Accordion.Body>
+        <ul>
+        <li>Libera tensiones y estrés</li>
+        <li>Aumenta la agilidad, los reflejos y la elasticidad</li>
+        <li>Combate la ansiedad y el estrés</li>
+        <li>Tonifica todo el cuerpo</li>
+        <li>Quema muchas calorías</li>
+        <li>Favorece el equilibrio mental</li>
+        </ul>
+        </Accordion.Body>
+        </Accordion.Item>
+
+        </Accordion>
 
 
-     <Table striped bordered hover variant="dark">
+
+        <h4 className='horariosletra'>HORARIOS</h4>
+
+
+        <Table striped bordered hover variant="dark">
 
         <thead>
         <tr>
@@ -51,73 +115,7 @@ const Boxeo = () => {
         </tbody>
 
         </Table>
-
-
-
-        <h2 className='boxeoletra'>BOXEO</h2>
-        <h5 className='boxeoletra'>SÉ MÁS FUERTE, ENTRENA CON NOSOTROS</h5>
-
-
-        <Carousel>
-
-        <Carousel.Item>
-        <img
-        className="d-block w-100"
-        src="https://wallpaperaccess.com/full/1154757.jpg"
-        alt="First slide"
-        />
-        <Carousel.Caption>
-        <h3>ENTRENA CON NOSOTROS</h3>
-        <p>Tenemos los mejores entrenadores del NOA</p>
-        </Carousel.Caption>
-        </Carousel.Item>
-
-        <Carousel.Item>
-        <img
-        className="d-block w-100"
-        src="https://wallpaperaccess.com/full/2769888.jpg"
-        alt="Second slide"
-        />
-      
-        <Carousel.Caption>
-        <h3>ENTRENA CON NOSOTROS</h3>
-        <p>Tenemos los mejores entrenadores del NOA</p>
-        </Carousel.Caption>
-        </Carousel.Item>
-
-        </Carousel>
-
-     
-        <Accordion>
-
-        <Accordion.Item eventKey="0">
-        <Accordion.Header>Acerca del Boxeo</Accordion.Header>
-        <Accordion.Body>
-        El boxeo, también llamado a veces boxeo inglés, boxeo irlandés o pugilismo, y comúnmente conocido como box, es un deporte de contacto en el que dos contrincantes luchan utilizando únicamente sus puños con guantes, golpeando a su adversario de la cintura hacia arriba, dentro de un cuadrilátero especialmente diseñado para tal fin; la pelea se lleva a cabo en breves secuencias de lucha denominadas asaltos y de acuerdo a un preciso reglamento, el cual regula categorías de pesos y duración del encuentro, entre otros aspectos.
-        </Accordion.Body>
-        </Accordion.Item>
-
-        <Accordion.Item eventKey="1">
-        <Accordion.Header className='accordionf'>Beneficios</Accordion.Header>
-        <Accordion.Body>
-        <ul>
-        <li>Libera tensiones y estrés</li>
-        <li>Aumenta la agilidad, los reflejos y la elasticidad</li>
-        <li>Combate la ansiedad y el estrés</li>
-        <li>Tonifica todo el cuerpo</li>
-        <li>Quema muchas calorías</li>
-        <li>Favorece el equilibrio mental</li>
-        </ul>
-        </Accordion.Body>
-        </Accordion.Item>
-
-        </Accordion>
-
-
-       
-
-   
-
+        
 </div>
 
         <Footer/>

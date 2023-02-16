@@ -6,18 +6,16 @@ import Table from 'react-bootstrap/Table';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Button from 'react-bootstrap/Button';
-
-
 import Footer from "../footer/Footer"
 import NavegadorAdmin from '../navegador/NavegadorAdmin';
 // import Navegador from '../navegador/Navegador';
 
 const Boxeo = () => {
-  return (
+return (
 <> 
 {/* <Navegador/> */}
 
-<NavegadorAdmin/>
+        <NavegadorAdmin/>
 
 <div className='fondobox'>
 

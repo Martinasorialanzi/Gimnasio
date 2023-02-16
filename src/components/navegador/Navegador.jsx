@@ -54,6 +54,7 @@ const Navegador = ({ allProducts, setAllProducts }) => {
               <NavDropdown.Item href="/ecommerce-categoria/all">Ver todo</NavDropdown.Item>
               
             </NavDropdown>
+            <Nav.Link href="/boxeo">Boxeo</Nav.Link>
             <Nav.Link href="/acercade">Acerca de nosotros</Nav.Link>
         
           </Nav>

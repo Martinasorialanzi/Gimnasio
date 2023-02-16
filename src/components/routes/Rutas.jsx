@@ -5,6 +5,7 @@ import AdminProducts from '../pages/AdminProducts'
 import EcommerceCategoria from '../pages/EcommerceCategoria'
 import EcommerceDetalleProducto from '../pages/EcommerceDetalleProducto'
 import EcommerceHome from '../pages/EcommerceHome'
+import Boxeo from '../boxeo/Boxeo'
 
 import Admin from '../admin/Admin'
 import AgregarUsuario from '../admin/AgregarUsuario'
@@ -30,12 +31,15 @@ import Error from '../pages/error404/Error'
 
 const Rutas = () => {
   return (
+
     <Routes>
-       <Route path="/admin/users" element={<UsersAdmin />} />
-       <Route path='/ecommercehome' element={<EcommerceHome/>}/>
-       <Route path='/ecommerce-producto/:_id' element={<EcommerceDetalleProducto/>}/>
-       <Route path='/ecommerce-categoria/:categoria' element={<EcommerceCategoria/>}/>
-       <Route path='/admin/productos' element={<AdminProducts/>}/>
+
+      <Route path="/admin/users" element={<UsersAdmin />} />
+      <Route path='/ecommercehome' element={<EcommerceHome/>}/>
+      <Route path='/ecommerce-producto/:_id' element={<EcommerceDetalleProducto/>}/>
+      <Route path='/ecommerce-categoria/:categoria' element={<EcommerceCategoria/>}/>
+      <Route path='/admin/productos' element={<AdminProducts/>}/>
+      <Route path="/boxeo" element={<Boxeo />} />
 
       <Route path="/admin" element={<Admin />} />
       <Route path="/clientes" element={<Clientes />} />
@@ -51,14 +55,11 @@ const Rutas = () => {
       <Route path="/editarplan/:codigoPlan" element={<EditarPlan />} exact />
       <Route path="/turnos" element={<Turnos />} exact />
   
-             <Route path="/" element={<Home/>} />
-       <Route path="/acercade" element={<AcercaDe/>} />
-       <Route path="/preguntasfrecuentes" element={<PreguntasFrecuentes/>} />
-       <Route path='/error' element={<Error/>}/>
-       
-      
-
-     
+      <Route path="/" element={<Home/>} />
+      <Route path="/acercade" element={<AcercaDe/>} />
+      <Route path="/preguntasfrecuentes" element={<PreguntasFrecuentes/>} />
+      <Route path='/error' element={<Error/>}/>
+            
     </Routes>
   )
 }

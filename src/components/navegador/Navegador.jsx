@@ -23,7 +23,8 @@ const Navegador = ({ allProducts, setAllProducts }) => {
         autocapitalize: 'off',
         autocorrect: 'off'
       },
-      confirmButtonColor: '#E95821'
+      confirmButtonColor: '#E95821',
+      
     })
     
     if (password == 123 ) {

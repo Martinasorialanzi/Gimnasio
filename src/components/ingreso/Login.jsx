@@ -57,7 +57,7 @@ const Login = () => {
           </Form.Group>
           
           <Button variant="dark" type="submit">
-            Submit
+            Enviar
           </Button>
         </Form>
         

@@ -17,6 +17,7 @@ console.log(formData)
       icon: "success",
       title: "Registrado",
       text: "Registro exitoso",
+      confirmButtonColor: '#E95821'
     });
 
 
@@ -26,6 +27,7 @@ console.log(formData)
       icon: "error",
       title: "Error",
       text: "hay algun error en tu registro",
+      confirmButtonColor: '#E95821'
     });
    }
      
@@ -33,6 +35,6 @@ console.log(formData)
     return response;
     
   } catch (error) {
-    console.log(error.response.data);
+    console.log(error);
   }
 };

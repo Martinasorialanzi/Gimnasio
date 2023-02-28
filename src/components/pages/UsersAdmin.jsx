@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Table, Button } from "react-bootstrap";
 import {  GetUsers } from "../helpers/GetUsers";
 import NavegadorAdmin from "../navegador/NavegadorAdmin";
+import '../admin/Listado.css'
 
 // import ModalAgregar from "../ecommerce/modalUpdateEdit/ModalAgregar";
 
@@ -26,20 +27,19 @@ const UsersAdmin = () => {
     <>
     <NavegadorAdmin/>
       {/* <ModalAgregar/> */}
-      <h1>Control de usuarios</h1>
+      <h1 className="text-center mt-4 ">Lista de administradores</h1>
       
 
       <Table striped bordered hover size="sm">
         <thead>
           <tr>
-            <th>id</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>email</th>
-            <th>contraseña</th>
+            <th className='back-tabla-listado text-light'>id</th>
+            <th className='back-tabla-listado text-light'>Nombre</th>
+            <th className='back-tabla-listado text-light'>Apellido</th>
+            <th className='back-tabla-listado text-light'>email</th>
+            <th className='back-tabla-listado text-light'>contraseña</th>
 
-            <th>Edit</th>
-            <th>Delete</th>
+            
           </tr>
         </thead>
         <tbody>
@@ -51,10 +51,8 @@ const UsersAdmin = () => {
                 <td>{user.lastname}</td>
                 <td>{user.email}</td>
                 <td>{user.password}</td>
-                <td>{<Button>Edit</Button>}</td>
-                {/* <td>{<Button
-                 onClick={(e)=>deleteProduct(producto._id)}
-                 >Delete</Button>}</td> */}
+                
+               
               </tr>
             );
           })}

@@ -19,6 +19,7 @@ export const funcionLogin = async (login) => { //le paso los datos del login por
           icon: "success",
           title: `Bienvenido `,
           text: "Ingreso exitoso",
+          confirmButtonColor: '#E95821'
         }, setTimeout(() => {
           window.location.href = "/admin"; //una vez q se logue lo redirecciono al home
           }, 2000));;
@@ -27,6 +28,7 @@ export const funcionLogin = async (login) => { //le paso los datos del login por
           icon: "error",
           title: "Error",
           text: "Usuario o contraseña incorrectos",
+          confirmButtonColor: '#E95821'
         });
       }
     } catch (error) {

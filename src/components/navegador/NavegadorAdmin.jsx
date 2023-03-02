@@ -18,6 +18,7 @@ const NavegadorAdmin = () => {
             <Nav.Link href="/clientes">Usuarios</Nav.Link>
             <Nav.Link href="/chat">Chat</Nav.Link>
             <Nav.Link href="/admin/productos">Productos</Nav.Link>
+            <Nav.Link href="/admin/users">Tabla admin</Nav.Link>
 
           </Nav>
           

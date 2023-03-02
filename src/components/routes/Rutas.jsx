@@ -8,6 +8,7 @@ import EcommerceHome from '../pages/EcommerceHome'
 
 import Boxeo from '../boxeo/Boxeo'
 import Yoga from '../yoga/Yoga'
+import Libre from '../libre/Libre'
 
 import Admin from '../admin/Admin'
 import AgregarUsuario from '../admin/AgregarUsuario'
@@ -44,7 +45,7 @@ const Rutas = () => {
 
       <Route path="/boxeo" element={<Boxeo />} />
       <Route path="/yoga" element={<Yoga />} />
-      
+      <Route path="/libre" element={<Libre />} />
 
       <Route path="/admin" element={<Admin />} />
       <Route path="/clientes" element={<Clientes />} />

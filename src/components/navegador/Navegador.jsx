@@ -56,6 +56,7 @@ const Navegador = ({ allProducts, setAllProducts }) => {
             </NavDropdown>
             <Nav.Link href="/boxeo">Boxeo</Nav.Link>
             <Nav.Link href="/yoga">Yoga</Nav.Link>
+            <Nav.Link href="/libre">Libre</Nav.Link>
             <Nav.Link href="/acercade">Acerca de nosotros</Nav.Link>
         
           </Nav>

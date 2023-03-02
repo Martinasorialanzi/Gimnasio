@@ -5,7 +5,9 @@ import AdminProducts from '../pages/AdminProducts'
 import EcommerceCategoria from '../pages/EcommerceCategoria'
 import EcommerceDetalleProducto from '../pages/EcommerceDetalleProducto'
 import EcommerceHome from '../pages/EcommerceHome'
+
 import Boxeo from '../boxeo/Boxeo'
+import Yoga from '../yoga/Yoga'
 
 import Admin from '../admin/Admin'
 import AgregarUsuario from '../admin/AgregarUsuario'
@@ -39,7 +41,10 @@ const Rutas = () => {
       <Route path='/ecommerce-producto/:_id' element={<EcommerceDetalleProducto/>}/>
       <Route path='/ecommerce-categoria/:categoria' element={<EcommerceCategoria/>}/>
       <Route path='/admin/productos' element={<AdminProducts/>}/>
+
       <Route path="/boxeo" element={<Boxeo />} />
+      <Route path="/yoga" element={<Yoga />} />
+      
 
       <Route path="/admin" element={<Admin />} />
       <Route path="/clientes" element={<Clientes />} />

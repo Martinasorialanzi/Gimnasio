@@ -1,15 +1,15 @@
 import React, { Fragment } from 'react'
-import "../boxeo/Boxeo.css"
+import "./Yoga.css"
 import Carousel from 'react-bootstrap/Carousel';
 import Accordion from 'react-bootstrap/Accordion';
 import Table from 'react-bootstrap/Table';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
-import Footer from "../footer/Footer"
+import Footer from "../footer/Footer";
 import NavegadorAdmin from '../navegador/NavegadorAdmin';
 // import Navegador from '../navegador/Navegador';
 
-const Boxeo = () => {
+const Yoga = () => {
 return (
 <> 
 {/* <Navegador/> */}
@@ -25,25 +25,25 @@ return (
         <Carousel.Item>
         <img
         className="d-block w-100"
-        src="https://wallpaperaccess.com/full/1154757.jpg"
+        src="https://besthqwallpapers.com/Uploads/19-8-2017/18753/yoga-yoga-exercises-yoga-girls-gym-meditation.jpg"
         alt="First slide"
         />
         <Carousel.Caption>
-        <h3>ENTRENA CON NOSOTROS</h3>
-        <p>Tenemos los mejores entrenadores del NOA</p>
+        <h3>VENI A NUESTRAS CLASES DE YOGA</h3>
+        <p>Tenemos a las mejores profes</p>
         </Carousel.Caption>
         </Carousel.Item>
 
         <Carousel.Item>
         <img
         className="d-block w-100"
-        src="https://wallpaperaccess.com/full/2769888.jpg"
+        src="https://images8.alphacoders.com/523/thumb-1920-523923.jpg"
         alt="Second slide"
         />
       
         <Carousel.Caption>
-        <h3>ENTRENA CON NOSOTROS</h3>
-        <p>Tenemos los mejores entrenadores del NOA</p>
+        <h3>VENI A NUESTRAS CLASES DE YOGA</h3>
+        <p>Tenemos a las mejores profes</p>
         </Carousel.Caption>
         </Carousel.Item>
 
@@ -163,4 +163,4 @@ return (
   )
 }
 
-export default Boxeo
+export default Yoga

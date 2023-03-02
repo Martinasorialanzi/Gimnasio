@@ -12,7 +12,8 @@ import NavegadorAdmin from '../navegador/NavegadorAdmin';
 const Libre = () => {
 return (
 <> 
-{/* <Navegador/> */}
+
+{/* <Navegador/>  */}
 
         <NavegadorAdmin/>
 

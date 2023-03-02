@@ -50,17 +50,17 @@ return (
         </Carousel>
 
         
-        <h2 className='boxeoletra'>CLASES DE BOXEO</h2>
-        <h5 className='boxeoletra'>QUERÉS SER MÁS FUERTE? ENTRENA CON NOSOTROS</h5>
+        <h2 className='boxeoletra'>CLASES DE YOGA</h2>
+        <h5 className='boxeoletra'>TE AYUDAMOS A DESCONTRACTURAR TU VIDA</h5>
 
 
 
         <Accordion className='mt-5 p-3'>
 
         <Accordion.Item eventKey="0" className='item'>
-        <Accordion.Header>Acerca del Boxeo</Accordion.Header>
+        <Accordion.Header>Acerca del Yoga</Accordion.Header>
         <Accordion.Body>
-        El boxeo, también llamado a veces boxeo inglés, boxeo irlandés o pugilismo, y comúnmente conocido como box, es un deporte de contacto en el que dos contrincantes luchan utilizando únicamente sus puños con guantes, golpeando a su adversario de la cintura hacia arriba, dentro de un cuadrilátero especialmente diseñado para tal fin; la pelea se lleva a cabo en breves secuencias de lucha denominadas asaltos y de acuerdo a un preciso reglamento, el cual regula categorías de pesos y duración del encuentro, entre otros aspectos.
+        El yoga es una disciplina tradicional espiritual, física y mental originada en la India. El yoga es una de las seis dárshanas ortodoxas del hinduismo. Enfatiza la meditación y la liberación, siendo su texto principal el Yoga sutra.
         </Accordion.Body>
         </Accordion.Item>
 
@@ -68,12 +68,12 @@ return (
         <Accordion.Header>Beneficios</Accordion.Header>
         <Accordion.Body>
         <ul>
-        <li>Libera tensiones y estrés</li>
-        <li>Aumenta la agilidad, los reflejos y la elasticidad</li>
-        <li>Combate la ansiedad y el estrés</li>
-        <li>Tonifica todo el cuerpo</li>
-        <li>Quema muchas calorías</li>
-        <li>Favorece el equilibrio mental</li>
+        <li>Reducir su presión arterial y su frecuencia cardíaca</li>
+        <li>Reducir el estrés</li>
+        <li>Mejorar su coordinación</li>
+        <li>Ayudarle a dormir mejor</li>
+        <li>Ayudar a la digestión</li>
+        <li>Ayudarle a relajarse</li>
         </ul>
         </Accordion.Body>
         </Accordion.Item>

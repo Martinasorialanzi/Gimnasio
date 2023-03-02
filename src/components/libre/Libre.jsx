@@ -25,7 +25,7 @@ return (
         <Carousel.Item>
         <img
         className="d-block w-100"
-        src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gimnasio-lleno-1672336393.jpg"
+        src="https://www.lifefitness.es/resource/blob/1590876/051290c32e2e58cd92bce8d0c5e86a60/hd-performance-trainers-data.jpg"
         alt="First slide"
         />
         <Carousel.Caption>
@@ -37,7 +37,7 @@ return (
         <Carousel.Item>
         <img
         className="d-block w-100"
-        src="https://www.latercera.com/resizer/vhzpO4ed740W9gfdqAenlruIsdY=/arc-anglerfish-arc2-prod-copesa/public/ILONDSA3N5D6FBZYWKFLEU5VQ4.jpg"
+        src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gimnasio-lleno-1672336393.jpg"
         alt="Second slide"
         />
       
@@ -50,17 +50,17 @@ return (
         </Carousel>
 
         
-        <h2 className='boxeoletra'>CLASES DE YOGA</h2>
-        <h5 className='boxeoletra'>TE AYUDAMOS A DESCONTRACTURAR TU VIDA</h5>
+        <h2 className='boxeoletra'>INSTALACIONES</h2>
+        <h5 className='boxeoletra'>TENEMOS UN GIMNASIO TOP PARA VOS</h5>
 
 
 
         <Accordion className='mt-5 p-3'>
 
         <Accordion.Item eventKey="0" className='item'>
-        <Accordion.Header>Acerca del Yoga</Accordion.Header>
+        <Accordion.Header>Acerca del gimnasio</Accordion.Header>
         <Accordion.Body>
-        El yoga es una disciplina tradicional espiritual, física y mental originada en la India. El yoga es una de las seis dárshanas ortodoxas del hinduismo. Enfatiza la meditación y la liberación, siendo su texto principal el Yoga sutra.
+        Estamos muy seguros al afirmar que tenemos el mejor gym del NOA, con las maquinas mas nuevas del mercado y los mejores trainers para sacarle el mayor provecho a tu entrenamiento.
         </Accordion.Body>
         </Accordion.Item>
 
@@ -68,12 +68,12 @@ return (
         <Accordion.Header>Beneficios</Accordion.Header>
         <Accordion.Body>
         <ul>
-        <li>Reducir su presión arterial y su frecuencia cardíaca</li>
-        <li>Reducir el estrés</li>
-        <li>Mejorar su coordinación</li>
-        <li>Ayudarle a dormir mejor</li>
-        <li>Ayudar a la digestión</li>
-        <li>Ayudarle a relajarse</li>
+        <li>Haciendo ejercicio físico te sentirás mejor</li>
+        <li>El ejercicio físico es una solución efectiva para calmar la ansiedad</li>
+        <li>Ir al gimnasio mejora tu calidad del sueño</li>
+        <li>Hacer ejercicio fortalece músculos y huesos</li>
+        <li>El gimnasio ayuda a combatir el estrés</li>
+        <li>El ejercicio constante activa las pilas</li>
         </ul>
         </Accordion.Body>
         </Accordion.Item>
@@ -144,7 +144,7 @@ return (
         <Card className='cardplanes'>
         <Card.Img variant="top" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mancuernas-1559227736.jpg?resize=480:*" />
         <Card.Body>
-        <Card.Title className='letratarjetas' style={{color: "black"}}>LIBRE</Card.Title>
+        <Card.Title className='letratarjetas' style={{color: "black"}}>GIMNASIO</Card.Title>
         <Card.Text className='letratarjetas'>
             Tenemos las mejores instalaciones, las mejores maquinas y los mejores trainers. Inscribite y logra tus objetivos con nosotros.
         </Card.Text>

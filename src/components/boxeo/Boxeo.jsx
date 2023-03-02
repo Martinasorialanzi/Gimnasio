@@ -144,7 +144,7 @@ return (
         <Card className='cardplanes'>
         <Card.Img variant="top" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mancuernas-1559227736.jpg?resize=480:*" />
         <Card.Body>
-        <Card.Title className='letratarjetas' style={{color: "black"}}>LIBRE</Card.Title>
+        <Card.Title className='letratarjetas' style={{color: "black"}}>GIMNASIO</Card.Title>
         <Card.Text className='letratarjetas'>
             Tenemos las mejores instalaciones, las mejores maquinas y los mejores trainers. Inscribite y logra tus objetivos con nosotros.
         </Card.Text>

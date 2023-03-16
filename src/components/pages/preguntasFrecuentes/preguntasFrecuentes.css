@@ -1,10 +1,11 @@
 
 .preguntasFrecuentes {
   display: flex;
-  height: 28rem;
+  /* height: 28rem; */
   gap: 2rem;
   padding: 2rem;
   background-color: #e95821;
+  min-height: 75.45vh;
 }
 
 

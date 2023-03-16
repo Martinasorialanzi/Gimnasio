@@ -6,27 +6,22 @@ import EcommerceCategoria from '../pages/EcommerceCategoria'
 import EcommerceDetalleProducto from '../pages/EcommerceDetalleProducto'
 import EcommerceHome from '../pages/EcommerceHome'
 
-import Admin from '../admin/Admin'
-import AgregarUsuario from '../admin/AgregarUsuario'
-import EditarUsuario from '../admin/EditarUsuario'
-import ListasDeUsuarios from '../admin/ListaDeUsuarios'
+import Boxeo from '../boxeo/Boxeo'
+import Yoga from '../yoga/Yoga'
+import Libre from '../libre/Libre'
 
-import Chat from '../chat/Chat'
-import ChatParticular from '../chat/ChatParticular'
-import Clientes from '../listaClientes/Clientes'
-import Turnos from '../turnos/Turnos'
-import Planes from '../planes/Planes'
-import AgregarPlan from '../planes/AgregarPlan'
+import Chat from "../chat/Chat";
+import ChatParticular from "../chat/ChatParticular";
+import Clientes from "../listaClientes/Clientes";
+import Turnos from "../turnos/Turnos";
+import Planes from "../planes/Planes";
+import AgregarPlan from "../planes/AgregarPlan";
 
-import EditarPlan from '../planes/EditarPlan'
-import AcercaDe from '../pages/acercaDe/AcercaDe';
+import EditarPlan from "../planes/EditarPlan";
+import AcercaDe from "../pages/acercaDe/AcercaDe";
 import Home from "../pages/Home";
-import PreguntasFrecuentes from "../pages/preguntasFrecuentes/PreguntasFrecuentes"
-import Error from '../pages/error404/Error'
-
-
-
-
+import PreguntasFrecuentes from "../pages/preguntasFrecuentes/PreguntasFrecuentes";
+import Error from "../pages/error404/Error";
 
 const Rutas = () => {
   return (
@@ -43,9 +38,17 @@ const Rutas = () => {
 
       <Route path="/agregarusuario" element={<AgregarUsuario />} exact />
       <Route path="/listadeusuarios" element={<ListasDeUsuarios />} exact />
-      <Route path="/editarusuario/:idUsuario" element={<EditarUsuario />} exact />
+      <Route
+        path="/editarusuario/:idUsuario"
+        element={<EditarUsuario />}
+        exact
+      />
       <Route path="/chat" element={<Chat />} exact />
-      <Route path="/chatparticular/:idUsuario" element={<ChatParticular />} exact />
+      <Route
+        path="/chatparticular/:idUsuario"
+        element={<ChatParticular />}
+        exact
+      />
       <Route path="/planes" element={<Planes />} exact />
       <Route path="/agregarplan" element={<AgregarPlan />} exact />
       <Route path="/editarplan/:codigoPlan" element={<EditarPlan />} exact />
@@ -60,7 +63,7 @@ const Rutas = () => {
 
      
     </Routes>
-  )
-}
+  );
+};
 
-export default Rutas
+export default Rutas;

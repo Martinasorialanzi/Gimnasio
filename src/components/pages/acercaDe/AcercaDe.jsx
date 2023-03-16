@@ -18,9 +18,10 @@ const AcercaDe = () => {
 
     <>
     <Navegador allProducts={allProducts} setAllProducts={setAllProducts}/> 
+    
      <div className="aboutHome" id="about">
 
-      <div className="aboutHeader">
+      <div className="aboutHeader m-4">
         <span>quienes somos</span>
       </div>
       <div className="aboutCategoria">

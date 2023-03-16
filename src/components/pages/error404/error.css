@@ -1,9 +1,12 @@
+ody{
+background-color: #2b2a29;
+}
 .errorP {
  
   gap: 2rem;
   padding: 2rem;
   background-color: #2b2a29;
-  height: 39rem;
+  min-height: 100vh;
   display: flex;
   
   justify-content: center;

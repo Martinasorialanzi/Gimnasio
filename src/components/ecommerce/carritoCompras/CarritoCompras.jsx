@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Stack } from "react-bootstrap";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { BsFillCartFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import "../carritoCompras/carritoCompras.css";
 
 const CarritoCompras = ({ allProducts, setAllProducts,abrirCarrito}) => {
@@ -102,8 +103,9 @@ const CarritoCompras = ({ allProducts, setAllProducts,abrirCarrito}) => {
                     )}
                   </h3>
                 </div>
-
+                    <Link to={"/error"}>
                 <button className="btn-comprar">COMPRAR</button>
+                </Link>
               </>
             ) : (
               <p className="cart-empty">El carrito está vacío</p>

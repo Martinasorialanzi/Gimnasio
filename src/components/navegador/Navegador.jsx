@@ -16,7 +16,7 @@ const Navegador = ({ allProducts, setAllProducts }) => {
     const { value: password } = await Swal.fire({
       title: 'Ingrese el codigo',
       input: 'password',
-      inputLabel: 'El registro es unicamente para el personal, si usted es cliente solicite a su entrenador que realice su registro',
+      text: 'El registro es unicamente para el personal, si usted es cliente solicite a su entrenador que realice su registro',
       inputPlaceholder: 'Codigo',
       inputAttributes: {
         maxlength: 10,

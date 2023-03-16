@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import "./Libre.css"
 import Carousel from 'react-bootstrap/Carousel';
 import Accordion from 'react-bootstrap/Accordion';
@@ -6,16 +6,22 @@ import Table from 'react-bootstrap/Table';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Footer from "../footer/Footer";
-import NavegadorAdmin from '../navegador/NavegadorAdmin';
-// import Navegador from '../navegador/Navegador';
+import Navegador from '../navegador/Navegador';
 
 const Libre = () => {
+    const [allProducts, setAllProducts] = useState(() => {
+        try {
+          const productosEnLocalStorage = localStorage.getItem("productos carrito");
+          return productosEnLocalStorage ? JSON.parse(productosEnLocalStorage) : [];
+        } catch (error) {
+          return [];
+        }
+      });
 return (
 <> 
 
-{/* <Navegador/>  */}
+<Navegador allProducts={allProducts} setAllProducts={setAllProducts} />
 
-        <NavegadorAdmin/>
 
 <div className='fondobox'>
 

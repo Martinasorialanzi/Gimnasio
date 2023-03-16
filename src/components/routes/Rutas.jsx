@@ -5,14 +5,14 @@ import AdminProducts from '../pages/AdminProducts'
 import EcommerceCategoria from '../pages/EcommerceCategoria'
 import EcommerceDetalleProducto from '../pages/EcommerceDetalleProducto'
 import EcommerceHome from '../pages/EcommerceHome'
-
+import Admin from '../admin/Admin'
 import Boxeo from '../boxeo/Boxeo'
 import Yoga from '../yoga/Yoga'
 import Libre from '../libre/Libre'
+import AgregarUsuario from '../admin/AgregarUsuario'
+import ListasDeUsuarios from '../admin/ListaDeUsuarios'
+import EditarUsuario from '../admin/EditarUsuario'
 
-import Boxeo from '../boxeo/Boxeo'
-import Yoga from '../yoga/Yoga'
-import Libre from '../libre/Libre'
 
 import Chat from "../chat/Chat";
 import ChatParticular from "../chat/ChatParticular";

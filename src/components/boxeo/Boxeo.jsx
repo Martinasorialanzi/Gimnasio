@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import "../boxeo/Boxeo.css"
 import Carousel from 'react-bootstrap/Carousel';
 import Accordion from 'react-bootstrap/Accordion';
@@ -6,15 +6,20 @@ import Table from 'react-bootstrap/Table';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Footer from "../footer/Footer"
-import NavegadorAdmin from '../navegador/NavegadorAdmin';
-// import Navegador from '../navegador/Navegador';
+import Navegador from '../navegador/Navegador';
 
 const Boxeo = () => {
+    const [allProducts, setAllProducts] = useState(() => {
+        try {
+          const productosEnLocalStorage = localStorage.getItem("productos carrito");
+          return productosEnLocalStorage ? JSON.parse(productosEnLocalStorage) : [];
+        } catch (error) {
+          return [];
+        }
+      });
 return (
 <> 
-{/* <Navegador/> */}
-
-        <NavegadorAdmin/>
+<Navegador allProducts={allProducts} setAllProducts={setAllProducts}/>
 
 <div className='fondobox'>
 

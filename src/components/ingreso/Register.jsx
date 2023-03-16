@@ -15,6 +15,18 @@ const Registro = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [contraseña, setContraseña] = useState(false);
 
+  const validacion = () => {
+    if(password !== confirmPassword){
+      setContraseña(true)
+    }else {
+      setContraseña(false)
+    }
+  }
+  useEffect(() => {
+  validacion()
+  }, [password,confirmPassword])
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const regexName = /^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/;
@@ -22,8 +34,14 @@ const Registro = () => {
     const regexPassword =
     /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
 
+    
     if (password !== confirmPassword) {
-      setContraseña(true);
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Las contraseñas deben coincidir",
+        confirmButtonColor: '#E95821',
+      });
     } else if (
       name === "" ||
       lastname === "" ||
@@ -34,24 +52,28 @@ const Registro = () => {
         icon: "error",
         title: "Error",
         text: "Los campos son obligatorios",
+        confirmButtonColor: '#E95821',
       });
     } else if (!regexEmail.test(email)) {
       Swal.fire({
         icon: "error",
         title: "Error",
         text: "Debes escribir un email valido",
+        confirmButtonColor: '#E95821',
       });
     } else if (!regexName.test(name)) {
       Swal.fire({
         icon: "error",
         title: "Error",
         text: "El nombre no debe contener numeros o caracteres especiales",
+        confirmButtonColor: '#E95821',
       });
     } else if (!regexName.test(lastname)) {
       Swal.fire({
         icon: "error",
         title: "Error",
         text: "El apellido no debe contener numeros o caracteres especiales",
+        confirmButtonColor: '#E95821',
       });
     } 
     else if (!regexPassword.test(password)) {
@@ -59,6 +81,7 @@ const Registro = () => {
         icon: "error",
         title: "Error",
         text: "La contraseña debe tener por lo menos un caracter en mayuscula, uno en minuscula, y 8 caracteres minimos",
+        confirmButtonColor: '#E95821',
       });
     } 
     else {
@@ -146,8 +169,8 @@ const Registro = () => {
         </Form.Text>
       </Form.Group>
      
-      <Button variant="primary" type="submit">
-        Submit
+      <Button variant="dark" type="submit">
+        Enviar
       </Button>
     </Form>
   );

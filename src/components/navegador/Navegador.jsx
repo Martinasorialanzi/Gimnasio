@@ -22,15 +22,29 @@ const Navegador = ({ allProducts, setAllProducts }) => {
         maxlength: 10,
         autocapitalize: 'off',
         autocorrect: 'off'
-      }
+      },
+      confirmButtonColor: '#E95821',
+      
     })
     
     if (password == 123 ) {
-      Swal.fire(`Codigo correcto`)
+      Swal.fire({
+        title: `Codigo correcto`,
+        icon: "success",
+        confirmButtonColor: '#E95821'
+
+      })
       setShowR(true);
     setShowL(false);
-    }
+    }else {
+      Swal.fire({
+        title: `Codigo incorrecto`,
+        confirmButtonColor: '#E95821',
+        icon: "error"
+  
+      })
     
+  } 
   };
 
   const handleShowL = () => {
@@ -54,6 +68,9 @@ const Navegador = ({ allProducts, setAllProducts }) => {
               <NavDropdown.Item href="/ecommerce-categoria/all">Ver todo</NavDropdown.Item>
               
             </NavDropdown>
+            <Nav.Link href="/boxeo">Boxeo</Nav.Link>
+            <Nav.Link href="/yoga">Yoga</Nav.Link>
+            <Nav.Link href="/libre">Gimnasio</Nav.Link>
             <Nav.Link href="/acercade">Acerca de nosotros</Nav.Link>
         
           </Nav>
@@ -86,16 +103,15 @@ const Navegador = ({ allProducts, setAllProducts }) => {
           <p>
             ¿Aún no estas registrado?{" "}
             <a
-              style={{ cursor: "pointer" }}
+              style={{ cursor: "pointer",
+              color: '#E95821'  }}
               onClick={handleShowR}
               className="link"
             >
               click aqui
             </a>
           </p>
-          <Button onClick={() => setShowL(false)} variant="secondary">
-            Close
-          </Button>
+          
         </Modal.Footer>
       </Modal>
 
@@ -115,14 +131,14 @@ const Navegador = ({ allProducts, setAllProducts }) => {
             <a
               className="link"
               onClick={handleShowL}
-              style={{ cursor: "pointer" }}
+              style={{ cursor: "pointer",
+              color: '#E95821' }}  
+              
             >
               Ingresa aqui
             </a>
           </p>
-          <Button onClick={() => setShowR(false)} variant="secondary">
-            Close
-          </Button>
+        
         </Modal.Footer>
       </Modal>
     </>
